@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+  .ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+ .li {
+    float: left;
+  }
+  
+ .li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .Title{
+      background-color: #8BC6EC;
+      background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+      
+
+
+      text-align: center;
+  }
+
+  .Grupo {
+    text-align:justify;
+    padding: 50px;
+    padding-left: 350px; 
+  }
+
+  .Titulo{
+      color: #32de84;
+  }
+
+  .lista3 {
+    counter-reset: li; 
+    list-style: none; 
+    list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    width:485px;
+    
+}
+
+.lista3 ol {
+    margin: 0 0 0 2em; 
+}
+
+.lista3 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+}
+
+.lista3 li:hover{
+    background: #eee;
+}   
+
+.lista3 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.lista3 li:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+
+.lista3 li:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}
+
+.boton-personalizado{
+text-decoration:none;
+font-weight: 600;
+font-size: 20px;
+color:#ffffff;
+padding-top:15px;
+padding-bottom:15px;
+padding-left:40px;
+padding-right:40px;
+background-color:#2a4aff;
+border-color: #d8d8d8;
+border-width: 1px;
+border-radius:35px;
+margin-left: 60px;
+}
+
+/*FORMULARIO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+
+
+.form-register {
+ 
+  width: 400px;
+
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+  </style>
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario Registro</title>
+  <link rel=”StyleSheet” href=css/redsocial” type=”text/css”>
+</head>
+<ul class="ul">      
+    <li class="dropdown li">
+      <a href="javascript:void(0)" class="dropbtn">Perfil</a>
+      <div class="dropdown-content">
+        <a href="verPerfil.html">Ver mi perfil</a>
+        <a href="editarPerfil.html">Editar mi perfil</a>
+      </div>
+     
+    </li>
+    <li class="dropdown li">
+      <a href="javascript:void(0)" class="dropbtn">Grupos</a>
+      <div class="dropdown-content">
+        <a href="Grupo.html" >Ver mis grupos</a>
+    
+      <a href="Grupo.html">Crear un nuevo grupo</a>
+      <a href="Grupo.html">Solicitudes</a>
+      </div>
+     
+    </li>
+    <li class="dropdown li">
+      <a href="javascript:void(0)" class="dropbtn">Amigos</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+     
+    </li>
+    <li class="dropdown li">
+      <a href="javascript:void(0)" class="dropbtn">Tutores</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+     
+    </li>
+    <li class="dropdown li">
+      <a href="javascript:void(0)" class="dropbtn">Chat</a>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+     
+    </li>
+    <li class="dropdown li"><a href="">Inicio</a></li>
+  
+  
+  </ul>
+  
+<section class="form-register">
+    <h4>CREAR GRUPO</h4>
+    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Nombre del grupo">
+    <input class="controls" type="text" name="Descripcion" id="Descripcion" placeholder="Descripcion">
+
+    <p>Materias a la que aplica el grupo</p>
+    <select class= "controls" name="Materias:">
+  
+    <option value="value1">Programacion 1</option> 
+    <option value="value2" selected>Base de datos</option>
+    <option value="value3">Estructura de datos</option>
+    </select>
+    
+    <p>Cantidad de participantes</p>
+    <select class= "controls" name="Participantes:">
+
+        <option value="value1">1</option> 
+        <option value="value2" selected>2</option>
+        <option value="value3">3</option>
+        </select>
+
+        <p>Privacidad del grupo</p>
+        <select class= "controls" name="Privacidad:">
+
+            <option value="value1">Publico 1</option> 
+            <option value="value2" selected>Privado</option>
+            
+            </select>
+    
+   
+    <input class="botons" type="submit" value="Crear">
+   
+  </section>
