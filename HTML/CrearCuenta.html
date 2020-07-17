@@ -1,338 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+  
+
   <style>
-  .ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
- .li {
-    float: left;
-  }
-  
- .li a, .dropbtn {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  .li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-  }
-  
-  .li.dropdown {
-    display: inline-block;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1;}
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .Title{
-      background-color: #8BC6EC;
-      background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    .estilo{
       
-
-
-      text-align: center;
-  }
-
-  .Grupo {
-    text-align:justify;
-    padding: 50px;
-    padding-left: 350px; 
-  }
-
-  .Titulo{
-      color: #32de84;
-  }
-
-  .lista3 {
-    counter-reset: li; 
-    list-style: none; 
-    list-style: decimal; 
-    font: 15px 'trebuchet MS', 'lucida sans';
-    padding: 0;
-    margin-bottom: 4em;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-    width:485px;
+      margin-left:25%;
+      margin-top: 7%;
+      width: 50%;
+    }
     
-}
+    .estilo1{
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 
-.lista3 ol {
-    margin: 0 0 0 2em; 
-}
-
-.lista3 li{
-    position: relative;
-    display: block;
-    padding: .4em .4em .4em .8em;
-    *padding: .4em;
-    margin: .5em 0 .5em 2.5em;
-    background: #ddd;
-    color: #444;
-    text-decoration: none;
-    transition: all .3s ease-out;   
-}
-
-.lista3 li:hover{
-    background: #eee;
-}   
-
-.lista3 li:before{
-    content: counter(li);
-    counter-increment: li;
-    position: absolute; 
-    left: -2.5em;
-    top: 50%;
-    margin-top: -1em;
-    background: #fa8072;
-    height: 2em;
-    width: 2em;
-    line-height: 2em;
-    text-align: center;
-    font-weight: bold;
-}
-
-.lista3 li:after{
-    position: absolute; 
-    content: '';
-    border: .5em solid transparent;
-    left: -1em;
-    top: 50%;
-    margin-top: -.5em;
-    transition: all .3s ease-out;               
-}
-
-.lista3 li:hover:after{
-    left: -.5em;
-    border-left-color: #fa8072;             
-}
-
-.boton-personalizado{
-text-decoration:none;
-font-weight: 600;
-font-size: 20px;
-color:#ffffff;
-padding-top:15px;
-padding-bottom:15px;
-padding-left:40px;
-padding-right:40px;
-background-color:#2a4aff;
-border-color: #d8d8d8;
-border-width: 1px;
-border-radius:35px;
-margin-left: 60px;
-}
-/*Crear cuenta */
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-html {
-  font-family: 'Montserrat', Arial, sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  background: #F2F3EB;
-}
-
-button {
-  overflow: visible;
-}
-
-button, select {
-  text-transform: none;
-}
-
-button, input, select, textarea {
-  color: #5A5A5A;
-  font: inherit;
-  margin: 0;
-}
-
-input {
-  line-height: normal;
-}
-
-textarea {
-  overflow: auto;
-}
-
-#container {
-  border: solid 3px #474544;
-  max-width: 768px;
-  margin: 60px auto;
-  position: relative;
-}
-
-form {
-  padding: 37.5px;
-  margin: 50px 0;
-}
-
-h1 {
-  color: #474544;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 7px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.underline {
-  border-bottom: solid 2px #474544;
-  margin: -0.512em auto;
-  width: 80px;
-}
-
-.icon_wrapper {
-  margin: 50px auto 0;
-  width: 100%;
-}
-
-.icon {
-  display: block;
-  fill: #474544;
-  height: 50px;
-  margin: 0 auto;
-  width: 50px;
-}
-
-.email {
-	float: right;
-	width: 45%;
-}
-
-input[type='text'], [type='email'], select, textarea {
-	background: none;
-  border: none;
-	border-bottom: solid 2px #474544;
-	color: #474544;
-	font-size: 1.000em;
-  font-weight: 400;
-  letter-spacing: 1px;
-	margin: 0em 0 1.875em 0;
-	padding: 0 0 0.875em 0;
-  text-transform: uppercase;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-ms-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	box-sizing: border-box;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-input[type='text']:focus, [type='email']:focus, textarea:focus {
-	outline: none;
-	padding: 0 0 0.875em 0;
-}
-
-.message {
-	float: none;
-}
-
-.name {
-	float: left;
-	width: 45%;
-}
-
-select {
-  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
-  outline: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-.subject {
-  width: 100%;
-}
-
-.telephone {
-  width: 100%;
-}
-
-textarea {
-	line-height: 150%;
-	height: 150px;
-	resize: none;
-  width: 100%;
-}
-
-::-webkit-input-placeholder {
-	color: #474544;
-}
-
-:-moz-placeholder { 
-	color: #474544;
-	opacity: 1;
-}
-
-::-moz-placeholder {
-	color: #474544;
-	opacity: 1;
-}
-
-:-ms-input-placeholder {
-	color: #474544;
-}
-
-#form_button {
-  background: none;
-  border: solid 2px #474544;
-  color: #474544;
-  cursor: pointer;
-  display: inline-block;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size: 0.875em;
-  font-weight: bold;
-  outline: none;
-  padding: 20px 35px;
-  text-transform: uppercase;
-  -webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	-ms-transition: all 0.3s;
-	-o-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-#form_button:hover {
-  background: #474544;
-  color: #F2F3EB;
-}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+ 
 
 @media screen and (max-width: 768px) {
   #container {
@@ -381,67 +77,105 @@ textarea {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
-  <link rel=”StyleSheet” href=css/redsocial” type=”text/css”>
 </head>
 
-<body>
-    <div id="container">
-        <h1>&bull; Crear Cuenta &bull;</h1>
-        <div class="underline">
-        </div>
-       
-        <form action="verPerfil.html" method="post" id="contact_form">
-          <div class="name">
-            <label for="name"></label>
-            <input type="text" placeholder="Nombre de usuario" name="name" id="name_input" required>
-          </div>
-         
-          <div class="email">
-            <label for="email"></label>
-            <input type="email" placeholder="Email" name="email" id="email_input" required>
-          </div>
-         
-          <div class="name">
-            <label for="name"></label>
-            <input type="text" placeholder="Contraseña" name="name" id="name_input" required>
-          </div>
-         
-         
-          <div class="subject">
-            <label for="subject"></label>
-            <select placeholder="Subject line" name="subject" id="subject_input" required>
-              <option disabled hidden selected>Carrera</option>
-              <option>Lic en Informatica</option>
-              <option>Ing en Informatica</option>
-            </select>
-            <select placeholder="Subject line" name="subject" id="subject_input" required>
-                <option disabled hidden selected>Cursando Actualmente</option>
-                <option>Ingles</option>
-                <option>Base de datos</option>
-              </select>
-              <select placeholder="Subject line" name="subject" id="subject_input" required>
-                <option disabled hidden selected>Preparando finales</option>
-                <option>Ingles</option>
-                <option>Base de datos</option>
-              </select>
-              <select placeholder="Subject line" name="subject" id="subject_input" required>
-                <option disabled hidden selected>¿Desea postularse como tutor?</option>
-                <option>Si</option>
-                <option>No</option>
-              </select>
-              <select placeholder="Subject line" name="subject" id="subject_input" required>
-                <option disabled hidden selected>Materias a la que Aplica</option>
-                <option>Matematica</option>
-                <option>Programacion 3</option>
-              </select>
-          </div>
-          
-          <div class="submit">
-            <input type="submit" value="Crear Cuenta" id="form_button" />
-          </div>
-        </form><!-- // End form -->
-      </div><!-- // End #container -->
+  
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Red Social</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">EXIT</a>
+      </li>
+      
+
+     
+
+      
+    </ul>
+  </div>
+</nav>
+<div class="card estilo">
+   
+  <div class="card-header bg-primary">
+   <h5>CREAR PERFIL DE USUARIO</h5> 
+  </div>
+
+<form class="estilo1">
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Nombre de usuario</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Contraseña</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email </label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Carrera</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Ing en Informatica</option>
+      <option>Lic en Informatica</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Cursando Actualmente</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Programacion</option>
+      <option>Ingles</option>
+      <option>Base de Datos</option>
+
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Preparando Finales</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Base de Datos</option>
+      <option>Matematica 3</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">¿Desea postularse como tutor?</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Si</option>
+      <option>No</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Materias a la que Aplica</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Base de Datos 2</option>
+      <option>Matematica 3</option>
+    </select>
+  </div>
 
 
-</body>
+  <button class="btn btn-primary" type="submit" >Crear Perfil de Usuario</button>
+
+
+</div>
+</form>
+  
+</form>

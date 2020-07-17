@@ -187,28 +187,38 @@ margin-left: 60px;
 }
 
 /*SEARCH */
-.flexsearch--wrapper {
-	height: auto;
-	width: auto;
-	max-width: 100%;
-	overflow: hidden;
-	background: transparent;
-	margin: 0;
-	position: static;
+.active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
 }
-	
-.flexsearch--form {
-	overflow: hidden;
-	position: relative;
+.active-pink input.form-control[type=text] {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
 }
-	
-.flexsearch--input-wrapper {
-	padding: 0 66px 0 0; /* Right padding for submit button width */
-	overflow: hidden;
+.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
 }
-
-.flexsearch--input {
-  width: 100%;
+.active-purple input.form-control[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+.active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan input.form-control[type=text] {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan .fa, .active-cyan-2 .fa {
+  color: #4dd0e1;
+}
+.active-purple .fa, .active-purple-2 .fa {
+  color: #ce93d8;
+}
+.active-pink .fa, .active-pink-2 .fa {
+  color: #f48fb1;
 }
 
 /***********************
@@ -281,7 +291,7 @@ input:-moz-placeholder {
 
 
 /****************
- * Pretify demo *
+
  ****************/
 .h1 {
   float: left;
@@ -294,10 +304,24 @@ input:-moz-placeholder {
   text-align: center;
 }
 .buscarGrupo{
-  
-  margin-left: 200px;
+  width: 29.8%;
+  margin-left: 30.8%;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
   
 }
+
+.search{
+  width: 30%;
+  margin-left: 30.8%;
+}
+
+.espacio{
+  top: 10%;
+  margin-top: 9%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 
   </style>
 <head>
@@ -305,98 +329,118 @@ input:-moz-placeholder {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   
-  <link rel=”StyleSheet” href=css/redsocial” type=”text/css”>
 </head>
 
-<ul class="ul">      
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Perfil</a>
-      <div class="dropdown-content">
-        <a href="verPerfil.html">Ver mi perfil</a>
-      <a href="editarPerfil.html">Editar mi perfil</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Grupos</a>
-      <div class="dropdown-content">
-        <a href="Grupo.html" >Ver mis grupos</a>
-    
-      <a href="Grupo.html">Crear un nuevo grupo</a>
-      <a href="Grupo.html">Solicitudes</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Amigos</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Tutores</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Chat</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li"><a href="">Inicio</a></li>
   
   
-  </ul>
-  
-  <h1 class="buscarGrupo">Buscar Grupos</h1>
-  <div class="flexsearch">
-    <div class="flexsearch--wrapper">
-        <form class="flexsearch--form" action="#" method="post">
-            <div class="flexsearch--input-wrapper">
-                <input class="flexsearch--input" type="Buscar Grupo" placeholder="search">
-            </div>
-            <input class="flexsearch--submit" type="submit" value="&#10140;"/>
-        </form>
-    </div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Red Social</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PERFIL
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="verPerfil.html">Ver mi perfil</a>
+          <a class="dropdown-item" href="editarPerfil.html">Editar mi perfil</a>
+          
+        </div>
+      </li>
+      
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         GRUPO
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Grupo.html">Grupos</a>
+          <a class="dropdown-item" href="verGrupos.html">Ver Grupos</a>
+          <a class="dropdown-item" href="solicitudesGrupo.html">Solicitudes</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          TUTOR 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          AMIGOS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">CHAT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">INICIO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">EXIT</a>
+      </li>
+
+      
+    </ul>
+  </div>
+</nav>
+
+  <div class="espacio">
+  <h1 class="buscarGrupo bg-secondary text-white">Buscar Grupo</h1>
+  <div class="active-cyan-3 active-cyan-4 mb-4 search">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div>
+
   <div class="flex-container">
-    <div>Matematica<br>
-        <input class="botons" type="submit" value="Unirse">
+    
+    <div class="card card-header">
+      Matematica
+    <button class="btn btn-primary" type="submit" >Unirse</button>
     </div>
-    <div>
+    
+    <div class="card card-header">
         Programacion<br>
-        <input class="botons" type="submit" value="Unirse">
+        <button class="btn btn-primary" type="submit" >Unirse</button>
    </div>
-   <div>
+   <div class="card card-header">
     Base de Datos<br>
-    <input class="botons" type="submit" value="Unirse">
+    <button class="btn btn-primary" type="submit" >Unirse</button>
 </div>
-<div>
+<div class="card card-header">
     Ingles<br>
-    <input class="botons" type="submit" value="Unirse">
+    <button class="btn btn-primary" type="submit" >Unirse</button>
 </div>
-<div>
+<div class="card card-header">
     Matematica 2<br>
-    <input class="botons" type="submit" value="Unirse">
+    <button class="btn btn-primary" type="submit" >Unirse</button>
 </div>
-<div>
+<div class="card card-header">
     Desarrollo de Aplicaciones<br>
-    <input class="botons" type="submit" value="Unirse">
+    <button class="btn btn-primary" type="submit" >Unirse</button>
 </div>
-<div>
+<div class="card card-header">
     Estructura de Datos<br>
-    <input class="botons" type="submit" value="Unirse">
+    <button class="btn btn-primary" type="submit" >Unirse</button>
 </div>
   </div>
+</div>

@@ -155,59 +155,74 @@ margin-left: 60px;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
-  <link rel=”StyleSheet” href=css/redsocial” type=”text/css”>
+  <title>Formulario Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </head>
-<ul class="ul">      
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Perfil</a>
-      <div class="dropdown-content">
-        <a href="verPerfil.html">Ver mi perfil</a>
-      <a href="editarPerfil.html">Editar mi perfil</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Grupos</a>
-      <div class="dropdown-content">
-        <a href="Grupo.html" >Ver mis grupos</a>
-    
-      <a href="Grupo.html">Crear un nuevo grupo</a>
-      <a href="Grupo.html">Solicitudes</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Amigos</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Tutores</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li">
-      <a href="javascript:void(0)" class="dropbtn">Chat</a>
-      <div class="dropdown-content">
-        <a href="#">Link 1</a>
-        <a href="#">Link 2</a>
-        <a href="#">Link 3</a>
-      </div>
-     
-    </li>
-    <li class="dropdown li"><a href="">Inicio</a></li>
-  
-  
-  </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Red Social</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PERFIL
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="verPerfil.html">Ver mi perfil</a>
+          <a class="dropdown-item" href="editarPerfil.html">Editar mi perfil</a>
+          
+        </div>
+      </li>
+      
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="Grupo.html" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         GRUPO
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Grupo.html">Grupos</a>
+          <a class="dropdown-item" href="verGrupos.html">Ver Grupos</a>
+          <a class="dropdown-item" href="solicitudesGrupo.html">Solicitudes</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          TUTOR 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          AMIGOS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">CHAT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">INICIO</a>
+      </li>
+
+      
+    </ul>
+  </div>
+</nav>
 
             <div class="Grupo" >
                 
