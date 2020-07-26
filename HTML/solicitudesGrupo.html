@@ -14,7 +14,7 @@
     
   }
   .estilo3{
-    width: 18%;
+    width: 100%;
     margin-left:5%;
     margin-top: 9%;
   }
@@ -24,8 +24,12 @@
 }
 .diseño1{
   margin-left: 5%;
-  
+  margin-right: 5%  ;
   margin-top: 2%;
+  width: 20%;
+}
+.navpos{
+    margin-left: 90%;
 }
 
 
@@ -103,7 +107,7 @@
   
   
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Red Social</a>
+  <a class="navbar-brand" href="Bienvenida.html">Red Social</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -137,9 +141,9 @@
           TUTOR 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="perfilTutor.html">Mi Perfil</a>
+          <a class="dropdown-item" href="solicitudesTutor.html">Solicitudes</a>
+          <a class="dropdown-item" href="alumnosTutor.html">Alumnos</a>
         </div>
       </li>
 
@@ -153,12 +157,10 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">CHAT</a>
+      <li class="nav-item navpos">
+        <a class="nav-link navpos" href="login.html">EXIT</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">INICIO</a>
-      </li>
+     
       <li class="nav-item">
         <a class="nav-link" href="login.html">EXIT</a>
       </li>
@@ -168,20 +170,81 @@
   </div>
 </nav>
 
-<div class="card estilo3">
-  <div class="card-header bg-primary">
-    <h5>Solcitudes pendientes</h5>
-  </div>
-</div> 
+<div class="card-header">
+  <h5>Solicitudes de Grupos</h5>
+</div>
 
-<div class="card diseño diseño1">
- 
-  <div class="card-body">
-    <img src="img/logo.jpg" class="card-img-top"  alt="...">
-    <h5 class="card-title">Base de datos 2 </h5>
-    <p class="card-text card-title"><strong>Descripción</strong>: Preparando primer parcial</p>
-    <a href="#" class="btn btn-primary">Aceptar</a>
-    <button class="btn btn-danger" type="submit" >Eliminar</button>
-  </div> 
+
+<div class="row">
+<div class="col-sm-4">
+  <div class="borraname">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Programacion 2</h5>
+      <p class="card-text ">Hola, estamos preparando el segundo parcial </p>
+      
+      
+      <a   name="boton01" id="boton01" type="button"href="#" class="btn btn-primary">Aceptar</a>
+      <a  name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-4">
+  <div class="borraname1">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Matematica</h5>
+      <p class="card-text">Hola, estamos preparando el segundo parcial</p>
+      <a name="boton02" id="boton02" type="button" href="#" class="btn btn-primary">Aceptar</a>
+      <a name="boton02" id="boton02" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="borraname2">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Base de Datos</h5>
+      <p class="card-text">Hola, estamos preparando el segundo parcial</p>
+      <a name="boton03" id="boton03" type="button" href="#" class="btn btn-primary">Aceptar</a>
+      <a name="boton03" id="boton03" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
+    </div>
+    </div>
+  </div>
+</div>
+
 
 </div>
+<script type="text/javascript">
+  function ConfirmDemo() {
+  //Ingresamos un mensaje a mostrar
+  var mensaje = confirm("¿Cancelar solicitud?");
+  //Detectamos si el usuario acepto el mensaje
+  if (mensaje) {
+  alert("Solicitud cancelada");
+  }
+  //Detectamos si el usuario denegó el mensaje
+  
+
+  }
+  $(document).ready(function() {
+		$("#boton01").click(function(event) {
+			$("div").remove(".borraname");
+		});
+    
+		$("#boton02").click(function(event) {
+			$("div").remove(".borraname1");
+		});
+		$("#boton03").click(function(event) {
+			$("div").remove(".borraname2");
+		});
+        $("#boton04").click(function(event) {
+			$("p").remove(".borrame");
+		});
+	});
+  
+  </script>
