@@ -1,5 +1,39 @@
 <!DOCTYPE html>
 <html>
+
+  <style>
+  body {
+    background-color: #eeeeee;
+}
+
+.navpos{
+    margin-left: 90%;
+}
+
+.h7 {
+    font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+    margin-top: 0.97rem;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+    content: none;
+    display: none;
+}
+</style>
   <head>
  
     <meta charset="UTF-8">
@@ -11,12 +45,15 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+
   </head>
   
     
     
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Red Social</a>
+    <a class="navbar-brand" href="Bienvenida.html">Red Social</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,9 +87,9 @@
             TUTOR 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="perfilTutor.html">Mi Perfil</a>
+            <a class="dropdown-item" href="solicitudesTutor.html">Solicitudes</a>
+            <a class="dropdown-item" href="alumnosTutor.html">Alumnos</a>
           </div>
         </li>
   
@@ -67,30 +104,147 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">CHAT</a>
+          <a class="nav-link" href="chat.html">CHAT</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">INICIO</a>
+   
+        
+        <li class="nav-item navpos">
+          <a class="nav-link navpos" href="login.html">EXIT</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="login.html">EXIT</a>
-        </li>
-  
+     
         
       </ul>
     </div>
   </nav>
-
-  <div class="card">
-    <div class="card-body">
-      <strong>BIENVENIDO A RED SOCIAL</strong>
-    </div>
-  </div>
-  <form>
+ 
     
+  <nav class="navbar navbar-light bg-white">
+    <a href="#" class="navbar-brand">Bienvenido a Red Social!</a>
+    <form class="form-inline">  
+    </form>
+</nav>
 
 
 
 
-</body>
+<div class="container-fluid gedf-wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="h5">Alan Cichello</div>
+                    <div class="h7 text-muted">Carrera : Lic. en Informatica</div>
+                    <div class="h7 text-muted">Email : alancichello@gmail.com</div>
+                    <div class="h7">
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-6 gedf-main">
+
+            <!--- \\\\\\\Post-->
+            <div class="card gedf-card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Realizar una publicacion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images" aria-selected="false" href="#images">Imagen</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">post</label>
+                                <textarea class="form-control" id="message" rows="3" placeholder="Que estas pensando?"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                            <div class="form-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Cargar imagen</label>
+                                </div>
+                            </div>
+                            <div class="py-4"></div>
+                        </div>
+                    </div>
+                    <div class="btn-toolbar justify-content-between">
+                        <div class="btn-group">
+                            <button type="submit" class="btn btn-primary">Compartir </button>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+            <!-- Post /////-->
+
+            <!--- \\\\\\\Post-->
+            <div class="card gedf-card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2">
+                                <img class="rounded-circle" width="45" src="img/logo.jpg" alt="">
+                            </div>
+                            <div class="ml-2">
+                                <div class="h5 m-0">Alan Cichello</div>
+                                <div class="h7 text-muted">Lic. en Informatica</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                    <a class="card-link" href="#">
+                        <h5 class="card-title">Parcial Matematica</h5>
+                    </a>
+
+                    <p class="card-text">
+                      Hola tengo una consulta sobre el parcial de Matematica, ¿alguien me podria ayudar? Gracias!
+                    </p>
+                </div>
+            </div>
+            <!-- Post /////-->
+
+
+            
+           
+
+
+
+        </div>
+        <div class="col-md-3">
+            <div class="card gedf-card">
+                <div class="card-body">
+                    <h5 class="card-title">Grupos</h5>
+                   
+                    <p class="card-text">En <strong>Red Social UNAHUR</strong>, podras crear grupos de estudios para estudiar juntos a tus compañeros y mucho mas.   </p>
+                    <a href="Grupo.html" class="card-link">Crea tu Grupo!</a>
+                   
+                </div>
+            </div>
+            <div class="card gedf-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Amigos</h5>
+                        
+                        <p class="card-text">En <strong>Red Social UNAHUR</strong>, podras añadir a tus amigos de la universidad e interactuar con ellos.</p>
+                        <a href="#" class="card-link">Añadir Amigos!</a>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
 </html>
+

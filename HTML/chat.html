@@ -1,17 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
-  <style>
-    .estilo{
-      
-      margin-left:25%;
-      margin-top: 7%;
-      width: 50%;
-    }
-    .navpos{
+<html>
+<style>
+body {
+  background-color: #ecf0f1;
+}
+.navpos{
     margin-left: 90%;
 }
+#contentWrap {
+  display: none;
+}
 
-    </style>
+.error {
+  color: red;
+}
+
+.whisper {
+  color: gray;
+  font-style: italic;
+}
+.width {
+  width: 50%;
+  margin-left:23.7%;
+ 
+  
+}
+
+.color {
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.gedf-wrapper {
+    margin-top: 0.1rem;
+}
+.position {
+    margin-top: -14.7%;
+}
+
+
+
+
+
+
+
+  </style>
   <head>
  
     <meta charset="UTF-8">
@@ -22,7 +57,13 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
+    <!-- BOOTSWATCH COSMO THEME CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css">
+  <!-- FONT AWESOME -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+    integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+    crossorigin="anonymous"></script>
+  <!-- MAIN CSS -->
   </head>
   
     
@@ -79,53 +120,96 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="chat.html">CHAT</a>        </li>
+          <a class="nav-link" href="chat.html">CHAT</a>
+        </li>
      
         <li class="nav-item navpos">
           <a class="nav-link navpos" href="login.html">EXIT</a>
         </li>
+  
+        
       </ul>
     </div>
   </nav>
-  
- 
 
-  <div class="card estilo">
-    <div class="card-header bg-primary ">
-     <h5>MI PERFIL</h5> 
-    </div>
+
     
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Nombre del Usuario: <strong>Alan Cichello</strong></li>
-      <li class="list-group-item">Contraseña: *********</li>
-      <li class="list-group-item">Email: <strong>alancichello@gmail.com</strong></li>
-      <li class="list-group-item">Carrera: <strong>Lic. en Informatica</strong> </li>
-      <li class="list-group-item">Cursando Actualmente:
-        <div>
-          <span class="badge badge-primary">Matematica 2</span>
-          <span class="badge badge-primary">Ingles</span>
-          <span class="badge badge-primary">Programacion 2</span>
-          <span class="badge badge-primary">Programacion</span>
 
-      </div>
-      </li>
-      <li class="list-group-item">Preparando Finales: 
-        <div>
-        <span class="badge badge-primary">Matematica</span>
-          <span class="badge badge-primary">Programacion</span>
+            <div class="width ">
+            <!-- CARD HEADER-->
+            <div class="card-header bg-dark text-white ">
+              <h4>Chat</h4>
+            </div>
+
+            <!-- CARD BODY-->
+            <div id="chat" class="card-body color"></div>
+
+            <!-- CARD FOOTER -->
+            <form id="message-form" class="card-footer">
+              <div class="input-group">
+                <input type="text" id="message" class="form-control" />
+                <div class="input-group-append">
+                  <button class="btn btn-warning">
+                    <i class="fas fa-location-arrow"></i> Send
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-      </li>
+        
+        <div class="container-fluid gedf-wrapper position">
+          <div class="row">
+              <div class="col-md-3">
+                  <div class="card color2">
+                      <div class="card-body  ">
+                          <div class="h5"><strong> Salas de chat</strong></div>
+                          <div class="h7 text-muted"><i class="fas fa-user"></i>
+
+                              General</div>
+                          
+                      </div>
+                      
+                  </div>
+              </div>
       
-      <li class="list-group-item">¿Desea postularse como tutor?: <strong> Si </strong></li>
-      <li class="list-group-item">Materias a la que Aplica:
-        <div>
-        <span class="badge badge-primary">Matematica</span>
-      </div>
-      </li>
-    </ul>
-  </div>
-<strong>
+              <div class="container-fluid gedf-wrapper ">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card color2">
+                            <div class="card-body">
+                                <div class="h5"><strong>Chat por Materia</strong>         <i class="fas fa-search"></i>
 
+</div>
+                                <div class="h7 text-muted"><i class="fas fa-user"></i>
 
+                                    Programacion  
 
-</body>
+                                </div>
+                                <div class="h7 text-muted"><i class="fas fa-user"></i>
+
+                                  Base de Datos 
+
+                                </div>
+                                <div class="h7 text-muted"><i class="fas fa-user"></i>
+
+                                    Matematica  
+
+                                </div>
+
+                                <div class="h7">
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    
+              
+        
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/main.js"></script>

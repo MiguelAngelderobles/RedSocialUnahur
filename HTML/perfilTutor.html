@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <style>
-    .estilo{
-      
-      margin-left:25%;
-      margin-top: 7%;
-      width: 50%;
-    }
-    .navpos{
+<html>
+
+<style>
+
+  .width{
+    width: 50%;
+    
+  }
+
+  .position{
+    width: 10%;
+    margin-left: 1%;
+    
+  }
+  .navpos{
     margin-left: 90%;
 }
 
-    </style>
+</style>
+
   <head>
  
     <meta charset="UTF-8">
@@ -22,7 +29,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
+    <!-- libreria jquery -->
   </head>
   
     
@@ -79,53 +86,71 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="chat.html">CHAT</a>        </li>
-     
+          <a class="nav-link" href="chat.html">CHAT</a>
+        </li>
+       
         <li class="nav-item navpos">
           <a class="nav-link navpos" href="login.html">EXIT</a>
         </li>
+  
+        
       </ul>
     </div>
   </nav>
-  
+
+  <div class="card-title card-body">
+
+    <h5>Materias sobre las cuales es tutor:</h5>
  
-
-  <div class="card estilo">
-    <div class="card-header bg-primary ">
-     <h5>MI PERFIL</h5> 
+  <div class="d-flex flex-column bd-highlight mb-3 ">
+    <div class="borraname">
+    <div class="p-3 bd-highlight width card-body ">Programacion
     </div>
-    
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Nombre del Usuario: <strong>Alan Cichello</strong></li>
-      <li class="list-group-item">Contraseña: *********</li>
-      <li class="list-group-item">Email: <strong>alancichello@gmail.com</strong></li>
-      <li class="list-group-item">Carrera: <strong>Lic. en Informatica</strong> </li>
-      <li class="list-group-item">Cursando Actualmente:
-        <div>
-          <span class="badge badge-primary">Matematica 2</span>
-          <span class="badge badge-primary">Ingles</span>
-          <span class="badge badge-primary">Programacion 2</span>
-          <span class="badge badge-primary">Programacion</span>
-
-      </div>
-      </li>
-      <li class="list-group-item">Preparando Finales: 
-        <div>
-        <span class="badge badge-primary">Matematica</span>
-          <span class="badge badge-primary">Programacion</span>
-        </div>
-      </li>
-      
-      <li class="list-group-item">¿Desea postularse como tutor?: <strong> Si </strong></li>
-      <li class="list-group-item">Materias a la que Aplica:
-        <div>
-        <span class="badge badge-primary">Matematica</span>
-      </div>
-      </li>
-    </ul>
+    <a name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger position">Eliminar</a>
   </div>
-<strong>
 
+  <div class="borraname1">
+    <div class="p-3 bd-highlight width card-body">Matematica 2 
+    </div>
+    <a name="boton02" id="boton02" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger position">Eliminar</a>
+  </div>
 
+  <div class="borraname2">
 
-</body>
+    <div class="p-3 bd-highlight width card-body">Base de Datos 
+  </div>
+  <a name="boton03" id="boton03" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger position">Eliminar</a></div>
+</div>
+  
+  
+  <script type="text/javascript">
+    function ConfirmDemo() {
+    //Ingresamos un mensaje a mostrar
+    var mensaje = confirm("¿Cancelar Tutoria?");
+    //Detectamos si el usuario acepto el mensaje
+    if (mensaje) {
+    alert("Tutoria cancelada");
+    }
+    //Detectamos si el usuario denegó el mensaje
+    
+    }
+
+    
+	$(document).ready(function() {
+		$("#boton01").click(function(event) {
+			$("div").remove(".borraname");
+		});
+    
+		$("#boton02").click(function(event) {
+			$("div").remove(".borraname1");
+		});
+		$("#boton03").click(function(event) {
+			$("div").remove(".borraname2");
+		});
+        $("#boton04").click(function(event) {
+			$("p").remove(".borrame");
+		});
+	});
+</script>
+   
+
