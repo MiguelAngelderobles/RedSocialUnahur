@@ -1,8 +1,10 @@
 const express = require('express')
-const router = express.Router() 
+const { modelNames } = require('mongoose')
 
-router.get('/',(req,res)=>{
-    res.send("hello world")
+const router = express.Router()
+
+
+router.get('/',(req,res) =>{
+    res.send('Hello word desde el repo ')
 })
-
-module.exports = router;
+module.exports = router

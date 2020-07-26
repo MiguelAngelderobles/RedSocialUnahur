@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Usuario = mongoose.Usuario;
 
 //
-new Usuario({
+const Usuario = new Schema({
     nombreUsuario: String,
     contrasenia: String,
     email: String,
@@ -12,3 +12,5 @@ new Usuario({
     serTutor: Boolean,
     MateriaAplicadas:[]
 })
+
+module.exports = mongoose.model('usuario',Usuario)
