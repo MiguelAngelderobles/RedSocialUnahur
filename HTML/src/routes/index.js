@@ -59,4 +59,57 @@ function isAuthenticated(req, res, next) {
   res.redirect('/')
 }
 
+router.get('/olvidoContrasenia', (req, res, next) => {
+  res.render('olvidoContrasenia');
+});
+
+router.get('/CrearCuenta', (req, res, next) => {
+  res.render('CrearCuenta');
+});
+
+router.get('/crearGrupo', (req, res, next) => {
+  res.render('crearGrupo');
+});
+
+router.get('/editarGrupo', (req, res, next) => {
+  res.render('editarGrupo');
+});
+
+router.get('/chat', (req, res, next) => {
+  res.render('chat');
+});
+
+router.get('/alumnosTutor', (req, res, next) => {
+  res.render('alumnosTutor');
+});
+
+router.get('/Grupo', (req, res, next) => {
+  res.render('Grupo');
+});
+
+router.get('/editarPerfil', (req, res, next) => {
+  res.render('editarPerfil');
+});
+
+router.get('/verGrupos', (req, res, next) => {
+  res.render('verGrupos');
+});
+
+router.get('/solicitudesTutor', (req, res, next) => {
+  res.render('solicitudesTutor');
+});
+
+router.get('/solicitudesGrupo', (req, res, next) => {
+  res.render('solicitudesGrupo');
+});
+
+router.get('/unirseGrupo', (req, res, next) => {
+  res.render('unirseGrupo');
+});
+
+router.get('/perfilTutor', (req, res, next) => {
+  res.render('perfilTutor');
+});
+
+
 module.exports = router;

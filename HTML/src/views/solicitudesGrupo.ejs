@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <style>
@@ -6,10 +5,7 @@
  .estilo{
     width: 50%;
     margin-left:25%;
-    margin-top: 10%;
-    margin-bottom: 30px;
-    
-  
+    margin-top: 7%;
   }
   .estilo1{
     margin-top: 2%;
@@ -17,6 +13,24 @@
     margin-right: 3%;
     
   }
+  .estilo3{
+    width: 100%;
+    margin-left:5%;
+    margin-top: 9%;
+  }
+  .diseño{
+  width: 18%; 
+  margin-left: 5%;
+}
+.diseño1{
+  margin-left: 5%;
+  margin-right: 5%  ;
+  margin-top: 2%;
+  width: 20%;
+}
+.navpos{
+    margin-left: 90%;
+}
 
 
 .form-register {
@@ -36,9 +50,6 @@
 .form-register h4 {
   font-size: 22px;
   margin-bottom: 20px;
-}
-.navpos{
-    margin-left: 90%;
 }
 
 .controls {
@@ -79,28 +90,6 @@
   margin: 16px 0;
   font-size: 16px;
 }
-.boton-personalizado{
- 
-text-decoration:none;
-font-weight: 500;
-font-size: 15px;
-color:#ffffff;
-padding-top:10px;
-padding-bottom:10px;
-padding-left:20px;
-padding-right:20px;
-background-color:#2a4aff;
-border-color: #d8d8d8;
-border-width: 1px;
-border-radius:35px;
-margin-left: 75%;
-}
-.width{
-  width: 20%;
-  margin-left: 77%;
-  margin-bottom: 2%;
-  
-}
   </style>
 <head>
  
@@ -118,7 +107,7 @@ margin-left: 75%;
   
   
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="Bienvenida.html">Red Social</a>
+  <a class="navbar-brand" href="Bienvenida">Red Social</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -129,8 +118,8 @@ margin-left: 75%;
           PERFIL
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="verPerfil.html">Ver mi perfil</a>
-          <a class="dropdown-item" href="editarPerfil.html">Editar mi perfil</a>
+          <a class="dropdown-item" href="verPerfil">Ver mi perfil</a>
+          <a class="dropdown-item" href="editarPerfil">Editar mi perfil</a>
           
         </div>
       </li>
@@ -141,9 +130,9 @@ margin-left: 75%;
          GRUPO
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="Grupo.html">Grupos</a>
-          <a class="dropdown-item" href="verGrupos.html">Ver Grupos</a>
-          <a class="dropdown-item" href="solicitudesGrupo.html">Solicitudes</a>
+          <a class="dropdown-item" href="Grupo">Grupos</a>
+          <a class="dropdown-item" href="verGrupos">Ver Grupos</a>
+          <a class="dropdown-item" href="solicitudesGrupo">Solicitudes</a>
         </div>
       </li>
 
@@ -152,9 +141,9 @@ margin-left: 75%;
           TUTOR 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="perfilTutor.html">Mi Perfil</a>
-          <a class="dropdown-item" href="solicitudesTutor.html">Solicitudes</a>
-          <a class="dropdown-item" href="alumnosTutor.html">Alumnos</a>
+          <a class="dropdown-item" href="perfilTutor">Mi Perfil</a>
+          <a class="dropdown-item" href="solicitudesTutor">Solicitudes</a>
+          <a class="dropdown-item" href="alumnosTutor">Alumnos</a>
         </div>
       </li>
 
@@ -168,75 +157,94 @@ margin-left: 75%;
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="chat.html">CHAT</a>
+      <li class="nav-item navpos">
+        <a class="nav-link navpos" href="login">EXIT</a>
       </li>
      
-    
-      <li class="nav-item navpos">
-        <a class="nav-link navpos" href="login.html">EXIT</a>
+      <li class="nav-item">
+        <a class="nav-link" href="login">EXIT</a>
       </li>
 
       
     </ul>
   </div>
 </nav>
-<div class="card estilo">
-  <div class="card-header bg-primary">
-    <h5>CREAR GRUPO</h5>
-  </div>
 
-<form class="estilo1">
-  
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Nombre del Grupo</label>
-    <input type="user" required class="form-control" id="exampleFormControlInput1" placeholder="Nombre del grupo">
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleFormControlInput2">Descripción</label>
-    <input type="email" required class="form-control" id="exampleFormControlInput2" placeholder="Descripción del grupo">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect3">Cantidad de Participantes</label>
-    <select class="form-control" id="exampleFormControlSelect3">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect4">Materia a la que Aplicará el Grupo</label>
-    <select class="form-control" id="exampleFormControlSelect4">
-      <option>Programacion</option>
-      <option>Ingles</option>
-      <option>Base de Datos</option>
-
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect5">Privacidad</label>
-    <select class="form-control" id="exampleFormControlSelect5">
-      <option>Publico</option>
-      <option>Privado</option>
-    </select>
-  </div>
-  
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlFile1">Cargar Imagen del Grupo</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
- 
-
-  
-   
-  </form>
-  <a href="verGrupos.html" class="btn btn-primary width">Guardar</a>
+<div class="card-header">
+  <h5>Solicitudes de Grupos</h5>
 </div>
-</form>
+
+
+<div class="row">
+<div class="col-sm-4">
+  <div class="borraname">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Programacion 2</h5>
+      <p class="card-text ">Hola, estamos preparando el segundo parcial </p>
+      
+      
+      <a   name="boton01" id="boton01" type="button"href="#" class="btn btn-primary">Aceptar</a>
+      <a  name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-4">
+  <div class="borraname1">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Matematica</h5>
+      <p class="card-text">Hola, estamos preparando el segundo parcial</p>
+      <a name="boton02" id="boton02" type="button" href="#" class="btn btn-primary">Aceptar</a>
+      <a name="boton02" id="boton02" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="borraname2">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Base de Datos</h5>
+      <p class="card-text">Hola, estamos preparando el segundo parcial</p>
+      <a name="boton03" id="boton03" type="button" href="#" class="btn btn-primary">Aceptar</a>
+      <a name="boton03" id="boton03" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<script type="text/javascript">
+  function ConfirmDemo() {
+  //Ingresamos un mensaje a mostrar
+  var mensaje = confirm("¿Cancelar solicitud?");
+  //Detectamos si el usuario acepto el mensaje
+  if (mensaje) {
+  alert("Solicitud cancelada");
+  }
+  //Detectamos si el usuario denegó el mensaje
+  
+
+  }
+  $(document).ready(function() {
+		$("#boton01").click(function(event) {
+			$("div").remove(".borraname");
+		});
+    
+		$("#boton02").click(function(event) {
+			$("div").remove(".borraname1");
+		});
+		$("#boton03").click(function(event) {
+			$("div").remove(".borraname2");
+		});
+        $("#boton04").click(function(event) {
+			$("p").remove(".borrame");
+		});
+	});
+  
+  </script>

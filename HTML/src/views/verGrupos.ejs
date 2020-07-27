@@ -13,24 +13,12 @@
     margin-right: 3%;
     
   }
+
   .estilo3{
     width: 100%;
     margin-left:5%;
     margin-top: 9%;
   }
-  .diseño{
-  width: 18%; 
-  margin-left: 5%;
-}
-.diseño1{
-  margin-left: 5%;
-  margin-right: 5%  ;
-  margin-top: 2%;
-  width: 20%;
-}
-.navpos{
-    margin-left: 90%;
-}
 
 
 .form-register {
@@ -90,6 +78,25 @@
   margin: 16px 0;
   font-size: 16px;
 }
+.diseño{
+  width: 19%; 
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.diseño1{
+  margin-left: 5%;
+  margin-right: 5%  ;
+  margin-top: 2%;
+  width: 20%;
+}
+
+.diseño2{
+ width: 100%;
+}
+
+
+
+
   </style>
 <head>
  
@@ -107,7 +114,7 @@
   
   
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="Bienvenida.html">Red Social</a>
+  <a class="navbar-brand" href="Bienvenida">Red Social</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -118,8 +125,8 @@
           PERFIL
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="verPerfil.html">Ver mi perfil</a>
-          <a class="dropdown-item" href="editarPerfil.html">Editar mi perfil</a>
+          <a class="dropdown-item" href="verPerfil">Ver mi perfil</a>
+          <a class="dropdown-item" href="editarPerfil">Editar mi perfil</a>
           
         </div>
       </li>
@@ -130,9 +137,9 @@
          GRUPO
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="Grupo.html">Grupos</a>
-          <a class="dropdown-item" href="verGrupos.html">Ver Grupos</a>
-          <a class="dropdown-item" href="solicitudesGrupo.html">Solicitudes</a>
+          <a class="dropdown-item" href="Grupo">Grupos</a>
+          <a class="dropdown-item" href="verGrupos">Ver Grupos</a>
+          <a class="dropdown-item" href="solicitudesGrupo">Solicitudes</a>
         </div>
       </li>
 
@@ -141,9 +148,9 @@
           TUTOR 
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="perfilTutor.html">Mi Perfil</a>
-          <a class="dropdown-item" href="solicitudesTutor.html">Solicitudes</a>
-          <a class="dropdown-item" href="alumnosTutor.html">Alumnos</a>
+          <a class="dropdown-item" href="perfilTutor">Mi Perfil</a>
+          <a class="dropdown-item" href="solicitudesTutor">Solicitudes</a>
+          <a class="dropdown-item" href="alumnosTutor">Alumnos</a>
         </div>
       </li>
 
@@ -157,12 +164,11 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      <li class="nav-item navpos">
-        <a class="nav-link navpos" href="login.html">EXIT</a>
-      </li>
-     
       <li class="nav-item">
-        <a class="nav-link" href="login.html">EXIT</a>
+        <a class="nav-link" href="chat">CHAT</a>      </li>
+    
+      <li class="nav-item">
+        <a class="nav-link" href="login">EXIT</a>
       </li>
 
       
@@ -170,81 +176,40 @@
   </div>
 </nav>
 
-<div class="card-header">
-  <h5>Solicitudes de Grupos</h5>
-</div>
 
-
-<div class="row">
-<div class="col-sm-4">
-  <div class="borraname">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Programacion 2</h5>
-      <p class="card-text ">Hola, estamos preparando el segundo parcial </p>
-      
-      
-      <a   name="boton01" id="boton01" type="button"href="#" class="btn btn-primary">Aceptar</a>
-      <a  name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
-    </div>
-    </div>
+<div class="card estilo3">
+  <div class="card-header bg-primary">
+    <h5>Mis Grupos</h5>
   </div>
+
+
+<div class="card  diseño1">
+  <div class="card-body">
+    <img src="img/logo.jpg" class="card-img-top"  alt="...">
+    <h5 class="card-title">Programacion 2 </h5>
+    <p class="card-text card-title"><strong>Descripción</strong>: Preparando segundo parcial</p>
+    <a href="editarGrupo" class="btn btn-primary width">Editar</a>
+   
+   
+    <a onclick="ConfirmDemo()" value="Eliminar"  class="btn btn-danger width">Eliminar </a>
+  </div> 
 </div>
 
 
-<div class="col-sm-4">
-  <div class="borraname1">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Matematica</h5>
-      <p class="card-text">Hola, estamos preparando el segundo parcial</p>
-      <a name="boton02" id="boton02" type="button" href="#" class="btn btn-primary">Aceptar</a>
-      <a name="boton02" id="boton02" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
-    </div>
-    </div>
-  </div>
-</div>
-<div class="col-sm-4">
-  <div class="borraname2">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">Base de Datos</h5>
-      <p class="card-text">Hola, estamos preparando el segundo parcial</p>
-      <a name="boton03" id="boton03" type="button" href="#" class="btn btn-primary">Aceptar</a>
-      <a name="boton03" id="boton03" type="button" onclick="ConfirmDemo()" href="#" class="btn btn-danger">Cancelar</a>
-    </div>
-    </div>
-  </div>
-</div>
 
+</div> 
 
-</div>
 <script type="text/javascript">
   function ConfirmDemo() {
   //Ingresamos un mensaje a mostrar
-  var mensaje = confirm("¿Cancelar solicitud?");
+  var mensaje = confirm("¿Eliminar Grupo?");
   //Detectamos si el usuario acepto el mensaje
   if (mensaje) {
-  alert("Solicitud cancelada");
+  alert("Grupo eliminado");
   }
   //Detectamos si el usuario denegó el mensaje
-  
-
+ 
   }
-  $(document).ready(function() {
-		$("#boton01").click(function(event) {
-			$("div").remove(".borraname");
-		});
-    
-		$("#boton02").click(function(event) {
-			$("div").remove(".borraname1");
-		});
-		$("#boton03").click(function(event) {
-			$("div").remove(".borraname2");
-		});
-        $("#boton04").click(function(event) {
-			$("p").remove(".borrame");
-		});
-	});
-  
   </script>
+
+
