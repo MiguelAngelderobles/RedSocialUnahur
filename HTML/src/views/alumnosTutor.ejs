@@ -19,11 +19,11 @@ body {
   color: gray;
   font-style: italic;
 }
+
 .width {
-  width: 50%;
-  margin-left:23.7%;
- 
-  
+  width: 75.8%;
+  margin-left:24.1%;
+  margin-top: 0.9%; 
 }
 
 .color {
@@ -32,14 +32,24 @@ background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Ch
 background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
+.colorcheck {
+ color: green;
+}
+
+.colorcancel {
+ color: red;
+}
+
+.colormsg {
+ color:chocolate
+}
 
 .gedf-wrapper {
     margin-top: 0.1rem;
 }
 .position {
-    margin-top: -14.7%;
+    margin-top: -11.7%;
 }
-
 
 
 
@@ -164,10 +174,10 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
                   <div class="card color2">
                       <div class="card-body  ">
                           <div class="h5"><strong> Administrar Tutorias</strong></div>
-                          <div class="h7 text-muted"><i class="fas fa-user"></i>
+                          <div type="submit" class="h7 text-muted"><i class="fas fa-user colorcheck"></i>
 
                               Matematica</div>
-                          <div class="h7 text-muted"><i class="fas fa-user"></i>
+                          <div  type="submit"class="h7 text-muted"><i class="fas fa-user colorcheck"></i>
 
                               Programacion 1</div>
                           <div class="h7">
@@ -183,22 +193,22 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
                     <div class="col-md-3">
                         <div class="card color2">
                             <div class="card-body">
-                                <div class="h5"><strong>Alumnos</strong>         <i class="fas fa-search"></i>
+                                <div type="submit" class="h5"><strong>Alumnos</strong>         <i class="fas fa-search"></i>
 
 </div>
-                                <div class="h7 text-muted"><i class="fas fa-user"></i>
+                                <div type="submit" class="h7 text-muted"><i class="fas fa-user colorcheck"></i>
 
-                                    Alan  <i class="fas fa-envelope"></i>
-
-                                </div>
-                                <div class="h7 text-muted"><i class="fas fa-user"></i>
-
-                                  Miguel  <i class="fas fa-envelope"></i>
+                                    Alan  <i class="fas fa-envelope colormsg"></i>
 
                                 </div>
-                                <div class="h7 text-muted"><i class="fas fa-user"></i>
+                                <div type="submit" class="h7 text-muted"><i class="fas fa-user colorcheck"></i>
 
-                                    Juan  <i class="fas fa-envelope"></i>
+                                  Miguel  <i class="fas fa-envelope colormsg"></i>
+
+                                </div>
+                                <div type="submit" class="h7 text-muted"><i class="fas fa-user colorcheck"></i>
+
+                                    Juan  <i class="fas fa-envelope colormsg"></i>
 
                                 </div>
 
@@ -217,21 +227,21 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
                         <div class="card color2">
                             <div class="card-body ">
                                 <div class="h5 "><strong>Solicitudes</strong> </div>
-                                <div class=" h7  text-muted"><i class="fas fa-envelope"></i>
+                                <div type="submit" class=" h7  text-muted"><i class="fas fa-envelope colormsg"></i>
 
-                                     Alan  <i class="fas fa-check"></i>  <i class="far fa-window-close"></i>
+                                     Alan  <i class="fas fa-check colorcheck"></i>  <i class="far fa-window-close colorcancel"></i>
 
                                     </div>
-                                <div class="h7 text-muted"><i class="fas fa-envelope"></i>
+                                <div type="submit" class="h7 text-muted"><i class="fas fa-envelope colormsg"></i>
 
-                                    Miguel  <i class="fas fa-check"></i>  <i class="far fa-window-close"></i>
+                                    Miguel  <i class="fas fa-check colorcheck"></i>  <i class="far fa-window-close colorcancel"></i>
 
 
 
                                   </div>
-                                <div class="h7 text-muted"><i class="fas fa-envelope"></i>
+                                <div type="submit" class="h7 text-muted"><i class="fas fa-envelope colormsg"></i>
 
-                                    Juan  <i class="fas fa-check"></i>  <i class="far fa-window-close"></i>
+                                    Juan  <i class="fas fa-check colorcheck"></i>  <i class="far fa-window-close colorcancel"></i>
 
 
 
