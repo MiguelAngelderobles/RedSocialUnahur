@@ -155,7 +155,7 @@ margin-left: 60px;
 body {
   margin: 0;
   padding: 0;
-  background: url(./img/unahur.jpg) no-repeat center top;
+  background: url(./public/unahur.jpg) no-repeat center top;
  
   background-size: cover;
   font-family: sans-serif;
@@ -252,7 +252,7 @@ body {
 <body>
 
   <div class="login-box">
-    <img src="./img/logo.jpg" class="avatar" alt="Avatar Image">
+    <img src="http://localhost:3000/public/logo.jpg" class="avatar" alt="Avatar Image">
     <h1>Iniciar Sesion</h1>
     <form action="/signin" method="POST">
       <!-- USERNAME INPUT -->
@@ -267,3 +267,22 @@ body {
     </form>
   </div>
 </body>
+
+<script>
+
+var imagen=1;
+    while(error==false)
+{
+       var carpeta= obtener_imagen("carpeta");
+       var img= new Image();
+       img.src=""+carpeta+"/"+imagen+".jpg";
+       img.onerror=error(imagen);
+       imagen++;
+}
+
+         function error(numero)
+         {
+           error=yes;
+           total=numero
+         }
+</script>

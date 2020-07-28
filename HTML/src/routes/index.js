@@ -67,6 +67,10 @@ router.get('/CrearCuenta', (req, res, next) => {
   res.render('CrearCuenta');
 });
 
+router.get('/img', function(req, res,next){
+  res.render( `public/${img}` );
+}); 
+
 router.get('/crearGrupo', (req, res, next) => {
   res.render('crearGrupo');
 });

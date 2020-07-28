@@ -35,6 +35,7 @@ app.use(session({
   app.use(passport.initialize());
   app.use(passport.session());
 
+  app.use(express.static(__dirname + '/public'));
 
   app.use((req, res, next) => {
     app.locals.signinMessage = req.flash('signinMessage');
