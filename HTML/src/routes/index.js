@@ -34,9 +34,6 @@ router.get('/Bienvenida',isAuthenticated, (req, res, next) => {
   res.render('Bienvenida');
 });
 
-router.get('/verPerfil', (req, res, next) => {
-  res.render('verPerfil');
-});
 
 
 router.post('/Bienvenida', passport.authenticate('local-signin', {
@@ -67,9 +64,20 @@ router.get('/CrearCuenta', (req, res, next) => {
   res.render('CrearCuenta');
 });
 
+router.get('/img', function(req, res,next){
+  res.render( `public/${img}` );
+}); 
+
 router.get('/crearGrupo', (req, res, next) => {
   res.render('crearGrupo');
 });
+
+router.get('/chatGrupo', (req, res, next) => {
+  res.render('chatGrupo');
+});
+
+
+
 
 router.get('/editarGrupo', (req, res, next) => {
   res.render('editarGrupo');
@@ -82,6 +90,11 @@ router.get('/chat', (req, res, next) => {
 router.get('/alumnosTutor', (req, res, next) => {
   res.render('alumnosTutor');
 });
+
+router.get('/verPerfil', (req, res, next) => {
+  res.render('verPerfil');
+});
+
 
 router.get('/Grupo', (req, res, next) => {
   res.render('Grupo');

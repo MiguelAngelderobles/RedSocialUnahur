@@ -16,8 +16,8 @@
 
   .estilo3{
     width: 100%;
-    margin-left:5%;
-    margin-top: 9%;
+    margin-left:0.1%;
+    margin-top: 1%;
   }
 
 
@@ -88,6 +88,9 @@
   margin-right: 5%  ;
   margin-top: 2%;
   width: 20%;
+}
+.navpos{
+    margin-left: 90%;
 }
 
 .diseño2{
@@ -167,8 +170,8 @@
       <li class="nav-item">
         <a class="nav-link" href="chat">CHAT</a>      </li>
     
-      <li class="nav-item">
-        <a class="nav-link" href="signin">EXIT</a>
+      <li class="nav-item navpos">
+        <a class="nav-link navpos" href="signin">EXIT</a>
       </li>
 
       
@@ -184,14 +187,14 @@
 
 
 <div class="card  diseño1">
-  <div class="card-body">
-    <img src="img/logo.jpg" class="card-img-top"  alt="...">
+  <div class="card-body borraname">
+    <img src="logo.jpg" class="card-img-top"  alt="...">
     <h5 class="card-title">Programacion 2 </h5>
     <p class="card-text card-title"><strong>Descripción</strong>: Preparando segundo parcial</p>
     <a href="editarGrupo" class="btn btn-primary width">Editar</a>
    
    
-    <a onclick="ConfirmDemo()" value="Eliminar"  class="btn btn-danger width">Eliminar </a>
+    <a name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" value="Eliminar"  class="btn btn-danger width">Eliminar </a>
   </div> 
 </div>
 
@@ -210,6 +213,22 @@
   //Detectamos si el usuario denegó el mensaje
  
   }
+
+  $(document).ready(function() {
+		$("#boton01").click(function(event) {
+			$("div").remove(".borraname");
+		});
+    
+		$("#boton02").click(function(event) {
+			$("div").remove(".borraname1");
+		});
+		$("#boton03").click(function(event) {
+			$("div").remove(".borraname2");
+		});
+        $("#boton04").click(function(event) {
+			$("p").remove(".borrame");
+		});
+	});
   </script>
 
 
