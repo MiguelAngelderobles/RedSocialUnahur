@@ -25,6 +25,7 @@ app.set('view engine','ejs')
 
 // middlewares
 app.use(morgan('dev'))
+app.use(express.static("img"))
 app.use(express.urlencoded({extended:true}))
 app.use(session({
     secret: 'mysecretsession',
