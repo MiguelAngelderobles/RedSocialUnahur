@@ -18,6 +18,10 @@ router.get('/signup', (req, res, next) => {
   res.render('signup');
 });
 
+router.get('/Bienvenida', (req, res, next) => {
+  res.render('Bienvenida');
+});
+
 router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: '/Bienvenida',
   failureRedirect: '/signup',
