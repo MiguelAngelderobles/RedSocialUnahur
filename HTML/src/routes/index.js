@@ -3,9 +3,6 @@ const router = require('express').Router();
 const passport = require('passport');
 
 
-
-
-
 router.get('/', (req, res, next) => {
   res.render('signin');
 });
@@ -14,17 +11,17 @@ router.get('/signin', (req, res, next) => {
   res.render('signin');
 });
 
-router.get('/signup', (req, res, next) => {
-  res.render('signup');
+router.get('/CrearCuenta', (req, res, next) => {
+  res.render('CrearCuenta');
 });
 
 router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-router.post('/signup', passport.authenticate('local-signup', {
+router.post('/CrearCuenta', passport.authenticate('local-CrearCuenta', {
   successRedirect: '/Bienvenida',
-  failureRedirect: '/signup',
+  failureRedirect: '/CrearCuenta',
   passReqToCallback: true
 }));
 
