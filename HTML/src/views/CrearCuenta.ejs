@@ -104,71 +104,69 @@
    <h5>CREAR PERFIL DE USUARIO</h5> 
   </div>
 
-<form class="estilo1">
+<form class="estilo1" action="/CrearCuenta" method="POST">
   
   <div class="form-group">
     <label for="exampleInputUser">Nombre de usuario</label>
-    <input type="user" required class="form-control" id="exampleInputUser">
+    <input type="user" class="form-control"   name="user" required placeholder="Usuario">
   </div>
   
   <div class="form-group">
     <label for="exampleInputPassword1">Contraseña</label>
-    <input type="password" required class="form-control" id="exampleInputPassword1">
+    <input  type="password" class="form-control"  name="password" required placeholder="Contraseña">
+
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail1">Email </label>
-    <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    
+    <input type="email" class="form-control"  name="email" required placeholder="Usuario">    
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Carrera</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Ing en Informatica</option>
-      <option>Lic en Informatica</option>
+    <select required class="form-control" id="exampleFormControlSelect1">
+      <option  id="1">Ing en Informatica</option>
+      <option id="2">Lic en Informatica</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect2">Cursando Actualmente</label>
-    <select class="form-control" id="exampleFormControlSelect2">
-      <option>Programacion</option>
-      <option>Ingles</option>
-      <option>Base de Datos</option>
+    <select required class="form-control" id="exampleFormControlSelect2">
+      <option id="3">Programacion</option>
+      <option id="4">Ingles</option>
+      <option id="5">Base de Datos</option>
 
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect3">Preparando Finales</label>
-    <select class="form-control" id="exampleFormControlSelect3">
-      <option>Base de Datos</option>
-      <option>Matematica 3</option>
+    <select required class="form-control" id="exampleFormControlSelect3">
+      <option id="6">Base de Datos</option>
+      <option id="7">Matematica 3</option>
     </select>
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlSelect4">¿Desea postularse como tutor?</label>
-    <select class="form-control" required id="exampleFormControlSelect4">
-      <option>Si</option>
-      <option>No</option>
+    <label for="serTutor">¿Desea postularse como tutor?</label>
+    <select required class="form-control" required id="exampleFormControlSelect4">
+      <option id="8">Si</option>
+      <option id="9">No</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect5">Materias a la que Aplica</label>
-    <select class="form-control" id="exampleFormControlSelect5">
-      <option>Base de Datos 2</option>
-      <option>Matematica 3</option>
+    <select required class="form-control" id="exampleFormControlSelect5">
+      <option id="10">Base de Datos 2</option>
+      <option id="11">Matematica 3</option>
     </select>
   </div>
 
 
-  <a class="btn btn-primary" type="submit" href="verPerfil" >Crear Perfil de Usuario</a>
-
-
+  <input   class="btn btn-primary " type="submit" value="Crear Cuenta">
+</form>
 </div>
-</form>
+
   
-</form>

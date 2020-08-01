@@ -22,9 +22,9 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-router.post('/signup', passport.authenticate('local-signup', {
-  successRedirect: '/Bienvenida',
-  failureRedirect: '/signup',
+router.post('/CrearCuenta', passport.authenticate('local-signup', {
+  successRedirect: '/verPerfil',
+  failureRedirect: '/verPerfil',
   passReqToCallback: true
 }));
 
