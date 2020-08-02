@@ -1,6 +1,9 @@
 const express = require('express')
 const router = require('express').Router();
 const passport = require('passport');
+const usuario = require('../models/usuario');
+const  mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 
 
 router.get('/', (req, res, next) => {
@@ -19,22 +22,28 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-<<<<<<< HEAD
-router.post('/CrearCuenta', passport.authenticate('local-signup', {
-  successRedirect: '/verPerfil',
+
+router.post('/CrearCuenta', passport.authenticate('local-CrearCuenta',  {
+
+  successRedirect: '/verPerfil' ,
   failureRedirect: '/verPerfil',
-=======
-router.post('/CrearCuenta', passport.authenticate('local-CrearCuenta', {
-  successRedirect: '/Bienvenida',
-  failureRedirect: '/CrearCuenta',
->>>>>>> 4e5dad0b7ab46ad75a4707e8d41e6382cf6b31cd
-  passReqToCallback: true
+  passReqToCallback: true 
+ 
+ 
 }));
 
+
+
+
 router.post('/signin', passport.authenticate('local-signin', {
+   
   successRedirect: '/Bienvenida',
+  
   failureRedirect: '/signin',
+  
   passReqToCallback: true
+
+
 }));
 
 router.get('/Bienvenida',isAuthenticated, (req, res, next) => {

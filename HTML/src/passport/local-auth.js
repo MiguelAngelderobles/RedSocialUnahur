@@ -15,8 +15,11 @@ passport.deserializeUser(async (id, done) => {
 passport.use('local-CrearCuenta', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
+  usernameField: 'nombreUsuario',
+  usernameField: 'Carrera',
+
   passReqToCallback: true
-}, async (req, email, password, done) => {
+}, async (req, email, password, nombreUsuario, carrera, done) => {
   const user = await User.findOne({'email': email})
   console.log(user)
   if(user) {
@@ -24,6 +27,8 @@ passport.use('local-CrearCuenta', new LocalStrategy({
   } else {
     const newUser = new User();
     newUser.email = email;
+    newUser.nombreUsuario = nombreUsuario;
+    newUser.carrera = carrera;
     newUser.password = newUser.encryptPassword(password);
   console.log(newUser)
     await newUser.save();
