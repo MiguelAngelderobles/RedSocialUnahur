@@ -6,7 +6,11 @@ router.get('/dateUser/new-user', (req,res) =>{
   res.render('dateUser/new-user');
 });
 
-router.post('/dateUser/new-note')
+router.post('/dateUser/new-user', (req,res) => {
+  const newUser= new crearUsuario({usuario,carrera});
+  console.log(newUser);
+  res.send('ok');
+})
 
 router.get('/dateUser', (req,res) => {
   res.send('Usuarios from database')
