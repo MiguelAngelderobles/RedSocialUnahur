@@ -50,6 +50,7 @@ app.use(session({
 
 // routes
 app.use('/', require('./routes/index'));
+app.use('/', require('./routes/dateUser'));
 
 // Starting the server
 app.listen(app.get('port'),()=>

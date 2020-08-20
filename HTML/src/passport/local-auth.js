@@ -12,23 +12,18 @@ passport.deserializeUser(async (id, done) => {
   done(null, user);
 });
 
-passport.use('local-CrearCuenta', new LocalStrategy({
+passport.use('local-signup', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
-  usernameField: 'nombreUsuario',
-  usernameField: 'Carrera',
-
   passReqToCallback: true
-}, async (req, email, password, nombreUsuario, carrera, done) => {
+}, async (req, email, password,  done) => {
   const user = await User.findOne({'email': email})
   console.log(user)
   if(user) {
-    return done(null, false, req.flash('CrearCuentaMessage', 'The Email is already Taken.'));
+    return done(null, false, req.flash('signupMessage', 'El mail ingresado ya existe'));
   } else {
     const newUser = new User();
     newUser.email = email;
-    newUser.nombreUsuario = nombreUsuario;
-    newUser.carrera = carrera;
     newUser.password = newUser.encryptPassword(password);
   console.log(newUser)
     await newUser.save();
@@ -43,10 +38,10 @@ passport.use('local-signin', new LocalStrategy({
 }, async (req, email, password, done) => {
   const user = await User.findOne({email: email});
   if(!user) {
-    return done(null, false, req.flash('signinMessage', 'No User Found'));
+    return done(null, false, req.flash('signinMessage', 'Usuario no encontrado'));
   }
   if(!user.comparePassword(password)) {
-    return done(null, false, req.flash('signinMessage', 'Incorrect Password'));
+    return done(null, false, req.flash('signinMessage', 'Contraseña incorrecta'));
   }
   return done(null, user);
 }));

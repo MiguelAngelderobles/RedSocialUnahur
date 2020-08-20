@@ -1,10 +1,5 @@
-const express = require('express')
 const router = require('express').Router();
 const passport = require('passport');
-const usuario = require('../models/usuario');
-const  mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-
 
 router.get('/', (req, res, next) => {
   res.render('signin');
@@ -12,6 +7,10 @@ router.get('/', (req, res, next) => {
 
 router.get('/signin', (req, res, next) => {
   res.render('signin');
+});
+
+router.get('/signup', (req, res, next) => {
+  res.render('signup');
 });
 
 router.get('/CrearCuenta', (req, res, next) => {
@@ -23,17 +22,6 @@ router.get('/Bienvenida', (req, res, next) => {
 });
 
 
-router.post('/CrearCuenta', passport.authenticate('local-CrearCuenta',  {
-
-  successRedirect: '/verPerfil' ,
-  failureRedirect: '/verPerfil',
-  passReqToCallback: true 
- 
- 
-}));
-
-
-
 
 router.post('/signin', passport.authenticate('local-signin', {
    
@@ -41,22 +29,26 @@ router.post('/signin', passport.authenticate('local-signin', {
   
   failureRedirect: '/signin',
   
-  passReqToCallback: true
-
-
+  failureFlash: true
 }));
 
-router.get('/Bienvenida',isAuthenticated, (req, res, next) => {
-  res.render('Bienvenida');
-});
-
-
-
-router.post('/Bienvenida', passport.authenticate('local-signin', {
-  successRedirect: '/verPerfil',
-  failureRedirect: '/Bienvenida',
-  passReqToCallback: true
+router.post('/signup', passport.authenticate('local-signup', {
+   
+  successRedirect: '/signin',
+  
+  failureRedirect: '/signup',
+  
+  failureFlash: true
 }));
+
+
+
+
+
+
+
+
+
 
 router.get('/logout', (req, res, next) => {
   req.logout();
@@ -92,9 +84,6 @@ router.get('/chatGrupo', (req, res, next) => {
   res.render('chatGrupo');
 });
 
-
-
-
 router.get('/editarGrupo', (req, res, next) => {
   res.render('editarGrupo');
 });
@@ -110,7 +99,6 @@ router.get('/alumnosTutor', (req, res, next) => {
 router.get('/verPerfil', (req, res, next) => {
   res.render('verPerfil');
 });
-
 
 router.get('/Grupo', (req, res, next) => {
   res.render('Grupo');
@@ -139,6 +127,4 @@ router.get('/unirseGrupo', (req, res, next) => {
 router.get('/perfilTutor', (req, res, next) => {
   res.render('perfilTutor');
 });
-
-
 module.exports = router;
