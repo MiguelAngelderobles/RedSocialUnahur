@@ -7,6 +7,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const engine = require('ejs-mate');
+const ejsLint = require('ejs-lint');
 
 mongoose.connect('mongodb://localhost/cruds').then(db => console.log(`db mongo connected ${db}`)).catch(err => console.log(err))
 
@@ -27,6 +28,7 @@ app.set('view engine','ejs')
 app.use(morgan('dev'))
 app.use(express.static("img"))
 app.use(express.urlencoded({extended:true}))
+app.use(express.json());//revisar
 app.use(session({
     secret: 'mysecretsession',
     resave: false,
@@ -50,7 +52,7 @@ app.use(session({
 
 // routes
 app.use('/', require('./routes/index'));
-app.use('/', require('./routes/dateUser'));
+app.use('/', require('./routes/notes.routes'));
 
 // Starting the server
 app.listen(app.get('port'),()=>
