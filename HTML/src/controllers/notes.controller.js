@@ -1,13 +1,13 @@
 const notesCtrl = {};
 
 // Models
-const Note = require("../models/Note");
+const Note = require("../models/Note")();
+const { Router } = require("express");
+const { models } = require("mongoose");
+
 
 notesCtrl.renderNoteForm = (req, res) => {
-  res.render("notes/new-note",{
-    title:'Inicio',
-    description:'Description'
-  });  
+  res.render("notes/new-note");  
 };
 
 notesCtrl.createNewNote = async (req, res) => {
@@ -29,10 +29,10 @@ notesCtrl.createNewNote = async (req, res) => {
     const newNote = new Note({ title, description });
     newNote.user = req.user.id;
     await newNote.save();
-    console.log(req.body);
     req.flash("success_msg", "Note Added Successfully");
     res.redirect("/notes");
-    
+    console.log(tilte,description);
+
   }
 };
 

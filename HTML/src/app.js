@@ -52,7 +52,7 @@ app.use(session({
 
 // routes
 app.use('/', require('./routes/index'));
-app.use('/', require('./routes/notes.routes'));
+app.use('/', require('./routes/taskindex'));
 
 // Starting the server
 app.listen(app.get('port'),()=>
