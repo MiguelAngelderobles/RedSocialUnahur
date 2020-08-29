@@ -2,6 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Task = require('../models/task');
 
+/*
+router.get('/index', async (req, res) => {
+  const tasks = await Task.find();
+  res.render('index', {
+    tasks
+  });
+});
+*/
 
 router.get('/index', async (req, res) => {
   const tasks = await Task.find();
@@ -11,11 +19,12 @@ router.get('/index', async (req, res) => {
 });
 
 
+/**/
 
 router.post('/add', async (req, res, next) => {
   const task = new Task(req.body);
   await task.save();
-  res.redirect('/index');
+  res.redirect('/verPerfil');
 });
 
 router.get('/turn/:id', async (req, res, next) => {
