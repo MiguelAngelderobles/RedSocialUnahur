@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
   <style>
- 
- .estilo{
+
+  .estilo{
     width: 50%;
     margin-left:25%;
-    margin-top: 7%;
+    margin-top: 1%;
   }
   .estilo1{
     margin-top: 2%;
     margin-left: 3%;
     margin-right: 3%;
-    
   }
-
-  .estilo3{
-    width: 100%;
-    margin-left:0.1%;
-    margin-top: 1%;
-  }
-
-
-.form-register {
- 
-  width: 400px;
-
-  background: #24303c;
-  padding: 30px;
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 4px;
-  font-family: 'calibri';
-  color: white;
-  box-shadow: 7px 13px 37px #000;
+  .navpos{
+    margin-left: 90%;
 }
 
-.form-register h4 {
-  font-size: 22px;
-  margin-bottom: 20px;
+.container
+{
+    width: 500px;
+    margin: 20px auto;
 }
 
-.controls {
-  width: 100%;
-  background: #24303c;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #1f53c5;
-  font-family: 'calibri';
-  font-size: 18px;
-  color: white;
-}
-
-.form-register p {
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 40px;
-}
-
-.form-register a {
-  color: white;
-  text-decoration: none;
-}
-
-.form-register a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.form-register .botons {
-  width: 100%;
-  background: #1f53c5;
-  border: none;
-  padding: 12px;
-  color: white;
-  margin: 16px 0;
-  font-size: 16px;
-}
-.diseño{
-  width: 19%; 
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.diseño1{
-  margin-left: 5%;
-  margin-right: 5%  ;
-  margin-top: 2%;
-  width: 20%;
+.preview
+{
+    position: relative;
 }
 .navpos{
     margin-left: 90%;
 }
-
-.diseño2{
- width: 100%;
+.preview i
+{
+    color: white;
+    font-size: 35px;
+    transform: translate(50px,130px);
 }
 
+.preview-img
+{
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+}
 
+.browse-button
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute; /* Tweak the position property if the element seems to be unfit */
+    top: 0.0000000000001px;
+    left: 45.5%;
+    background: linear-gradient(180deg, transparent, black);
+    opacity: 0;
+    transition: 0.3s ease;
+}
 
+.browse-button:hover
+{
+    opacity: 1;
+}
 
+.browse-input
+{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    transform: translate(-1px,-26px);
+    opacity: 0;
+}
+
+.form-group
+{
+    width:  250px;
+    margin: 10px auto;
+}
+
+.form-group input
+{
+    transition: 0.3s linear;
+}
+
+.form-group input:focus
+{
+    border: 1px solid crimson;
+    box-shadow: 0 0 0 0;
+}
+
+.Error
+{
+    color: crimson;
+    font-size: 13px;
+}
   </style>
+
 <head>
  
   <meta charset="UTF-8">
@@ -114,8 +106,6 @@
   
 </head>
 
-  
-  
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="Bienvenida">Red Social</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -158,10 +148,11 @@
         </div>
       </li>
 
-     
+      
       <li class="nav-item">
-        <a class="nav-link" href="chat">CHAT</a>      </li>
-    
+        <a class="nav-link" href="chat">CHAT</a>
+      </li>
+     
       <li class="nav-item navpos">
         <a class="nav-link navpos" href="signin">EXIT</a>
       </li>
@@ -171,56 +162,63 @@
   </div>
 </nav>
 
+<tbody>
+  <% for(var i=0; i < perfiles.length; i++) { %>
+    <tr>
+      <div class="container">
+           
+        <p class="h2 text-center">Mi Perfil</p>
+        
+            <div class="preview text-center">
+                <img class="preview-img" src="logo.jpg" alt="Preview Image" width="100" height="100"/>
+                <div class="browse-button">
+                    <i class="fa fa-pencil-alt"></i>
+                    <input class="browse-input" type="file"  name="UploadedFile" id="UploadedFile"/>
+                </div>
+                <span class="Error"></span>
+            </div>
 
-<div class="card estilo3">
-  <div class="card-header bg-primary">
-    <h5>Mis Grupos</h5>
-  </div>
+            <div class="form-group">
+              <label for="nombre">Nombre de usuario</label>
+              <input value=<%= perfiles[i].nombre %> type="user" readonly="readonly"  class="form-control"    name="nombre"  >
+            </div>
+           
+            <div class="form-group">
+        <label for="carrera">Carrera</label>
+             
+        <input  value="<%= perfiles[i].carrera %>" type="user" readonly="readonly"  class="form-control" id="carrera"  name="carrera"  >
+              
+      </div>
+           
+      <div class="form-group">
+        <label for="cursandoActualmente">Cursando actualmente</label>
+        <input  value="<%= perfiles[i].cursandoActualmente %>" type="user" readonly="readonly"  class="form-control"   name="cursandoActualmente" >
 
+      
+       
+      </div>
 
-<div class="card  diseño1">
-  <div class="card-body borraname">
-    <img src="logo.jpg" class="card-img-top"  alt="...">
-    <h5 class="card-title">Programacion 2 </h5>
-    <p class="card-text card-title"><strong>Descripción</strong>: Preparando segundo parcial</p>
-    <a href="editarGrupo" class="btn btn-primary width">Editar</a>
-   
-   
-    <a name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" value="Eliminar"  class="btn btn-danger width">Eliminar </a>
-  </div> 
-</div>
-
-
-
-</div> 
-
-<script type="text/javascript">
-  function ConfirmDemo() {
-  //Ingresamos un mensaje a mostrar
-  var mensaje = confirm("¿Eliminar Grupo?");
-  //Detectamos si el usuario acepto el mensaje
-  if (mensaje) {
-  alert("Grupo eliminado");
-  }
-  //Detectamos si el usuario denegó el mensaje
- 
-  }
-
-  $(document).ready(function() {
-		$("#boton01").click(function(event) {
-			$("div").remove(".borraname");
-		});
+      <div class="form-group">
+        <label for="preparandoFinales">Preparando finales</label>
+        <input value= "<%=perfiles[i].preparandoFinales %>" type="user" readonly="readonly"  class="form-control"   name="preparandoFinales" >
+        
+      </div>          
     
-		$("#boton02").click(function(event) {
-			$("div").remove(".borraname1");
-		});
-		$("#boton03").click(function(event) {
-			$("div").remove(".borraname2");
-		});
-        $("#boton04").click(function(event) {
-			$("p").remove(".borrame");
-		});
-	});
-  </script>
 
 
+
+        <div class="form-group">  
+        <a href="/delete/<%= perfiles[i]._id %>"
+          class="btn btn-danger">
+          Delete
+        </a>
+        <a href="/edit/<%= perfiles[i]._id %>" class="btn btn-info">
+          Edit
+        </a>
+      </div>  
+      
+    </tr>
+  </div>
+  <% } %>
+</form>
+</tbody>

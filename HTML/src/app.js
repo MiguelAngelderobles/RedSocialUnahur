@@ -7,7 +7,7 @@ const passport = require('passport');
 const flash = require('connect-flash');
 const session = require('express-session');
 const engine = require('ejs-mate');
-const ejsLint = require('ejs-lint');
+
 
 mongoose.connect('mongodb://localhost/cruds').then(db => console.log(`db mongo connected ${db}`)).catch(err => console.log(err))
 
@@ -52,7 +52,7 @@ app.use(session({
 
 // routes
 app.use('/', require('./routes/index'));
-app.use('/', require('./routes/taskindex'));
+app.use('/', require('./routes/crearuser'));
 
 // Starting the server
 app.listen(app.get('port'),()=>

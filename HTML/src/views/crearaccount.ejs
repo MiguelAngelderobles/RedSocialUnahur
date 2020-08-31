@@ -1,6 +1,5 @@
-
-<!DOCTYPE html>
 <html lang="en">
+  
   <style>
 
     .estilo{
@@ -106,8 +105,6 @@
   
 </head>
 
-  
-  
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="Bienvenida">Red Social</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,9 +117,8 @@
           PERFIL
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="crearaccount">Crear Perfil</a>
           <a class="dropdown-item" href="miaccount">Ver mi perfil</a>
-          <a class="dropdown-item" href="edit/id">Editar mi perfil</a>
+          <a class="dropdown-item" href="editarPerfil">Editar mi perfil</a>
           
         </div>
       </li>
@@ -155,9 +151,8 @@
         <a class="nav-link" href="chat">CHAT</a>
       </li>
      
-    
       <li class="nav-item navpos">
-        <a class="nav-link navpos" href="singin">EXIT</a>
+        <a class="nav-link navpos" href="signin">EXIT</a>
       </li>
 
       
@@ -165,53 +160,124 @@
   </div>
 </nav>
 
+<tbody>
+  
+  <% var i=0; %>
+    <%if(perfiles.length){%>
+      <% perfiles.forEach(function(entry) {%>
+      
+      
+      <p class="h2 text-center">Ya cuenta con un perfil:</p>
+      
+      
+      
+      
+      <div class="form-group">
+        <label for="nombre">Nombre de usuario</label>
+        <input value=<%= perfiles[i].nombre %> type="user" readonly="readonly" class="form-control"   name="nombre"  >
+      </div>
+     
+      <div class="form-group">
+  <label for="carrera">Carrera</label>
+       
+  <input  value="<%= perfiles[i].carrera %>" type="user" readonly="readonly" class="form-control" id="carrera"  name="carrera"  >
+        
+</div>
+     
+<div class="form-group">
+  <label for="cursandoActualmente">Cursando actualmente</label>
+  <input  value="<%= perfiles[i].cursandoActualmente %>" type="user" readonly="readonly" class="form-control"   name="cursandoActualmente" >
+
+
+ 
+</div>
+
+<div class="form-group">
+  <label for="preparandoFinales">Preparando finales</label>
+  <input value= "<%=perfiles[i].preparandoFinales %>" type="user" readonly="readonly" class="form-control"   name="preparandoFinales" >
+  
+</div>   
+
+
+<div class="form-group">  
+  <a href="/delete/<%= perfiles[i]._id %>"
+    class="btn btn-danger">
+    Delete
+  </a>
+  <a href="/edit/<%= perfiles[i]._id %>" class="btn btn-info">
+    Edit
+  </a>
+</div>  
+
+
+
+<% }) %> 
+   
+
+<% } else { %>
+ 
+    
 <div class="container">
            
-  <p class="h2 text-center">Editar Perfil</p>
-  <form action="/edit/<%= perfiles._id %>" method="post">
-      <div class="preview text-center">
-          <img class="preview-img" src="logo.jpg" alt="Preview Image" width="100" height="100"/>
-          <div class="browse-button">
-              <i class="fa fa-pencil-alt"></i>
-              <input class="browse-input" type="file"  name="UploadedFile" id="UploadedFile"/>
-          </div>
-          <span class="Error"></span>
-      </div>
-            <div class="form-group">
-              <label for="nombre">Nombre de usuario</label>
-              <input class="form-control" type="text" name="nombre"  value="<%= perfiles.nombre %>">
-            </div>
-
-            <div class="form-group">
-              <label for="carrera">Carrera</label>
-              <select value="<%= perfiles.carrera %>" name ="carrera" required class="form-control" id="carrera">
-                <option id="6">Lic. En Informatica</option>
-                <option id="8">Tec. En Informatica </option>
-                </select>
-          </div>
-
-            <div class="form-group">
-              <label for="cursandoActualmente">Cursando actualmente</label>
-                <select value="<%= perfiles.cursandoActualmente %>" name ="cursandoActualmente" required class="form-control" id="cursandoActualmente">
-                  <option id="6">Base de Datos 2</option>
-                  <option id="8">Ingles </option>
-                  </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="preparandoFinales">Preparando finales</label>
-                <select value="<%= perfiles.preparandoFinales %>" name ="preparandoFinales" required class="form-control" id="preparandoFinales">
-                  <option id="6">Base de Datos</option>
-                  <option id="7">Matematica 3</option>
-                  </select>
-            </div>
-            <div class="form-group">
-            <button class="btn btn-primary h2 " type="submit">
-              Actualizar Datos
-            </button>  
-          </div>         
-          </form>
-        </div>
-        
+  <p class="h2 text-center">Crear Perfil</p>
+  
+      
+  <form class="estilo1" action="/add" method="POST">
+  
+    <div class="form-group">
+      <label for="exampleInputUser">Nombre de usuario</label>
+      <input type="user" class="form-control"  required name="nombre" required placeholder="Usuario">
+    </div>
     
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Carrera</label>
+      <select name ="carrera" required class="form-control" id="exampleFormControlSelect1">
+        <option  id="1">Ing en Informatica</option>
+        <option id="2">Lic en Informatica</option>
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for= "exampleFormControlSelect2">Cursando Actualmente</label>
+      <select name ="cursandoActualmente" required class="form-control" id="exampleFormControlSelect2">
+        <option id="3">Programacion</option>
+        <option id="4">Ingles</option>
+        <option id="5">Base de Datos</option>
+  
+      </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleFormControlSelect3">Preparando Finales</label>
+      <select name ="preparandoFinales" required class="form-control" id="exampleFormControlSelect3">
+        <option id="6">Base de Datos</option>
+        <option id="7">Matematica 3</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <button class="btn btn-primary" type="submit">
+      Crear cuenta 
+    </button>
+    
+  </div>
+  </form>
+  </div>
 
+
+
+
+       
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<% } %> 
+
+
+
+
+  </tbody>
