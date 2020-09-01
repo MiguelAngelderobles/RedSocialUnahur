@@ -32,14 +32,14 @@ router.get('/index', async (req, res) => {
 
 
 router.get('/crearaccount', async (req, res) => {
-  const perfiles = await Perfil.find();
+  const perfiles = await Perfil.find({user: req.user.id});
   res.render('crearaccount', {
     perfiles
   });
 });
 
 router.get('/miaccount', async (req, res, next) => {
-  const perfiles = await Perfil.find();
+  const perfiles = await Perfil.find({user: req.user.id});
   res.render('miaccount', {
     perfiles
   });
@@ -47,6 +47,7 @@ router.get('/miaccount', async (req, res, next) => {
 
 router.post('/add', async (req, res, next) => {
   const perfiles = new Perfil(req.body);
+  perfiles.user = req.user.id;//tengo a que usuario le pertenece el perfil creado recientemente
   await perfiles.save();
   console.log(perfiles)
   res.redirect('/miaccount');
