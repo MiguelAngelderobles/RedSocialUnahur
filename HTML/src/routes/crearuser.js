@@ -29,7 +29,12 @@ router.get('/index', async (req, res) => {
   });
 });
 */
-
+router.get('/Bienvenida', async (req, res) => {
+  const perfiles = await Perfil.find({user: req.user.id});
+  res.render('Bienvenida', {
+    perfiles
+  });
+});
 
 router.get('/crearaccount', async (req, res) => {
   const perfiles = await Perfil.find({user: req.user.id});

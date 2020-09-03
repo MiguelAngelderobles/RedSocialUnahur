@@ -42,9 +42,9 @@ router.post('/signup', passport.authenticate('local-signup', {
 }));
 
 
-router.get('/logout', (req, res, next) => {
+router.get('/logout', (req, res, next) => {//para cerrar la sesión
   req.logout();
-  res.redirect('/');
+  res.redirect('/');//lo devuelvo a la pagina principal de mi aplicacion
 });
 
 

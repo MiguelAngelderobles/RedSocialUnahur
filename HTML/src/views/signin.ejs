@@ -249,7 +249,14 @@ body {
   
   <link rel=”stylesheet” href=/css/redsocial.css”>
 </head>
+
+
+
 <body>
+
+  <% if(signinMessage) { %>
+  
+  
 
   <div class="login-box">
     <img src="logo.jpg" class="avatar" alt="Avatar Image">
@@ -258,15 +265,23 @@ body {
       <!-- USERNAME INPUT -->
       <label for="username">Usuario</label>
       <input type="email"  name="email" required placeholder="Usuario">
+      
       <!-- PASSWORD INPUT -->
       <label for="password">Contraseña</label>
       <input  type="password" name="password" required placeholder="Contraseña">
       <input   type="submit" value="Log In">
+  
+      <div class="alert alert-warning alert-dismissable" role="alert">
+        <%= signinMessage %> 
+      </div>
+   
       <a href="olvidoContrasenia">¿Olvido su contraseña?</a><br>
       <a href="signup">¿No tiene una cuenta?</a>
     </form>
   </div>
+  <% } %> 
 </body>
+
 
 <script>
 

@@ -5,6 +5,7 @@ const PerfilSchema = Schema({
   carrera: String,
   cursandoActualmente: String,
   preparandoFinales: String,
+  
   user:{
     type:String,
     required:true

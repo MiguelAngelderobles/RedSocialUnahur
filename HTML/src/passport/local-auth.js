@@ -12,15 +12,17 @@ passport.deserializeUser(async (id, done) => {
   done(null, user);
 });
 
+//para registrarse
+//lo que hace passport es poder navegar entre diferentes vistas y no tener que registrarnos en todo momento, sino que guarda dichos datos
 passport.use('local-signup', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',
   passReqToCallback: true
-}, async (req, email, password,  done) => {
+}, async (req, email, password, done) => {
   const user = await User.findOne({'email': email})
   console.log(user)
   if(user) {
-    return done(null, false, req.flash('signupMessage', 'El mail ingresado ya existe'));
+    return done(null, false, req.flash('signupMessage', 'El Email ingresado ya existe.'));
   } else {
     const newUser = new User();
     newUser.email = email;
@@ -31,6 +33,7 @@ passport.use('local-signup', new LocalStrategy({
   }
 }));
 
+//para iniciar sesión
 passport.use('local-signin', new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password',

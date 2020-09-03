@@ -29,7 +29,7 @@ app.use(morgan('dev'))
 app.use(express.static("img"))
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());//revisar
-app.use(session({
+app.use(session({//guardar los datos de la password cuando inicia sesion
     secret: 'mysecretsession',
     resave: false,
     saveUninitialized: false
@@ -42,11 +42,11 @@ app.use(session({
   app.use(express.static("src/views/img"));
 
   app.use((req, res, next) => {
-    app.locals.signinMessage = req.flash('signinMessage');
-    app.locals.CrearCuentaMessage = req.flash('CrearCuentaMessage');
-    app.locals.user = req.user;
+    app.locals.signinMessage = req.flash('signinMessage'); //toma los mensaje si existen y los guardara
+    app.locals.signupMessage = req.flash('signupMessage');
+    app.locals.user = req.user;//tenemos disponible un usario para hacer llamadas en caso de ser necesario
     console.log(app.locals)
-    next();
+    next();//para que continue con el resto de las rutas, si no estuviera queda estancado en el login
   });
 
 

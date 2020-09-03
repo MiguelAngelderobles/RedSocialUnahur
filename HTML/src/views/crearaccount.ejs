@@ -178,36 +178,36 @@
       </div>
      
       <div class="form-group">
-  <label for="carrera">Carrera</label>
+       <label for="carrera">Carrera</label>
        
-  <input  value="<%= perfiles[i].carrera %>" type="user" readonly="readonly" class="form-control" id="carrera"  name="carrera"  >
+      <input  value="<%= perfiles[i].carrera %>" type="user" readonly="readonly" class="form-control" id="carrera"  name="carrera"  >
         
-</div>
+      </div>
      
-<div class="form-group">
-  <label for="cursandoActualmente">Cursando actualmente</label>
-  <input  value="<%= perfiles[i].cursandoActualmente %>" type="user" readonly="readonly" class="form-control"   name="cursandoActualmente" >
+      <div class="form-group">
+          <label for="cursandoActualmente">Cursando actualmente</label>
+           <input  value="<%= perfiles[i].cursandoActualmente %>" type="user" readonly="readonly" class="form-control"   name="cursandoActualmente" >
 
 
  
-</div>
+      </div>
 
-<div class="form-group">
-  <label for="preparandoFinales">Preparando finales</label>
-  <input value= "<%=perfiles[i].preparandoFinales %>" type="user" readonly="readonly" class="form-control"   name="preparandoFinales" >
+      <div class="form-group">
+          <label for="preparandoFinales">Preparando finales</label>
+          <input value= "<%=perfiles[i].preparandoFinales %>" type="user" readonly="readonly" class="form-control"   name="preparandoFinales" >
   
-</div>   
+      </div>   
 
 
-<div class="form-group">  
-  <a href="/delete/<%= perfiles[i]._id %>"
-    class="btn btn-danger">
-    Delete
-  </a>
-  <a href="/edit/<%= perfiles[i]._id %>" class="btn btn-info">
-    Edit
-  </a>
-</div>  
+      <div class="form-group">  
+        <a href="/delete/<%= perfiles[i]._id %>"
+          class="btn btn-danger">
+          Delete
+        </a>
+        <a href="/edit/<%= perfiles[i]._id %>" class="btn btn-info">
+          Edit
+        </a>
+      </div>  
 
 
 
@@ -217,12 +217,12 @@
 <% } else { %>
  
     
-<div class="container">
+    <div class="container">
            
-  <p class="h2 text-center">Crear Perfil</p>
+        <p class="h2 text-center">Crear Perfil</p>
   
       
-  <form class="estilo1" action="/add" method="POST">
+    <form class="estilo1" action="/add" method="POST">
   
     <div class="form-group">
       <label for="exampleInputUser">Nombre de usuario</label>

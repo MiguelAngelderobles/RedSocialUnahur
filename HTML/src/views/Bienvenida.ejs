@@ -18,6 +18,10 @@
     margin-top: 0.97rem;
 }
 
+.textBienvenida{
+   margin-left: 35%;
+}
+
 @media (min-width: 992px) {
     .gedf-main {
         padding-left: 4rem;
@@ -110,7 +114,7 @@
     
   <nav class="navbar navbar-light bg-white">
 
-    <a href="#" class="navbar-brand">Bienvenido a Red Social! </a>
+    <a href="#" class="navbar-brand textBienvenida">Bienvenido a Red Social <strong><%=user.email%>! </strong> </a>
 
     <form class="form-inline">  
         
@@ -125,12 +129,10 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <div class="h5">Alan Cichello</div>
+                    <div class="h7 text-muted"><%=user.email%></div> 
                     <div class="h7 text-muted">Carrera : Lic. en Informatica</div>
-                    <div class="h7 text-muted">Email : alancichello@gmail.com</div>
-                    <div class="h7">
-                        
-                    </div>
+                    
+                   
                 </div>
             
         
@@ -240,3 +242,4 @@
 
 </html>
 
+</tbody>
