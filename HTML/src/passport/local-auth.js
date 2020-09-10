@@ -46,5 +46,5 @@ passport.use('local-signin', new LocalStrategy({
   if(!user.comparePassword(password)) {
     return done(null, false, req.flash('signinMessage', 'Contraseña incorrecta'));
   }
-  return done(null, user);
+  return done(null, user, req.flash('Cuenta registrada satisfactoriamente'));
 }));

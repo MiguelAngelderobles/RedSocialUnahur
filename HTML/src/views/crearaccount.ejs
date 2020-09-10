@@ -199,12 +199,16 @@
       </div>   
 
 
+      <form action="/perfil/delete/<%=perfiles[i]._id %>" method="delete">
+
       <div class="form-group">  
-        <a href="/delete/<%= perfiles[i]._id %>"
+        <a href="delete/<%= perfiles[i]._id %>"
           class="btn btn-danger">
           Delete
         </a>
-        <a href="/edit/<%= perfiles[i]._id %>" class="btn btn-info">
+      </form>
+   
+        <a href="edit/<%= perfiles[i]._id %>" class="btn btn-info">
           Edit
         </a>
       </div>  
@@ -231,7 +235,7 @@
     
     <div class="form-group">
       <label for="carrera">Carrera</label>
-      <select name ="carrera" required class="form-control" id="carrera">
+      <select multiple name ="carrera" required class="form-control" id="carrera">
         <option  id="1">Ing en Informatica</option>
         <option id="2">Lic en Informatica</option>
       </select>
@@ -239,7 +243,7 @@
   
     <div class="form-group">
       <label for= "cursandoActualmente">Cursando Actualmente</label>
-      <select name ="cursandoActualmente" required class="form-control" id="cursandoActualmente">
+      <select multiple name ="cursandoActualmente" required class="form-control" id="cursandoActualmente">
         <option id="3">Programacion</option>
         <option id="4">Ingles</option>
         <option id="5">Base de Datos</option>
@@ -249,7 +253,7 @@
   
     <div class="form-group">
       <label for="preparandoFinales">Preparando Finales</label>
-      <select name ="preparandoFinales" required class="form-control" id="preparandoFinales">
+      <select multiple name ="preparandoFinales" required class="form-control" id="preparandoFinales">
         <option id="6">Base de Datos</option>
         <option id="7">Matematica 3</option>
       </select>

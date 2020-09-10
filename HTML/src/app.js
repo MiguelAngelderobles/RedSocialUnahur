@@ -50,9 +50,12 @@ app.use(session({//guardar los datos de la password cuando inicia sesion
   });
 
 
+
+  
 // routes
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/crearuser'));
+app.use('/', require('./routes/creargrupo'));
 
 // Starting the server
 app.listen(app.get('port'),()=>

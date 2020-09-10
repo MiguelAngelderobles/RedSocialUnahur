@@ -2,10 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const PerfilSchema = Schema({
   nombre: String,
-  carrera: String,
-  cursandoActualmente: String,
-  preparandoFinales: String,
-  
+  carrera: [],
+  cursandoActualmente: [],
+  preparandoFinales: [],
+    
   user:{
     type:String,
     required:true

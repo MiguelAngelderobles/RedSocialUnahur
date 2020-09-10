@@ -2,106 +2,97 @@
 <!DOCTYPE html>
 <html lang="en">
   <style>
- 
- .estilo{
-    width: 50%;
-    margin-left:25%;
-    margin-top: 1%;
-    margin-bottom: 30px;
-    
-  
+
+    .estilo{
+      width: 50%;
+      margin-left:25%;
+      margin-top: 1%;
+    }
+    .estilo1{
+      margin-top: 2%;
+      margin-left: 3%;
+      margin-right: 3%;
+    }
+    .navpos{
+      margin-left: 90%;
   }
-  .estilo1{
-    margin-top: 2%;
-    margin-left: 3%;
-    margin-right: 3%;
-    
-  }
-
-
-.form-register {
- 
-  width: 400px;
-
-  background: #24303c;
-  padding: 30px;
-  margin: auto;
-  margin-top: 20px;
-  border-radius: 4px;
-  font-family: 'calibri';
-  color: white;
-  box-shadow: 7px 13px 37px #000;
-}
-
-.form-register h4 {
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-.navpos{
-    margin-left: 90%;
-}
-
-.controls {
-  width: 100%;
-  background: #24303c;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #1f53c5;
-  font-family: 'calibri';
-  font-size: 18px;
-  color: white;
-}
-
-.form-register p {
-  height: 40px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 40px;
-}
-
-.form-register a {
-  color: white;
-  text-decoration: none;
-}
-
-.form-register a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.form-register .botons {
-  width: 100%;
-  background: #1f53c5;
-  border: none;
-  padding: 12px;
-  color: white;
-  margin: 16px 0;
-  font-size: 16px;
-}
-.boton-personalizado{
- 
-text-decoration:none;
-font-weight: 500;
-font-size: 15px;
-color:#ffffff;
-padding-top:10px;
-padding-bottom:10px;
-padding-left:20px;
-padding-right:20px;
-background-color:#2a4aff;
-border-color: #d8d8d8;
-border-width: 1px;
-border-radius:35px;
-margin-left: 75%;
-}
-.width{
-  width: 20%;
-  margin-left: 77%;
-  margin-bottom: 2%;
   
-}
-  </style>
+  .container
+  {
+      width: 500px;
+      margin: 20px auto;
+  }
+  
+  .preview
+  {
+      position: relative;
+  }
+  .navpos{
+      margin-left: 90%;
+  }
+  .preview i
+  {
+      color: white;
+      font-size: 35px;
+      transform: translate(50px,130px);
+  }
+  
+  .preview-img
+  {
+      border-radius: 100%;
+      box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
+  }
+  
+  .browse-button
+  {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      position: absolute; /* Tweak the position property if the element seems to be unfit */
+      top: 0.0000000000001px;
+      left: 45.5%;
+      background: linear-gradient(180deg, transparent, black);
+      opacity: 0;
+      transition: 0.3s ease;
+  }
+  
+  .browse-button:hover
+  {
+      opacity: 1;
+  }
+  
+  .browse-input
+  {
+      width: 200px;
+      height: 200px;
+      border-radius: 100%;
+      transform: translate(-1px,-26px);
+      opacity: 0;
+  }
+  
+  .form-group
+  {
+      width:  250px;
+      margin: 10px auto;
+  }
+  
+  .form-group input
+  {
+      transition: 0.3s linear;
+  }
+  
+  .form-group input:focus
+  {
+      border: 1px solid crimson;
+      box-shadow: 0 0 0 0;
+  }
+  
+  .Error
+  {
+      color: crimson;
+      font-size: 13px;
+  }
+    </style>
 <head>
  
   <meta charset="UTF-8">
@@ -173,62 +164,61 @@ margin-left: 75%;
     </ul>
   </div>
 </nav>
-<div class="card estilo">
-  <div class="card-header bg-primary">
-    <h5>CREAR GRUPO</h5>
-  </div>
-
-<form class="estilo1">
-  
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Nombre del Grupo</label>
-    <input type="user" required class="form-control" id="exampleFormControlInput1" placeholder="Nombre del grupo">
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleFormControlInput2">Descripción</label>
-    <input type="email" required class="form-control" id="exampleFormControlInput2" placeholder="Descripción del grupo">
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect3">Cantidad de Participantes</label>
-    <select class="form-control" id="exampleFormControlSelect3">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect4">Materia a la que Aplicará el Grupo</label>
-    <select class="form-control" id="exampleFormControlSelect4">
-      <option>Programacion</option>
-      <option>Ingles</option>
-      <option>Base de Datos</option>
-
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="exampleFormControlSelect5">Privacidad</label>
-    <select class="form-control" id="exampleFormControlSelect5">
-      <option>Publico</option>
-      <option>Privado</option>
-    </select>
-  </div>
-  
-  <form>
-    <div class="form-group">
-      <label for="exampleFormControlFile1">Cargar Imagen del Grupo</label>
-      <input type="file" class="form-control-file" id="exampleFormControlFile1">
-    </div>
  
+<div class="container">
+           
+  <p class="h2 text-center">Crear Grupo</p>
 
-  
-   
-  </form>
-  <a href="unirseGrupo" class="btn btn-primary width">Guardar</a>
+
+<form class="estilo1" action="/addgrupo" method="POST">
+
+<div class="form-group">
+<label for="nombreGrupo">Nombre del Grupo</label>
+<input type="user" class="form-control"  required  name="nombreGrupo" id="nombreGrupo" required placeholder="Usuario">
+</div>
+
+<div class="form-group">
+  <label for="descripcionGrupo">Descripcion</label>
+  <input type="user" class="form-control" required name="descripcionGrupo" id="descripcionGrupo" placeholder="Descripcion">
+  </div>
+
+<div class="form-group">
+<label for= "cantParticipantes">Cantidad de participantes</label>
+<select name ="cantParticipantes" required class="form-control" id="cantParticipantes">
+  <option >1</option>
+  <option >2</option>
+  <option >3</option>
+  <option >4</option>
+  <option >5</option>
+
+</select>
+</div>
+
+<div class="form-group">
+<label for="materiaQueAplica">Materias a la que aplicará el grupo</label>
+<select name ="materiaQueAplica[]" size="3" id="materiaQueAplica"  required class="form-control" id="materiaQueAplica" multiple>
+  <option>Base de Datos</option>
+  <option>Matematica 3</option>
+  <option>Ingles 2</option>
+  <option>Base de Datos</option>
+  <option>Matematica 2</option>
+  <option>Ingles</option>
+  <option>Programacion Basica</option>
+  <option>Estructura de Datos</option>
+</select>
+</div>
+
+<div class="form-group">
+<button class="btn btn-primary" type="submit">
+Crear Grupo 
+</button>
+
 </div>
 </form>
+</div>
+
+
+
+
+ 
+
