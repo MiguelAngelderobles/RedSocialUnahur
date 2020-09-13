@@ -17,28 +17,26 @@ router.post('/addgrupo', async (req, res, next) => {
     });
   });
 
-  router.get('/unirsegroup', function(req,res,next){
-    if(req.query.buscar){
-      console.log("Buscar",req.query.buscar)
-      Grupo.find({nombreGrupo:{$regex:'.*'+req.query.buscar+'.*',$options:"i"}}, function(error,documento){
-        if(error){
-          console.log("error")
-        }else{
-          var GruposListados=documento
-          res.render('unirsegroup',{descripcionGrupo:"Home",grupos:GruposListados,buscar:req.query.buscar})
-        }
-      })
-    }else{
-      Grupo.find({},function(error,documento){
-        if(error){
-          console.log("error en finde")
-        }else{
-          var GruposListados=documento
-          res.render('unirsegroup',{descripcionGrupo:"Home",grupos:GruposListados,buscar:''})
-        }
-      })
-    }
-  })
+  router.get('/creargroup', async (req, res, next) => {
+    const grupos = await Grupo.find();
+    res.render('creargroup', {
+        grupos
+    });
+  });
+
+  router.get('/vergroup', async (req, res, next) => {
+    const grupos = await Grupo.find();
+    res.render('vergroup', {
+        grupos
+    });
+  });
+  
+  router.get('/deletegroup/:id', async (req, res, next) => {
+    let { id } = req.params;
+    await Grupo.remove({_id: id});
+    res.redirect('/Grupo');
+  }); 
+
 
 
   module.exports = router;
