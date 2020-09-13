@@ -84,6 +84,7 @@
     color: crimson;
     font-size: 13px;
   }
+
 </style>
 
 <%include partials/_header %> 
@@ -113,7 +114,7 @@
   </div>
 
   <div class="form-group">
-    <label for="cantParticipantes">Participantes</label>
+    <label for="cantParticipantes">Cantidad de Participantes</label>
     <input value="<%= grupos[i].cantParticipantes %>" type="user" readonly="readonly" class="form-control"
       id="cantParticipantes" name="cantParticipantes">
 
@@ -122,8 +123,8 @@
   </div>
 
   <div class="form-group">
-    <label for="materiaQueAplica">Materias que aplica</label>
-    <input value="<%=grupos[i].materiaQueAplica %>" type="user" readonly="readonly" class="form-control"
+    <label for="materiaQueAplica">Materias a las que aplicará el grupo</label>
+    <input  value="<%=grupos[i].materiaQueAplica %>" type="user" readonly="readonly" class="form-control"
       id="materiaQueAplica" name="materiaQueAplica">
 
   </div>
@@ -177,7 +178,7 @@
         </select>
       </div>
 
-      <div class="form-group">
+      <div class="form-group myDiv">
         <label for="materiaQueAplica">Materias a la que aplicará el grupo</label>
         <select name="materiaQueAplica[]" size="3" id="materiaQueAplica" required class="form-control"
           id="materiaQueAplica" multiple>
