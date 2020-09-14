@@ -88,25 +88,14 @@
 
 <%include partials/_header %> 
 
+
+
 <div class="container">
+  
 
   <p class="h2 text-center">Editar Perfil</p>
-  <form action="/edit/<%= perfiles._id %>" method="post">
+  <form action="/edit/<%= perfiles._id %>" method="post"> 
 
-    <div class="preview text-center">
-
-      <img class="preview-img" src="logo.jpg" alt="Preview Image" width="100" height="100" />
-
-      <div class="browse-button">
-        <i class="fa fa-pencil-alt"></i>
-
-        <input class="browse-input" type="file" name="UploadedFile" id="UploadedFile" />
-
-      </div>
-
-      <span class="Error"></span>
-
-    </div>
     <div class="form-group">
       <label for="nombre">Nombre de usuario</label>
       <input class="form-control" type="text" name="nombre" value="<%= perfiles.nombre %>">
