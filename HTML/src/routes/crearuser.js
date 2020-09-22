@@ -1,17 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Perfil = require('../models/crearPerfil');
+const Materia = require('../models/Materia');
 const bodyParser=require('body-parser');
-
 const path = require('path');
 const { unlink } = require('fs-extra');
 
-
-
 router.use(bodyParser.urlencoded({extend:true}))
 router.use(bodyParser.json())
-
-
 
 router.get('/crearaccount', async (req, res) => {
   const perfiles = await Perfil.find({user: req.user.id});

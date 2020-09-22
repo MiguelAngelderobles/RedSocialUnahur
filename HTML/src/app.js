@@ -11,6 +11,7 @@ const multer = require('multer');
 const { v4: uuidv4 } = require('uuid');
 const { format } = require('timeago.js');
 
+
 mongoose.connect('mongodb://localhost/cruds').then(db => console.log(`db mongo connected ${db}`)).catch(err => console.log(err))
 
 
@@ -23,6 +24,7 @@ require('./passport/local-auth');
 // settings
 app.set('port',process.env.PORT || 3000)
 app.set('views',path.join(__dirname,'views'))
+
 app.engine('ejs', engine);
 app.set('view engine','ejs')
 
@@ -50,8 +52,7 @@ app.use(session({//guardar los datos de la password cuando inicia sesion
     next();//para que continue con el resto de las rutas, si no estuviera queda estancado en el login
   });
 
-
-//images
+  //images
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 const storage = multer.diskStorage({
@@ -70,14 +71,32 @@ app.use((req, res, next) => {
 });
 
 // static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
+
+
 
 // routes
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/crearuser'));
 app.use('/', require('./routes/creargrupo'));
-
+app.use('/', require('./routes/Materia'));
 
 // Starting the server
+/*
 app.listen(app.get('port'),()=>
 {console.log(`Server connect port ${app.get('port')}`)})
+*/
+
+const http = require('http');
+const socketio = require('socket.io');
+
+const server = http.createServer(app);
+const io = socketio.listen(server);
+require('./sockets')(io);//modificado (.)
+ 
+
+async function main() {
+  await server.listen(app.get('port'));
+  console.log(`server on port ${app.get('port')}`);
+}
+main();

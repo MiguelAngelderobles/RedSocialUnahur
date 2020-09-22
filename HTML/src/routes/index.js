@@ -1,5 +1,9 @@
 const router = require('express').Router();
+const { response } = require('express');
 const passport = require('passport');
+const Perfil = require('../models/crearPerfil');
+const Grupo = require('../models/crearGrupo');
+const Usuario = require('../models/usuario');
 
 router.get('/', (req, res, next) => {
   res.render('signin');
@@ -72,9 +76,17 @@ router.get('/crearGrupo', (req, res, next) => {
   res.render('crearGrupo');
 });
 
-router.get('/chatGrupo', (req, res, next) => {
-  res.render('chatGrupo');
+
+
+router.get('/chatgroup', async (req, res, next) => {
+  const grupos = await Grupo.find();
+  const perfiles = await Perfil.find();
+  const usuarios = await Usuario.find();
+  res.render('chatgroup',{
+    grupos,perfiles,usuarios
+  });
 });
+
 
 router.get('/editarGrupo', (req, res, next) => {
   res.render('editarGrupo');
@@ -82,7 +94,9 @@ router.get('/editarGrupo', (req, res, next) => {
 
 router.get('/chat', (req, res, next) => {
   res.render('chat');
+  
 });
+
 
 router.get('/alumnosTutor', (req, res, next) => {
   res.render('alumnosTutor');
@@ -119,4 +133,10 @@ router.get('/unirseGrupo', (req, res, next) => {
 router.get('/perfilTutor', (req, res, next) => {
   res.render('perfilTutor');
 });
+/*
+router.get('/index', (req, res, next) => {
+  res.render('/public/chat');
+});*/
+
+
 module.exports = router;

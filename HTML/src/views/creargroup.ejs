@@ -89,64 +89,6 @@
 
 <%include partials/_header %> 
 
-<tbody>
-  <% var i=0; %>
-  <%if(grupos.length){%>
-  <% grupos.forEach(function(entry) {%>
-
-
-  <p class="h2 text-center">Ya cuenta con un Grupo:</p>
-
-
-
-
-  <div class="form-group">
-    <label for="nombreGrupo">Nombre del Grupo</label>
-    <input value=<%= grupos[i].nombreGrupo %> type="user" readonly="readonly" class="form-control" name="nombreGrupo">
-  </div>
-
-  <div class="form-group">
-    <label for="descripcionGrupo">Descripción del Grupo</label>
-
-    <input value="<%= grupos[i].descripcionGrupo %>" type="user" readonly="readonly" class="form-control"
-      id="descripcionGrupo" name="descripcionGrupo">
-
-  </div>
-
-  <div class="form-group">
-    <label for="cantParticipantes">Cantidad de Participantes</label>
-    <input value="<%= grupos[i].cantParticipantes %>" type="user" readonly="readonly" class="form-control"
-      id="cantParticipantes" name="cantParticipantes">
-
-
-
-  </div>
-
-  <div class="form-group">
-    <label for="materiaQueAplica">Materias a las que aplicará el grupo</label>
-    <input  value="<%=grupos[i].materiaQueAplica %>" type="user" readonly="readonly" class="form-control"
-      id="materiaQueAplica" name="materiaQueAplica">
-
-  </div>
-
-
-  <form action="/deletegroup/<%=grupos[i]._id %>" method="delete">
-
-    <div class="form-group">
-      <a href="deletegroup/<%= grupos[i]._id %>" class="btn btn-danger">
-        Delete
-      </a>
-    </div>
-  </form>
-
-
-
-
-  <% }) %>
-
-
-  <% } else { %>
-
   <div class="container">
 
     <p class="h2 text-center">Crear Grupo</p>
@@ -238,7 +180,3 @@
       </div>
     </form>
   </div>
-
-
-  <% } %>
-</tbody>
