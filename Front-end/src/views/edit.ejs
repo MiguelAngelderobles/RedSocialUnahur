@@ -1,222 +1,221 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <style>
+<style>
+  .estilo {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 1%;
+  }
 
-    .estilo{
-      width: 50%;
-      margin-left:25%;
-      margin-top: 1%;
-    }
-    .estilo1{
-      margin-top: 2%;
-      margin-left: 3%;
-      margin-right: 3%;
-    }
-    .navpos{
-      margin-left: 90%;
+  .estilo1 {
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
   }
-  
-  .container
-  {
-      width: 500px;
-      margin: 20px auto;
-  }
-  
-  .preview
-  {
-      position: relative;
-  }
-  .navpos{
-      margin-left: 90%;
-  }
-  .preview i
-  {
-      color: white;
-      font-size: 35px;
-      transform: translate(50px,130px);
-  }
-  
-  .preview-img
-  {
-      border-radius: 100%;
-      box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.7);
-  }
-  
-  .browse-button
-  {
-      width: 100px;
-      height: 100px;
-      border-radius: 100%;
-      position: absolute; /* Tweak the position property if the element seems to be unfit */
-      top: 0.0000000000001px;
-      left: 45.5%;
-      background: linear-gradient(180deg, transparent, black);
-      opacity: 0;
-      transition: 0.3s ease;
-  }
-  
-  .browse-button:hover
-  {
-      opacity: 1;
-  }
-  
-  .browse-input
-  {
-      width: 200px;
-      height: 200px;
-      border-radius: 100%;
-      transform: translate(-1px,-26px);
-      opacity: 0;
-  }
-  
-  .form-group
-  {
-      width:  250px;
-      margin: 10px auto;
-  }
-  
-  .form-group input
-  {
-      transition: 0.3s linear;
-  }
-  
-  .form-group input:focus
-  {
-      border: 1px solid crimson;
-      box-shadow: 0 0 0 0;
-  }
-  
-  .Error
-  {
-      color: crimson;
-      font-size: 13px;
-  }
-    </style>
-<head>
- 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Formulario Registro</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  
-</head>
 
-  
-  
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="Bienvenida">Red Social</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          PERFIL
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="miaccount">Ver mi perfil</a>   
-          
-        </div>
-      </li>
-      
+  .navpos {
+    margin-left: 90%;
+  }
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         GRUPO
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="Grupo">Grupos</a>
-          <a class="dropdown-item" href="verGrupos">Ver Grupos</a>
-          <a class="dropdown-item" href="solicitudesGrupo">Solicitudes</a>
-        </div>
-      </li>
+  .container {
+    width: 500px;
+    margin: 20px auto;
+  }
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          TUTOR 
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="perfilTutor">Mi Perfil</a>
-          <a class="dropdown-item" href="solicitudesTutor">Solicitudes</a>
-          <a class="dropdown-item" href="alumnosTutor">Alumnos</a>
-        </div>
-      </li>
+  .preview {
+    position: relative;
+  }
 
-      
-      <li class="nav-item">
-        <a class="nav-link" href="chat">CHAT</a>
-      </li>
-     
-    
-      <li class="nav-item navpos">
-        <a class="nav-link navpos" href="singin">EXIT</a>
-      </li>
+  .navpos {
+    margin-left: 90%;
+  }
 
-      
-    </ul>
-  </div>
-</nav>
+  .preview i {
+    color: white;
+    font-size: 35px;
+    transform: translate(50px, 130px);
+  }
+
+  .preview-img {
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
+  }
+
+  .browse-button {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    position: absolute;
+    /* Tweak the position property if the element seems to be unfit */
+    top: 0.0000000000001px;
+    left: 45.5%;
+    background: linear-gradient(180deg, transparent, black);
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  .browse-button:hover {
+    opacity: 1;
+  }
+
+  .browse-input {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    transform: translate(-1px, -26px);
+    opacity: 0;
+  }
+
+  .form-group {
+    width: 250px;
+    margin: 10px auto;
+  }
+
+  .form-group input {
+    transition: 0.3s linear;
+  }
+
+  .form-group input:focus {
+    border: 1px solid crimson;
+    box-shadow: 0 0 0 0;
+  }
+
+  .Error {
+    color: crimson;
+    font-size: 13px;
+  }
+</style>
+
+<%include partials/_header %> 
+
+
 
 <div class="container">
-           
+  
+
   <p class="h2 text-center">Editar Perfil</p>
-  <form action="/edit/<%= perfiles._id %>" method="post">
-      
-    <div class="preview text-center">
-         
-        <img class="preview-img" src="logo.jpg" alt="Preview Image" width="100" height="100"/>
-         
-        <div class="browse-button">
-              <i class="fa fa-pencil-alt"></i>
-          
-              <input class="browse-input" type="file"  name="UploadedFile" id="UploadedFile"/>
-         
-            </div>
-          
-            <span class="Error"></span>
-     
-          </div>
-            <div class="form-group">
-              <label for="nombre">Nombre de usuario</label>
-              <input class="form-control" type="text" name="nombre"  value="<%= perfiles.nombre %>">
-            </div>
+  <form action="/edit/<%= perfiles._id %>" method="post"> 
 
-            <div class="form-group">
-              <label for="carrera">Carrera</label>
-              <select value="<%= perfiles.carrera %>" name ="carrera" required class="form-control" id="carrera">
-                <option id="6">Lic. En Informatica</option>
-                <option id="8">Tec. En Informatica </option>
-                </select>
-          </div>
+    <div class="form-group">
+      <label for="nombre">Nombre de usuario</label>
+      <input class="form-control" type="text" name="nombre" value="<%= perfiles.nombre %>">
+    </div>
 
-            <div class="form-group">
-              <label for="cursandoActualmente">Cursando actualmente</label>
-                <select value="<%= perfiles.cursandoActualmente %>" name ="cursandoActualmente" required class="form-control" id="cursandoActualmente">
-                  <option id="9">Base de Datos 2</option>
-                  <option id="10">Ingles </option>
-                  </select>
-            </div>
-            
-            <div class="form-group">
-              <label for="preparandoFinales">Preparando finales</label>
-                <select value="<%= perfiles.preparandoFinales %>" name ="preparandoFinales" required class="form-control" id="preparandoFinales">
-                  <option id="11">Base de Datos</option>
-                  <option id="12">Matematica 3</option>
-                  </select>
-            </div>
-            <div class="form-group">
-            <button class="btn btn-primary h2 " type="submit">
-              Actualizar Datos
-            </button>  
-          </div>         
-          </form>
-        </div>
-        
-    
+    <div class="form-group">
+      <label for="carrera">Carrera</label>
+      <select multiple value="<%= perfiles.carrera %>" name="carrera" required class="form-control" id="carrera">
+        <option>Lic. En Informatica</option>
+        <option>Tec. En Informatica </option>
+      </select>
+    </div>
 
+    <div class="form-group">
+      <label for="cursandoActualmente">Cursando actualmente</label>
+      <select multiple value="<%= perfiles.cursandoActualmente %>" name="cursandoActualmente" required
+        class="form-control" id="cursandoActualmente">
+        <option>Matematica 1</option>
+        <option>Introducción a la Progrmación</option>
+        <option>Organización de Computadoras</option>
+        <option>Nuevos Entornos y Lenguajes</option>
+        <option>Estructura de Datos</option>
+        <option>Programación con Objetos 1</option>
+        <option>Base de Datos</option>
+        <option>Ingles 1</option>
+        <option>Matematica 2</option>
+        <option>Programación con Objetos 2</option>
+        <option>Redes de Computadoras</option>
+        <option>Sistemas Operativos</option>
+        <option>Programación Funcional</option>
+        <option>Construcción de Intefaces de Usuarios</option>
+        <option>Algoritmos</option>
+        <option>Estrategias de Persistencias</option>
+        <option>Laboratorio de Sistemas Operativos y Redes</option>
+        <option>Análisis Matemático</option>
+        <option>Lógica y Programación</option>
+        <option>Elementos de Ingeniería de Software</option>
+        <option>Seguridad de la Información</option>
+        <option>Materia UNAHUR 1</option>
+        <option>Ingles 2</option>
+        <option>Matematica 3</option>
+        <option>Programación Concurrente</option>
+        <option>Ingenieria de Requerimientos</option>
+        <option>Desarrollo de Aplicaciones</option>
+        <option>Probabilidad y Estadistica</option>
+        <option>Gestión de Proyectos de Desarrollo de Software</option>
+        <option>Lenguajes Formales y Autómatas</option>
+        <option>Programación con Objetos 3</option>
+        <option>Materia UNAHUR 2</option>
+        <option>Practica Profesional Supervisada (PPS)</option>
+        <option>Teoría de la Computación</option>
+        <option>Arquitectura de Software 1</option>
+        <option>Sistemas Distribuidos y Tiempo Real</option>
+        <option>Tesina de Licenciatura</option>
+        <option>Materia Optativa 1</option>
+        <option>Caracteristicas de Lenguajes de Programación</option>
+        <option>Arquitectura de Software 2</option>
+        <option>Arquitectura de Computadoras</option>
+        <option>Materia Optativa 2</option>
+        <option>Parseo y generación de código</option>
+        <option>Ejercicio Profesional</option>
+        <option>Tecnología y Sociedad</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="preparandoFinales">Preparando finales</label>
+      <select multiple value="<%= perfiles.preparandoFinales %>" name="preparandoFinales" required class="form-control"
+        id="preparandoFinales">
+        <option>Matematica 1</option>
+        <option>Introducción a la Progrmación</option>
+        <option>Organización de Computadoras</option>
+        <option>Nuevos Entornos y Lenguajes</option>
+        <option>Estructura de Datos</option>
+        <option>Programación con Objetos 1</option>
+        <option>Base de Datos</option>
+        <option>Ingles 1</option>
+        <option>Matematica 2</option>
+        <option>Programación con Objetos 2</option>
+        <option>Redes de Computadoras</option>
+        <option>Sistemas Operativos</option>
+        <option>Programación Funcional</option>
+        <option>Construcción de Intefaces de Usuarios</option>
+        <option>Algoritmos</option>
+        <option>Estrategias de Persistencias</option>
+        <option>Laboratorio de Sistemas Operativos y Redes</option>
+        <option>Análisis Matemático</option>
+        <option>Lógica y Programación</option>
+        <option>Elementos de Ingeniería de Software</option>
+        <option>Seguridad de la Información</option>
+        <option>Materia UNAHUR 1</option>
+        <option>Ingles 2</option>
+        <option>Matematica 3</option>
+        <option>Programación Concurrente</option>
+        <option>Ingenieria de Requerimientos</option>
+        <option>Desarrollo de Aplicaciones</option>
+        <option>Probabilidad y Estadistica</option>
+        <option>Gestión de Proyectos de Desarrollo de Software</option>
+        <option>Lenguajes Formales y Autómatas</option>
+        <option>Programación con Objetos 3</option>
+        <option>Materia UNAHUR 2</option>
+        <option>Practica Profesional Supervisada (PPS)</option>
+        <option>Teoría de la Computación</option>
+        <option>Arquitectura de Software 1</option>
+        <option>Sistemas Distribuidos y Tiempo Real</option>
+        <option>Tesina de Licenciatura</option>
+        <option>Materia Optativa 1</option>
+        <option>Caracteristicas de Lenguajes de Programación</option>
+        <option>Arquitectura de Software 2</option>
+        <option>Arquitectura de Computadoras</option>
+        <option>Materia Optativa 2</option>
+        <option>Parseo y generación de código</option>
+        <option>Ejercicio Profesional</option>
+        <option>Tecnología y Sociedad</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary h2 " type="submit">
+        Actualizar Datos
+      </button>
+    </div>
+  </form>
+</div>

@@ -10,10 +10,10 @@ const ChatSchema = new Schema({
         type: String,
         required: '{PATH} is required!'
     },
-    usuario:{
-        type: mongoose.Schema.Types.ObjectId,
-        href:'usuario'
-    },
+    // usuario:{
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     href:'usuario'
+    // },
   created: { type: Date, default: Date.now }
 });
 

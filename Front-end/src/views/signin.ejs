@@ -1,7 +1,5 @@
-<h1>sav mi plz</h1>
-
-<!-- <html lang="en">
-  <style>
+<html lang="en">
+<style>
   .ul {
     list-style-type: none;
     margin: 0;
@@ -9,39 +7,42 @@
     overflow: hidden;
     background-color: #333;
   }
-  
- .li {
+
+  .li {
     float: left;
   }
-  
- .li a, .dropbtn {
+
+  .li a,
+  .dropbtn {
     display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
-  .navpos{
+
+  .navpos {
     margin-left: 90%;
-}
-  
-  .li a:hover, .dropdown:hover .dropbtn {
+  }
+
+  .li a:hover,
+  .dropdown:hover .dropbtn {
     background-color: red;
   }
-  
+
   .li.dropdown {
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
   }
-  
+
   .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -49,49 +50,51 @@
     display: block;
     text-align: left;
   }
-  
-  .dropdown-content a:hover {background-color: #f1f1f1;}
-  
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
 
-  .Title{
-      background-color: #8BC6EC;
-      background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-      
+  .Title {
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
 
 
-      text-align: center;
+
+    text-align: center;
   }
 
   .Grupo {
-    text-align:justify;
+    text-align: justify;
     padding: 50px;
-    padding-left: 350px; 
+    padding-left: 350px;
   }
 
-  .Titulo{
-      color: #32de84;
+  .Titulo {
+    color: #32de84;
   }
 
   .lista3 {
-    counter-reset: li; 
-    list-style: none; 
-    list-style: decimal; 
+    counter-reset: li;
+    list-style: none;
+    list-style: decimal;
     font: 15px 'trebuchet MS', 'lucida sans';
     padding: 0;
     margin-bottom: 4em;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
-    width:485px;
-    
-}
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+    width: 485px;
 
-.lista3 ol {
-    margin: 0 0 0 2em; 
-}
+  }
 
-.lista3 li{
+  .lista3 ol {
+    margin: 0 0 0 2em;
+  }
+
+  .lista3 li {
     position: relative;
     display: block;
     padding: .4em .4em .4em .8em;
@@ -100,17 +103,17 @@
     background: #ddd;
     color: #444;
     text-decoration: none;
-    transition: all .3s ease-out;   
-}
+    transition: all .3s ease-out;
+  }
 
-.lista3 li:hover{
+  .lista3 li:hover {
     background: #eee;
-}   
+  }
 
-.lista3 li:before{
+  .lista3 li:before {
     content: counter(li);
     counter-increment: li;
-    position: absolute; 
+    position: absolute;
     left: -2.5em;
     top: 50%;
     margin-top: -1em;
@@ -120,186 +123,207 @@
     line-height: 2em;
     text-align: center;
     font-weight: bold;
-}
+  }
 
-.lista3 li:after{
-    position: absolute; 
+  .lista3 li:after {
+    position: absolute;
     content: '';
     border: .5em solid transparent;
     left: -1em;
     top: 50%;
     margin-top: -.5em;
-    transition: all .3s ease-out;               
-}
+    transition: all .3s ease-out;
+  }
 
-.lista3 li:hover:after{
+  .lista3 li:hover:after {
     left: -.5em;
-    border-left-color: #fa8072;             
-}
+    border-left-color: #fa8072;
+  }
 
-.boton-personalizado{
-text-decoration:none;
-font-weight: 600;
-font-size: 20px;
-color:#ffffff;
-padding-top:15px;
-padding-bottom:15px;
-padding-left:40px;
-padding-right:40px;
-background-color:#2a4aff;
-border-color: #d8d8d8;
-border-width: 1px;
-border-radius:35px;
-margin-left: 60px;
-}
+  .boton-personalizado {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #2a4aff;
+    border-color: #d8d8d8;
+    border-width: 1px;
+    border-radius: 35px;
+    margin-left: 60px;
+  }
 
-/*Login*/
-body {
-  margin: 0;
-  padding: 0;
-  background: url(unahur.jpg) no-repeat center top;
- 
-  background-size: cover;
-  font-family: sans-serif;
-  height: 100vh;
-}
+  /*Login*/
+  body {
+    margin: 0;
+    padding: 0;
+    background: url(unahur.jpg) no-repeat center top;
 
-.login-box {
-  width: 320px;
-  height: 420px;
-  background: rgb(61, 60, 60);
-  color: #fff;
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  box-sizing: border-box;
-  padding: 70px 30px;
-}
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+  }
 
-.login-box .avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  position: absolute;
-  top: -50px;
-  left: calc(50% - 50px);
-}
+  .login-box {
+    width: 320px;
+    height: 420px;
+    background: rgb(61, 60, 60);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+  }
 
-.login-box h1 {
-  margin: 0;
-  padding: 0 0 20px;
-  text-align: center;
-  font-size: 22px;
-}
+  .login-box .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+  }
 
-.login-box label {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  display: block;
-}
+  .login-box h1 {
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+  }
 
-.login-box input {
-  width: 100%;
-  margin-bottom: 20px;
-}
+  .login-box label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+  }
 
-.login-box input[type="email"], .login-box input[type="password"] {
-  border: none;
-  border-bottom: 1px solid #fff;
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: #fff;
-  font-size: 16px;
-}
+  .login-box input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 
-.login-box input[type="submit"] {
-  border: none;
-  outline: none;
-  height: 40px;
-  background: #b80f22;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 20px;
-}
+  .login-box input[type="email"],
+  .login-box input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
 
-.login-box input[type="submit"]:hover {
-  cursor: pointer;
-  background: #ffc107;
-  color: #000;
-}
+  .login-box input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #b80f22;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+  }
 
-.login-box a {
-  text-decoration: none;
-  font-size: 12px;
-  line-height: 20px;
-  color: darkgrey;
-}
+  .login-box input[type="submit"]:hover {
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+  }
 
-.login-box a:hover {
-  color: #fff;
-}
+  .login-box a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
 
-  </style>
+  .login-box a:hover {
+    color: #fff;
+  }
+</style>
+
 <head>
- 
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  
   <link rel=”stylesheet” href=/css/redsocial.css”>
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
 </head>
 
 
 
 <body>
 
-  <(% if(signinMessage) { %>
-  
-  
+
+
+
 
   <div class="login-box">
     <img src="logo.jpg" class="avatar" alt="Avatar Image">
     <h1>Iniciar Sesion</h1>
     <form action="/signin" method="POST">
-      USERNAME INPUT
+      <!-- USERNAME INPUT -->
       <label for="username">Usuario</label>
-      <input type="email"  name="email" required placeholder="Usuario">
-      
-      PASSWORD INPUT
+      <input type="email" name="email" required placeholder="Usuario">
+
+      <!-- PASSWORD INPUT -->
       <label for="password">Contraseña</label>
-      <input  type="password" name="password" required placeholder="Contraseña">
-      <input   type="submit" value="Log In">
-  
-      <div class="alert alert-warning alert-dismissable" role="alert">
-         <(%= signinMessage %>  -->
-      <!-- </div>
-   
+      <input type="password" name="password" required placeholder="Contraseña">
+      <input type="submit" value="Log In">
+
+
+
       <a href="olvidoContrasenia">¿Olvido su contraseña?</a><br>
       <a href="signup">¿No tiene una cuenta?</a>
     </form>
   </div>
-  <(% } %> 
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </body>
+
+
+<div class="container">
+  <% if(signinMessage.length>0) { %>
+  <div class="alert alert-danger">
+    <%= signinMessage %>
+  </div>
+</div>
+<% } %>
 
 
 <script>
 
-var imagen=1;
-    while(error==false)
-{
-       var carpeta= obtener_imagen("carpeta");
-       var img= new Image();
-       img.src=""+carpeta+"/"+imagen+".jpg";
-       img.onerror=error(imagen);
-       imagen++;
-}
+  var imagen = 1;
+  while (error == false) {
+    var carpeta = obtener_imagen("carpeta");
+    var img = new Image();
+    img.src = "" + carpeta + "/" + imagen + ".jpg";
+    img.onerror = error(imagen);
+    imagen++;
+  }
 
-         function error(numero)
-         {
-           error=yes;
-           total=numero
-         }
-</script> --> 
+  function error(numero) {
+    error = yes;
+    total = numero
+  }
+</script>

@@ -1,123 +1,58 @@
 <!DOCTYPE html>
 <html>
 
-  <style>
-  body {
-    background-color: #eeeeee;
-}
-
-.navpos{
-    margin-left: 90%;
-}
-
-.h7 {
-    font-size: 0.8rem;
-}
-
-.gedf-wrapper {
-    margin-top: 0.97rem;
-}
-
-.textBienvenida{
-   margin-left: 35%;
-}
-
-@media (min-width: 992px) {
-    .gedf-main {
-        padding-left: 4rem;
-        padding-right: 4rem;
+<style>
+    body {
+        background-color: #eeeeee;
     }
-    .gedf-card {
-        margin-bottom: 2.77rem;
-    }
-}
 
-/**Reset Bootstrap*/
-.dropdown-toggle::after {
-    content: none;
-    display: none;
-}
+    .navpos {
+        margin-left: 90%;
+    }
+
+    .h7 {
+        font-size: 0.8rem;
+    }
+
+    .gedf-wrapper {
+        margin-top: 0.97rem;
+    }
+
+    .textBienvenida {
+        margin-left: 35%;
+    }
+
+    @media (min-width: 992px) {
+        .gedf-main {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+
+        .gedf-card {
+            margin-bottom: 2.77rem;
+        }
+    }
+
+    /**Reset Bootstrap*/
+    .dropdown-toggle::after {
+        content: none;
+        display: none;
+    }
 </style>
-  <head>
- 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulario Registro</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-        crossorigin="anonymous">
 
-  </head>
-  
-    
-    
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="Bienvenida">Red Social</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            PERFIL
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="crearaccount">Crear Perfil</a>
-            <a class="dropdown-item" href="miaccount">Ver mi perfil</a>            
-          </div>
-        </li>
-        
-  
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-           GRUPO
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="Grupo">Grupos</a>
-            <a class="dropdown-item" href="verGrupos">Ver Grupos</a>
-            <a class="dropdown-item" href="solicitudesGrupo">Solicitudes</a>
-          </div>
-        </li>
-  
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            TUTOR 
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="perfilTutor">Mi Perfil</a>
-            <a class="dropdown-item" href="solicitudesTutor">Solicitudes</a>
-            <a class="dropdown-item" href="alumnosTutor">Alumnos</a>
-          </div>
-        </li>
-  
-        
-        <li class="nav-item">
-          <a class="nav-link" href="chat">CHAT</a>
-        </li>
-   
-        
-        <li class="nav-item navpos">
-          <a class="nav-link navpos" href="signin">EXIT</a>
-        </li>
-     
-        
-      </ul>
-    </div>
-  </nav>
- 
-    
-  <nav class="navbar navbar-light bg-white">
 
-    <a href="#" class="navbar-brand textBienvenida">Bienvenido a Red Social <strong><%=user.email%>! </strong> </a>
 
-    <form class="form-inline">  
-        
+
+
+
+<%include partials/_header %> 
+
+<nav class="navbar navbar-light bg-white">
+
+    <a href="#" class="navbar-brand textBienvenida">Bienvenido a Red Social  </a>
+
+    <form class="form-inline">
+
     </form>
 </nav>
 
@@ -129,32 +64,34 @@
         <div class="col-md-3">
             <div class="card">
                 <div class="card-body">
-                    <div class="h7 text-muted"><%=user.email%></div> 
-                    <div class="h7 text-muted">Carrera : Lic. en Informatica</div>
                     
-                   
+                    <div class="h7 text-muted">Carrera : Lic. en Informatica</div>
+
+
                 </div>
-            
-        
-            <div class="card gedf-card">
-                <div class="card-body">
-                    <h5 class="card-title">Grupos</h5>
-                   
-                    <p class="card-text">En <strong>Red Social UNAHUR</strong>, podras crear grupos de estudios para estudiar juntos a tus compañeros y mucho mas.   </p>
-                    <a href="Grupo" class="card-link">Crea tu Grupo!</a>
-                </div>
-            <div class="card gedf-card">
+
+
+                <div class="card gedf-card">
                     <div class="card-body">
-                        <h5 class="card-title">Amigos</h5>
-                        
-                        <p class="card-text">En <strong>Red Social UNAHUR</strong>, podras añadir a tus amigos de la universidad e interactuar con ellos.</p>
-                        <a href="#" class="card-link">Añadir Amigos!</a>
+                        <h5 class="card-title">Grupos</h5>
+
+                        <p class="card-text">En <strong>Red Social UNAHUR</strong>, podras crear grupos de estudios para
+                            estudiar juntos a tus compañeros y mucho mas. </p>
+                        <a href="Grupo" class="card-link">Crea tu Grupo!</a>
+                    </div>
+                    <div class="card gedf-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Amigos</h5>
+
+                            <p class="card-text">En <strong>Red Social UNAHUR</strong>, podras añadir a tus amigos de la
+                                universidad e interactuar con ellos.</p>
+                            <a href="#" class="card-link">Añadir Amigos!</a>
+                        </div>
                     </div>
                 </div>
-        </div>  
 
-</div>
-    </div>
+            </div>
+        </div>
 
         <div class="col-md-6 gedf-main">
 
@@ -163,10 +100,12 @@
                 <div class="card-header">
                     <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true">Realizar una publicacion</a>
+                            <a class="nav-link active" id="posts-tab" data-toggle="tab" href="#posts" role="tab"
+                                aria-controls="posts" aria-selected="true">Realizar una publicacion</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images" aria-selected="false" href="#images">Imagen</a>
+                            <a class="nav-link" id="images-tab" data-toggle="tab" role="tab" aria-controls="images"
+                                aria-selected="false" href="#images">Imagen</a>
                         </li>
                     </ul>
                 </div>
@@ -175,7 +114,8 @@
                         <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                             <div class="form-group">
                                 <label class="sr-only" for="message">post</label>
-                                <textarea class="form-control" id="message" rows="3" placeholder="Que estas pensando?"></textarea>
+                                <textarea class="form-control" id="message" rows="3"
+                                    placeholder="Que estas pensando?"></textarea>
                             </div>
 
                         </div>
@@ -193,7 +133,7 @@
                         <div class="btn-group">
                             <button type="submit" class="btn btn-primary">Compartir </button>
                         </div>
-                       
+
                     </div>
                 </div>
             </div>
@@ -212,7 +152,7 @@
                                 <div class="h7 text-muted">Lic. en Informatica</div>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
@@ -223,7 +163,7 @@
                     </a>
 
                     <p class="card-text">
-                      Hola tengo una consulta sobre el parcial de Matematica, ¿alguien me podria ayudar? Gracias!
+                        Hola tengo una consulta sobre el parcial de Matematica, ¿alguien me podria ayudar? Gracias!
                     </p>
                 </div>
             </div>
@@ -231,11 +171,12 @@
         </div>
         <div class="col-md-3">
             <div class="card gedf-card">
-                
-                    <script src="https://cdn.onlymega.com/cke0r2s6w000ak7pdvrhh1ptd/embed.js?responsive=1&bnTag=" async></script>
-                
+
+                <script src="https://cdn.onlymega.com/cke0r2s6w000ak7pdvrhh1ptd/embed.js?responsive=1&bnTag="
+                    async></script>
+
             </div>
-            
+
         </div>
     </div>
 </div>

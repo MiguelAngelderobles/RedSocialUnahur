@@ -1,5 +1,9 @@
 const router = require('express').Router();
-// const passport = require('passport');
+const express = require('express')
+const app = express('')
+const axios = require('axios')
+const passport = require('passport');
+require('../configuration/urlBackEnd')
 
 router.get('/', (req, res, next) => {
   res.render('signin');
@@ -21,6 +25,14 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
+app.get('/singin', (req, res) => {
+  axios.post(urlBackEnd + '/singin')
+  .then(function (response) {
+    const data = response.data.data;
+    let user = req.user;
+    res.render('singin', user)  
+  })
+})
 
 
 // router.post('/signin', passport.authenticate('local-signin', {

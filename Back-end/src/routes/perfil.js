@@ -14,13 +14,13 @@ router.use(bodyParser.json())
 //   });
 // });
 
-router.get('/account/', async (req, res, next) => {
+router.get('/perfil/', async (req, res, next) => {
   const perfiles = await Perfil.find(req.usuario.id);
   res.status(200)
   res.send(perfiles)
 });
 
-router.get('/miaccount/:id', async (req, res, next) => {
+router.get('/perfil/:id', async (req, res, next) => {
   const perfiles = await Perfil.findById(req.params.id).populate(usuario);
   console.log(perfiles)
   res.status(200)
@@ -31,7 +31,7 @@ router.get('/miaccount/:id', async (req, res, next) => {
 
 
 
-router.post('/account/add', async (req, res, next) => {
+router.post('/perfl/add', async (req, res, next) => {
   const perfiles = new Perfil(req.body)
   perfiles.nombre=req.body.nombre
   perfiles.carrera=req.body.carrera
@@ -51,24 +51,24 @@ router.post('/account/add', async (req, res, next) => {
   res.redirect('/perfil/miaccount');*/
 });
 
-router.get('/account/turn/:id', async (req, res, next) => {
+router.get('/perfil/turn/:id', async (req, res, next) => {
   let { id } = req.params;
-  const perfiles = await Perfil.findById(id).populate(usuario);
+  const perfiles = await Perfil.findById(id).populate('usuario');
   perfiles.status = !perfiles.status;
   await perfiles.save();
   res.status(200)
 });
 
 
-router.get('/account/:id', async (req, res, next) => {
-  const perfiles = await Perfil.findById(req.params.id).populate(usuario);
+router.get('/perfil/:id', async (req, res, next) => {
+  const perfiles = await Perfil.findById(req.params.id).populate('usuario');
   console.log(perfiles)
   res.status(200)
   res.send(perfiles)
 
 });
 
-router.put('/account/edit/:id', async (req, res, next) => {
+router.put('/perfil/update/:id', async (req, res, next) => {
   const { id } = req.params;
   await Perfil.update({_id: id}, req.body);
   res.status(200)
@@ -82,9 +82,9 @@ router.put('/account/edit/:id', async (req, res, next) => {
 // });
 
 //delete
-router.delete('/delete/:id', async (req, res, next) => {
+router.delete('perfil/delete/:id', async (req, res, next) => {
   let { id } = req.params;
-  await Perfil.remove({_id: id});
+  await Perfil.remove({_id: id}).populate('usuario');
   res.status(200)
   res.send(perfiles)
 }); 

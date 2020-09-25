@@ -17,10 +17,10 @@ const Perfil = mongoose.Schema({
     type: [],
     required: '{PATH} is required!'
   },
-  usuario:{
-    type: mongoose.Schema.Types.ObjectId,
-    href:'usuario'
-  },
+  // usuario:{
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   href:'usuario'
+  // },
   status: {
     type: Boolean,
     default: false

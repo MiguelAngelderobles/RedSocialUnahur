@@ -88,6 +88,13 @@
 
 <%include partials/_header %> 
 
+
+
+ 
+ 
+
+
+
 <tbody>
   <% for(var i=0; i < perfiles.length; i++) { %>
   <tr>
@@ -95,7 +102,8 @@
 
       <p class="h2 text-center">Mi Perfil</p>
 
-    
+     
+
       <div class="form-group">
         <label for="nombre">Nombre de usuario</label>
         <input value=<%= perfiles[i].nombre %> type="user" readonly="readonly" class="form-control" name="nombre">

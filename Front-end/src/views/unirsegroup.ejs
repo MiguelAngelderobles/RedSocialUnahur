@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  body {
+    background: #eee;
+  }
+
+  .navpos {
+    margin-left: 90%;
+  }
+
+  .box-part {
+    background: #FFF;
+    border-radius: 0;
+    padding: 60px 10px;
+    margin: 30px 0px;
+  }
+
+  .text {
+    margin: 10x 0px;
+  }
+
+  .fa {
+    color: #4183D7;
+  }
+
+  .ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .li {
+    float: left;
+  }
+
+
+  .lista3 li:hover:after {
+    left: -.5em;
+    border-left-color: #fa8072;
+  }
+
+  .boton-personalizado {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #2a4aff;
+    border-color: #d8d8d8;
+    border-width: 1px;
+    border-radius: 35px;
+    margin-left: 60px;
+  }
+
+
+
+  /****************
+
+ ****************/
+  .h1 {
+    float: left;
+    margin: 25px;
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 45px;
+    text-align: center;
+  }
+
+  .buscarGrupo {
+    width: 29.8%;
+    margin-left: 30.8%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  }
+
+  .search {
+    width: 30%;
+    margin-left: 30.8%;
+  }
+
+  .espacio {
+    top: 1%;
+    margin-top: 4%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .text1 {
+    margin-left: 25.9%;
+
+
+  }
+
+  .noTiene {
+    display: none
+  }
+
+  .top {
+    margin-bottom: 1.5%;
+  }
+</style>
+
+<%include partials/_header %> 
+
+<!-- Container -->
+<div class="container">
+  <!-- Main Content-->
+  <div class="masthead">
+    <div class="espacio">
+      <p class="text1">
+        <legend>Buscar Grupo</legend>
+      </p>
+    </div>
+    <input class="search top" type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar grupo deseado"
+      title="Empieza a escribir para buscar">
+    <div class="table-responsive ">
+      <table class="table" id="tabla" data-sort="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Participantes</th>
+            <th>Materia</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0;i<grupos.length;i++) { %>
+          <tr>
+            <td><%=grupos[i].nombreGrupo%></td>
+            <td><%=grupos[i].descripcionGrupo%></td>
+            <td><%=grupos[i].cantParticipantes%></td>
+            <td><%=grupos[i].materiaQueAplica%></td>
+            <td><a href="chatgroup">Unirse</a></td>
+          </tr>
+
+        </tbody>
+        <% } %>
+    </div>
+    </table>
+
+
+  </div>
+</div>
+
+<script>
+  function busqueda() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("buscar");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tabla");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+  function busquedaJQsimple() {
+    var filtro = $("#buscar").val().toUpperCase();
+
+    $("#tabla tbody tr").each(function () {
+      texto = $(this).children("td:eq(0)").text().toUpperCase();
+
+      if (texto.indexOf(filtro) < 0) {
+        $(this).hide();
+      } else {
+        $(this).show();
+      }
+
+
+    });
+
+  }
+
+  function buscar() {
+
+    var filtro = $("#buscar").val().toUpperCase();
+
+    $("#tabla td").each(function () {
+      var textoEnTd = $(this).text().toUpperCase();
+      if (textoEnTd.indexOf(filtro) >= 0) {
+        $(this).addClass("existe");
+      } else {
+        $(this).removeClass("existe");
+      }
+    })
+
+    $("#tabla tbody tr").each(function () {
+      if ($(this).children(".existe").length > 0) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    })
+
+  }
+
+  function busquedaJQmultiple() {
+    var filtro = $("#buscar").val().toUpperCase();
+
+    $("#tabla tbody tr").each(function () {
+
+      $(this).children("td").each(function () {
+        var texto = $(this).text().toUpperCase();
+
+        if (texto.indexOf(filtro) < 0) {
+          $(this).addClass("sin");
+        } else {
+          $(this).removeClass("sin");
+        }
+      });
+
+      // nTds = la cantidad de <td> en el <tr> evaluado
+      nTds = $(this).children("td").length
+      // nTdsSin = la cantidad de <td> con la clase ".sin" en el <tr> evaluado
+      nTdsSin = $(this).children(".sin").length
+
+      if (nTdsSin == nTds) {
+        //$(this).hide()
+        $(this).addClass("noTiene");
+      } else {
+        //$(this).show()
+        $(this).removeClass("noTiene");
+      }
+
+    });
+
+  }
+
+
+</script>

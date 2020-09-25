@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const passport = require('passport');
 
+
 router.get('/', (req, res, next) => {
   res.render('signin');
 });
@@ -55,6 +56,7 @@ function isAuthenticated(req, res, next) {
 
   res.redirect('/')
 }
+
 
 router.get('/olvidoContrasenia', (req, res, next) => {
   res.render('olvidoContrasenia');
