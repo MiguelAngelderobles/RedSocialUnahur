@@ -25,12 +25,30 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-app.get('/singin', (req, res) => {
+app.get(urlBackEnd+'/singin', (req, res) => {
   axios.post(urlBackEnd + '/singin')
   .then(function (response) {
     const data = response.data.data;
     let user = req.user;
     res.render('singin', user)  
+  })
+})
+
+router.post(urlBackEnd+'/singin',function(req,res,next){
+  const respuesta = await axios.get(urlBackEndPerfil +'update/id',id)
+  .then(response=>{
+    console.log(response.data)
+  }).catch(err=>{
+    console.log(err)
+  })
+})
+
+app.get(urlBackEnd + '/singout', (req, res) => {
+  axios.post(urlBackEnd + '/singin')
+  .then(function (response) {
+    const data = response.data.data;
+    let user = req.user;
+    res.render('singout', user)  
   })
 })
 
