@@ -4,6 +4,7 @@ const passport = require('passport');
 const Perfil = require('../models/crearPerfil');
 const Grupo = require('../models/crearGrupo');
 const Usuario = require('../models/usuario');
+const Chat = require('../models/Chat');
 
 router.get('/', (req, res, next) => {
   res.render('signin');
@@ -22,6 +23,7 @@ router.get('/CrearCuenta', (req, res, next) => {
 });
 
 router.get('/Bienvenida', (req, res, next) => {
+  
   res.render('Bienvenida');
 });
 
@@ -77,27 +79,6 @@ router.get('/crearGrupo', (req, res, next) => {
 });
 
 
-
-router.get('/chatgroup', async (req, res, next) => {
-  const grupos = await Grupo.find();
-  const perfiles = await Perfil.find();
-  const usuarios = await Usuario.find();
-  res.render('chatgroup',{
-    grupos,perfiles,usuarios
-  });
-});
-
-
-router.get('/editarGrupo', (req, res, next) => {
-  res.render('editarGrupo');
-});
-
-router.get('/chat', (req, res, next) => {
-  res.render('chat');
-  
-});
-
-
 router.get('/alumnosTutor', (req, res, next) => {
   res.render('alumnosTutor');
 });
@@ -137,6 +118,8 @@ router.get('/perfilTutor', (req, res, next) => {
 router.get('/index', (req, res, next) => {
   res.render('/public/chat');
 });*/
+
+
 
 
 module.exports = router;

@@ -5,6 +5,7 @@ const PerfilSchema = Schema({
   carrera: [],
   cursandoActualmente: [],
   preparandoFinales: [],
+  
   image:{
     title: {type: String},
     description: {type: String},

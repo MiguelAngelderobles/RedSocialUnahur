@@ -120,8 +120,8 @@
     </div>
     <input class="search top" type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar grupo deseado"
       title="Empieza a escribir para buscar">
-    <div class="table-responsive ">
-      <table class="table" id="tabla" data-sort="table">
+    <div class="table-responsive table-hover  table-striped ">
+      <table class="table " id="tabla" data-sort="table">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -134,11 +134,11 @@
         <tbody>
           <% for(var i=0;i<grupos.length;i++) { %>
           <tr>
-            <td><%=grupos[i].nombreGrupo%></td>
-            <td><%=grupos[i].descripcionGrupo%></td>
-            <td><%=grupos[i].cantParticipantes%></td>
-            <td><%=grupos[i].materiaQueAplica%></td>
-            <td><a href="chatgroup">Unirse</a></td>
+            <td class="active"><%=grupos[i].nombreGrupo%></td>
+            <td class="active"><%=grupos[i].descripcionGrupo%></td>
+            <td class="active"><%=grupos[i].cantParticipantes%></td>
+            <td ><%=grupos[i].materiaQueAplica%></td>
+            <td><a href="chatgroup/<%= grupos[i]._id %>">Unirse</a></td>
           </tr>
 
         </tbody>

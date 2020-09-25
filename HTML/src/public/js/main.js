@@ -1,7 +1,7 @@
 $(function () {
 
     // conexión del lado del cliente
-    const socket = io.connect();
+    const socket = io.connect(); //mantiene la conexion en tiempo real con el servidor
 
     // obteniendo elementos DOM de la interfaz chat
     const $messageForm = $('#message-form');
@@ -26,7 +26,7 @@ $(function () {
         } else {
           $nickError.html(`
             <div class="alert alert-danger">
-              That username already Exists.
+              El usuario ya existe.
             </div>
           `);
         }
@@ -37,7 +37,7 @@ $(function () {
     // eventos
     $messageForm.submit( e => {
       e.preventDefault();
-      socket.emit('send message', $messageBox.val(), data => {
+      socket.emit('send message', $messageBox.val(), data => { //capturo el valor del mensaje y lo envio al servidor
         $chat.append(`<p class="error">${data}</p>`)
       });
       $messageBox.val('');
@@ -68,5 +68,7 @@ $(function () {
     function displayMsg(data) {
       $chat.append(`<p class="msg"><b>${data.nick}</b>: ${data.msg}</p>`);
     }
-
 });
+
+
+

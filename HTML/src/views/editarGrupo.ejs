@@ -160,53 +160,36 @@
 <div class="container">
 
   <p class="h2 text-center">Editar Grupo</p>
-  <form action="unirseGrupo">
-    <div class="preview text-center">
-      <img class="preview-img" src="logo.jpg" alt="Preview Image" width="100" height="100" />
-      <div class="browse-button">
-        <i class="fa fa-pencil-alt"></i>
-        <input class="browse-input" type="file" name="UploadedFile" id="UploadedFile" />
-      </div>
-      <span class="Error"></span>
+  <form action="/editarGrupo/<%= grupos._id %>" method="post"> 
+    
+      
     </div>
     <div class="form-group">
-      <label>Nombre del Grupo:</label>
-      <input class="form-control" type="text" name="fullname" required placeholder="Ingrese Nombre de Usuario" />
-      <span class="Error"></span>
+      <label for="nombreGrupo">Nombre del Grupo:</label>
+      <input class="form-control" type="text" name="nombreGrupo" required value=<%= grupos.nombreGrupo%>/>
+      
     </div>
     <div class="form-group">
-      <label>Descripcion:</label>
-      <input class="form-control" type="description" name="description" required
-        placeholder="Ingrese una descripcion" />
-      <span class="Error"></span>
+      <label for="descripcionGrupo">Descripcion:</label>
+      <input class="form-control" type="text" name="descripcionGrupo" required value="<%= grupos.descripcionGrupo%>"/>
     </div>
 
     <div class="form-group">
-      <label>Cantidad de Participantes</label><br />
-      <select class="form-control" id="exampleFormControlSelect1">
-        <option type="radio" name="gender" required value="uno" checked> 1</option>
-        <option type="radio" name="gender" required value="dos"> 2</option>
-        <option type="radio" name="gender" required value="tres" checked> 3</option>
-        <option type="radio" name="gender" required value="cuatro">4</option>
-        <option type="radio" name="gender" required value="cinco" checked>5</option>
-        <option type="radio" name="gender" required value="seis">6</option>
+      <label for="cantParticipantes">Participantes:</label>
+      <input class="form-control" type="text" name="cantParticipantes" required value="<%= grupos.cantParticipantes%>"/>
+    </div>
+
+    <div class="form-group">
+      <label for="materiaQueAplica">Materias que aplica</label><br />
+      <select multiple value="<%= grupos.materiaQueAplica %>" class="form-control" name="materiaQueAplica" id="materiaQueAplica">
+        <option>Matematica 1</option>
+        <option>Introducción a la Progrmación</option>
+        <option>Organización de Computadoras</option>
+        <option>Nuevos Entornos y Lenguajes</option>
+        <option>Estructura de Datos</option>
       </select>
-      <span class="Error"></span>
+  
     </div>
-
-    <div class="form-group">
-      <label for="exampleFormControlSelect2">Materias a la que aplicara el grupo</label>
-      <select class="form-control" id="exampleFormControlSelect2">
-        <option>Programacion</option>
-        <option>Ingles</option>
-        <option>Base de Datos</option>
-
-      </select>
-    </div>
-
-
-
-
 
 
     <div class="form-group">

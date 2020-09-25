@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+const {ObjectId} = Schema;
 
 const ChatSchema = new Schema({
 
-  nick: String,
+  nick:String,
+
   msg: String,
   created: { type: Date, default: Date.now }
 });

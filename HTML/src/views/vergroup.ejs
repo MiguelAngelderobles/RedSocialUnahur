@@ -234,6 +234,11 @@
     margin-left: 4%;
   }
 
+  .posicionedit {
+    margin-top: -600%;
+    margin-left: 4%;
+    width: 93%;
+  }
   .cardd {
     margin-top: 5%;
     margin-left: 35%;
@@ -254,7 +259,7 @@
 
 
   <p class=" text-center">
-    <legend>Mis Grupos</legend>
+    <legend>Mi Grupo</legend>
   </p>
 
 
@@ -298,6 +303,9 @@
           Delete
         </a>
     </form>
+    <a href="editarGrupo/<%= grupos[i]._id %>" class="btn btn-info posicionedit">
+      Edit
+    </a>
   </div>
   <% } %>
 </tbody>

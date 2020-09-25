@@ -1,14 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const MateriaSchema = new Schema(
-{
-    materia: {
-        type:String, enum:
-        ['Matematica 1', 'Introducción a la Progrmación', 'Organización de Computadoras']
-    }
-    /*
-    "materias" : [
+    materia = [ 
         {
             "id":1,
             "nombre":"Matematica 1"
@@ -196,11 +189,16 @@ const MateriaSchema = new Schema(
         {
             "id":47,
             "nombre":"Tecnología y Sociedad"
-        }*/
+        }
     
-        
-});
+    ];
 
 
 
-module.exports = mongoose.model('Materia', MateriaSchema);
+    module.exports = function (req, res) {
+        res.writeHead(200, {
+          'Content-Type': 'text/json'
+        });
+        res.write(JSON.stringify(people));
+        res.end();
+      };

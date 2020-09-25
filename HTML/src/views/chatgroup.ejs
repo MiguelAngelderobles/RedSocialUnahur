@@ -31,12 +31,21 @@
     margin-top: 0.9%;
   }
 
-  .color {
+  .color1 {
     background: #0f0c29;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .color2 {
+    background: #9e93ff;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #a2a2e4, #b2acf0, #8074f0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #a8a8f3, #b2ade9, #9e93ff);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
@@ -72,32 +81,36 @@
   }
 
 
-  input-group.md-form.form-sm.form-1 input{
-  border: 1px solid #bdbdbd;
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-.input-group.md-form.form-sm.form-2 input {
-  border: 1px solid #bdbdbd;
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-.input-group.md-form.form-sm.form-2 input.red-border {
-  border: 1px solid #ef9a9a;
-}
-.input-group.md-form.form-sm.form-2 input.lime-border {
-  border: 1px solid #cddc39;
-}
-.input-group.md-form.form-sm.form-2 input.amber-border {
-  border: 1px solid #ffca28;
-}
+  input-group.md-form.form-sm.form-1 input {
+    border: 1px solid #bdbdbd;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+  }
+
+  .input-group.md-form.form-sm.form-2 input {
+    border: 1px solid #bdbdbd;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+  }
+
+  .input-group.md-form.form-sm.form-2 input.red-border {
+    border: 1px solid #ef9a9a;
+  }
+
+  .input-group.md-form.form-sm.form-2 input.lime-border {
+    border: 1px solid #cddc39;
+  }
+
+  .input-group.md-form.form-sm.form-2 input.amber-border {
+    border: 1px solid #ffca28;
+  }
 </style>
 
 <%include partials/_header %>
 
 <head>
   <link rel="stylesheet" href="/css/main.css" />
-  
+
   <!-- BOOTSWATCH COSMO THEME CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cosmo/bootstrap.min.css">
   <!-- FONT AWESOME -->
@@ -122,7 +135,7 @@
           <p id="nickError"></p>
           <div class="card-body">
             <form id="nickForm">
-              <input id="nickname" type="text" class="form-control" autofocus />
+              <input id="nickname" required type="text" class="form-control" autofocus />
               <input type="submit" class="btn btn-warning btn-block mt-2" />
             </form>
           </div>
@@ -154,12 +167,11 @@
           <% } %>
 
           <!-- CUERPO -->
-          <div id="chat" class="card-body"></div>
-
+          <div id="chat1" class="card-body"></div>
           <!-- PIE -->
-          <form id="message-form" class="card-footer">
+          <form id="message-form1" class="card-footer">
             <div class="input-group">
-              <input type="text" id="message" class="form-control" />
+              <input type="text" id="message1" class="form-control" />
               <div class="input-group-append">
                 <button class="btn btn-warning">
                   <i class="fas fa-location-arrow"></i> Enviar
@@ -183,136 +195,148 @@
       </div>
 
 
-      <tbody>
-        <div class="col-md-4 ">
-          <div class="card ">
-            <div class="card-header bg-dark text-white">
-              <h3>Invitar usuarios</h3>
-            </div>
 
-            <form class="form-inline d-flex justify-content-center md-form form-sm active-purple active-purple-2 mt-2">
-              <i class="fas fa-search" aria-hidden="true"></i>
-               <input class="form-control-sm ml-3 w-75" type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar..."
-                title="Empieza a escribir para buscar">
-            </form>
-
-          <div class="card-body" id="tabla" data-sort="table">
-            <% var i=0; %>
-            <% for(var i=0;i<usuarios.length;i++) { %>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <tr>
-              <td><%=usuarios[i].email%></td>
-            </tr>
-      
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item">Invitar</a>
-            </div>
+      <div class="col-md-4 ">
+        <div class="card ">
+          <div class="card-header bg-dark text-white">
+            <h3>Invitar usuarios</h3>
+          </div>
 
 
-          </tbody>
-          <% }%>
-    </div>
+          <input class="search top" type="text" id="buscar" onkeyup="buscar()" placeholder="Buscar grupo deseado"
+            title="Empieza a escribir para buscar">
+          <div class="table-responsive table-hover  table-striped ">
+            <table class="table" id="tabla" data-sort="table">
+            
+             
+                  
+                    <tbody>
+                      <% var i=0; %>
+                      <% for(var i=0;i<usuarios.length;i++) { %>
+                        <tr>
+                    <td ><%=usuarios[i].email%>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     
+                      <td><a href="">Invitar</a></td>
+  
+                  </div>
+                  </td>
+                    
+                
+                </tr>
+              </tbody>
+              <% }%>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+                <button class="btn btn-primary" type="submit">
+                  Invitar
+                </button>
+              </div>
 
 
 
-    <!-- SCRIPTS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/main.js"></script>
+          </div>
+          </table>
+          </form>
 
-    <script>/* W3 Example */
-      function busqueda() {
-        var input, filter, div, a, i;
-        input = document.getElementById("buscar");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("tabla");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < a.length; i++) {
-          tr = tr[i].getElementsByTagName("td")[0];
-          if (td) {
-            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
+
+          <!-- SCRIPTS -->
+          <script src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+          <script src="/socket.io/socket.io.js"></script>
+          <script src="/js/main2.js"></script>
+
+          <script>/* W3 Example */
+            function busqueda() {
+              var input, filter, table, tr, td, i;
+              input = document.getElementById("buscar");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("tabla");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
             }
-          }
-        }
-      }
 
-      function busquedaJQsimple() {
-        var filtro = $("#buscar").val().toUpperCase();
+            function busquedaJQsimple() {
+              var filtro = $("#buscar").val().toUpperCase();
 
-        $("#tabla tbody tr").each(function () {
-          texto = $(this).children("td:eq(0)").text().toUpperCase();
+              $("#tabla tbody tr").each(function () {
+                texto = $(this).children("td:eq(0)").text().toUpperCase();
 
-          if (texto.indexOf(filtro) < 0) {
-            $(this).hide();
-          } else {
-            $(this).show();
-          }
+                if (texto.indexOf(filtro) < 0) {
+                  $(this).hide();
+                } else {
+                  $(this).show();
+                }
 
 
-        });
+              });
 
-      }
-
-      function buscar() {
-
-        var filtro = $("#buscar").val().toUpperCase();
-
-        $("#tabla td").each(function () {
-          var textoEnTd = $(this).text().toUpperCase();
-          if (textoEnTd.indexOf(filtro) >= 0) {
-            $(this).addClass("existe");
-          } else {
-            $(this).removeClass("existe");
-          }
-        })
-
-        $("#tabla tbody tr").each(function () {
-          if ($(this).children(".existe").length > 0) {
-            $(this).show();
-          } else {
-            $(this).hide();
-          }
-        })
-
-      }
-
-      function busquedaJQmultiple() {
-        var filtro = $("#buscar").val().toUpperCase();
-
-        $("#tabla tbody tr").each(function () {
-
-          $(this).children("td").each(function () {
-            var texto = $(this).text().toUpperCase();
-
-            if (texto.indexOf(filtro) < 0) {
-              $(this).addClass("sin");
-            } else {
-              $(this).removeClass("sin");
             }
-          });
 
-          // nTds = la cantidad de <td> en el <tr> evaluado
-          nTds = $(this).children("td").length
-          // nTdsSin = la cantidad de <td> con la clase ".sin" en el <tr> evaluado
-          nTdsSin = $(this).children(".sin").length
+            function buscar() {
 
-          if (nTdsSin == nTds) {
-            //$(this).hide()
-            $(this).addClass("noTiene");
-          } else {
-            //$(this).show()
-            $(this).removeClass("noTiene");
-          }
+              var filtro = $("#buscar").val().toUpperCase();
 
-        });
+              $("#tabla td").each(function () {
+                var textoEnTd = $(this).text().toUpperCase();
+                if (textoEnTd.indexOf(filtro) >= 0) {
+                  $(this).addClass("existe");
+                } else {
+                  $(this).removeClass("existe");
+                }
+              })
 
-      }
+              $("#tabla tbody tr").each(function () {
+                if ($(this).children(".existe").length > 0) {
+                  $(this).show();
+                } else {
+                  $(this).hide();
+                }
+              })
+
+            }
+
+            function busquedaJQmultiple() {
+              var filtro = $("#buscar").val().toUpperCase();
+
+              $("#tabla tbody tr").each(function () {
+
+                $(this).children("td").each(function () {
+                  var texto = $(this).text().toUpperCase();
+
+                  if (texto.indexOf(filtro) < 0) {
+                    $(this).addClass("sin");
+                  } else {
+                    $(this).removeClass("sin");
+                  }
+                });
+
+                // nTds = la cantidad de <td> en el <tr> evaluado
+                nTds = $(this).children("td").length
+                // nTdsSin = la cantidad de <td> con la clase ".sin" en el <tr> evaluado
+                nTdsSin = $(this).children(".sin").length
+
+                if (nTdsSin == nTds) {
+                  //$(this).hide()
+                  $(this).addClass("noTiene");
+                } else {
+                  //$(this).show()
+                  $(this).removeClass("noTiene");
+                }
+
+              });
+
+            }
 
 
-    </script>
+          </script>

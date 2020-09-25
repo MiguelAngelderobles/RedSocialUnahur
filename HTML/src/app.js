@@ -79,8 +79,8 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/crearuser'));
 app.use('/', require('./routes/creargrupo'));
-app.use('/', require('./routes/Materia'));
-
+app.use('/', require('./routes/Solicitud'));
+app.use('/', require('./routes/Chat'));
 // Starting the server
 /*
 app.listen(app.get('port'),()=>
@@ -90,9 +90,9 @@ app.listen(app.get('port'),()=>
 const http = require('http');
 const socketio = require('socket.io');
 
-const server = http.createServer(app);
-const io = socketio.listen(server);
-require('./sockets')(io);//modificado (.)
+const server = http.createServer(app);//creo el servidor
+const io = socketio.listen(server);//ahora va a escuchar en tiempo real
+require('./sockets')(io);
  
 
 async function main() {
