@@ -105,6 +105,10 @@
   .top {
     margin-bottom: 1.5%;
   }
+
+  .PINTAR{
+    background-color: blue;
+  }
 </style>
 
 <%include partials/_header %> 
@@ -133,8 +137,9 @@
         </thead>
         <tbody>
           <% for(var i=0;i<grupos.length;i++) { %>
+        
           <tr>
-            <td class="active"><%=grupos[i].nombreGrupo%></td>
+            <td class="active "><%=grupos[i].nombreGrupo%></td>
             <td class="active"><%=grupos[i].descripcionGrupo%></td>
             <td class="active"><%=grupos[i].cantParticipantes%></td>
             <td ><%=grupos[i].materiaQueAplica%></td>
@@ -142,6 +147,7 @@
           </tr>
 
         </tbody>
+   
         <% } %>
     </div>
     </table>

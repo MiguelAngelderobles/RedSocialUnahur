@@ -11,7 +11,7 @@ router.post('/addgrupo', async (req, res, next) => {
     const grupos = new Grupo(req.body);
     grupos.user = req.user.id
     await grupos.save();
-    console.log(grupos)
+    console.log(req.body)
     res.redirect('/unirsegroup');
   });
   
@@ -24,6 +24,7 @@ router.post('/addgrupo', async (req, res, next) => {
 
   router.get('/creargroup', async (req, res, next) => {
     const grupos = await Grupo.find({user: req.user.id});
+  
     res.render('creargroup', {
         grupos
     });
@@ -71,6 +72,8 @@ router.post('/addgrupo', async (req, res, next) => {
       grupos,perfiles,usuarios
     });
   });
+
+  
 
   
   module.exports = router;

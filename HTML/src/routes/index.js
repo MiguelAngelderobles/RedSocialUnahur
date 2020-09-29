@@ -120,6 +120,14 @@ router.get('/index', (req, res, next) => {
 });*/
 
 
+router.get('/chatgrupal', (req, res, next) => {
+  res.render('chatgrupal');
+});
+
+router.get('/index', (req, res, next) => {
+  res.render('index');
+});
+
 
 
 module.exports = router;

@@ -4,7 +4,7 @@ const GrupoSchema = Schema({
   nombreGrupo: String,
   descripcionGrupo: String,
   cantParticipantes: String,
-  materiaQueAplica: [],
+  materiaQueAplica: String,
   user:{
     type:String,
     required:true
