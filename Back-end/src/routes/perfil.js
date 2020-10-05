@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Perfil = require('../models/perfil');
-const bodyParser=require('body-parser');
-router.use(bodyParser.urlencoded({extend:true}))
-router.use(bodyParser.json())
+const perfil = require('../models/perfil');
 
 
 
@@ -15,40 +13,36 @@ router.use(bodyParser.json())
 // });
 
 router.get('/perfil/', async (req, res, next) => {
-  const perfiles = await Perfil.find(req.usuario.id);
-  res.status(200)
-  res.send(perfiles)
+  const perfiles = await Perfil.find(req.params.id)
+  .then(perfiles =>{
+    res.status(200)
+    res.send(perfiles)})
+  .catch(err=>{console.log(err)})
+  
 });
 
 router.get('/perfil/:id', async (req, res, next) => {
-  const perfiles = await Perfil.findById(req.params.id).populate(usuario);
-  console.log(perfiles)
-  res.status(200)
-  res.send(perfiles)
+  const perfiles = await Perfil.findById(req.params.id).populate(usuario)
+  .then(perfiles =>{
+    res.status(200)
+    res.send(perfiles)})
+  .catch(err=>{console.log(err)})
 });
 
 
 
 
 
-router.post('/perfl/add', async (req, res, next) => {
+router.post('/perfil/add', async (req, res, next) => {
+  console.log('POST /perfil/add')
   const perfiles = new Perfil(req.body)
   perfiles.nombre=req.body.nombre
   perfiles.carrera=req.body.carrera
   perfiles.cursandoActualmente=req.body.cursandoActualmente
   perfiles.preparandoFinales=req.body.preparandoFinales
-  perfiles.usuario = req.usuario.id
-
- 
-  console.log('POST /perfil/add')
-  console.log(req.body)
-  await perfiles.save();
-  
- /* const perfiles = new Perfil(req.body);
-  perfiles.user = req.user.id;//tengo a que usuario le pertenece el perfil creado recientemente
+  perfiles.usuario = req.usuario.id;//tengo a que usuario le pertenece el perfil creado recientemente
   await perfiles.save();
   console.log(perfiles)
-  res.redirect('/perfil/miaccount');*/
 });
 
 router.get('/perfil/turn/:id', async (req, res, next) => {
@@ -57,6 +51,12 @@ router.get('/perfil/turn/:id', async (req, res, next) => {
   perfiles.status = !perfiles.status;
   await perfiles.save();
   res.status(200)
+  res.send(perfiles)
+  .then(perfiles =>{
+    res.status(200)
+    res.send(perfiles)})
+  .catch(err=>{console.log(err)})
+
 });
 
 

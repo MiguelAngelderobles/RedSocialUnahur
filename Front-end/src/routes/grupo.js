@@ -5,7 +5,7 @@ require('../configuration/urlBackEnd')
 const urlBackEndGrupo = urlBackEnd + '/grupo/'
 
 router.get('x',function(req,res,next){
-  const respuesta = await xios.post(urlBackEndGrupo + 'add')
+  const respuesta = await axios.post(urlBackEndGrupo + 'add')
   .then(response=>{
     console.log(response.data)
   }).catch(err=>{

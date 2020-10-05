@@ -6,21 +6,21 @@ const Perfil = mongoose.Schema({
   	required: '{PATH} is required!'
   },
   carrera: {
-    type: [],
+    type: String,
     required: '{PATH} is required!'
   },
   cursandoActualmente: {
-    type: [],
+    type: String,
     required: '{PATH} is required!'
   },
   preparandoFinales: {
-    type: [],
+    type: String,
     required: '{PATH} is required!'
   },
-  // usuario:{
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   href:'usuario'
-  // },
+  usuario:{
+    type: mongoose.Schema.Types.ObjectId,
+    href:'usuario'
+  },
   status: {
     type: Boolean,
     default: false
