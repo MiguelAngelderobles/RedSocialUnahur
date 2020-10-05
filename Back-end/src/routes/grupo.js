@@ -8,19 +8,19 @@ router.post('/grupo/add', async (req, res, next) => {
     await grupos.save();
     console.log(grupos)
     res.status(200)
-    res.json(grupos)
+    res.send(grupos)
   });
   
   router.get('/grupo/join', async (req, res, next) => {
     const grupos = await Grupo.find();
     res.status(200)
-    res.json(grupos)    
+    res.send(grupos)    
   });
 
   router.post('/grupo/create', async (req, res, next) => {
     const grupos = await Grupo.find();
     res.status(200)
-    res.json(grupos)
+    res.send(grupos)
   });
   // grupo/accion
   router.get('/grupo', async (req, res, next) => {
