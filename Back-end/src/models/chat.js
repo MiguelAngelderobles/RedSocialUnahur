@@ -1,15 +1,9 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const { Schema, model } = require("mongoose");
+
 
 const ChatSchema = new Schema({
-    nombre: { 
-        type: String, 
-        required: '{PATH} is required!'
-    },
-    mensaje: {
-        type: String,
-        required: '{PATH} is required!'
-    },
+    nombre:String, 
+    mensaje: String,
     perfil:{
         type: mongoose.Schema.Types.ObjectId,
         href:'perfil'
@@ -18,4 +12,4 @@ const ChatSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Chat', ChatSchema);
+module.exports = model('Chat', ChatSchema);

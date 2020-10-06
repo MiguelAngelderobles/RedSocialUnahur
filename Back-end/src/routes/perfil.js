@@ -36,11 +36,11 @@ router.get('/perfil/:id', async (req, res, next) => {
 router.post('/perfil/add', async (req, res, next) => {
   console.log('POST /perfil/add')
   const perfiles = new Perfil(req.body)
-  perfiles.nombre=req.body.nombre
-  perfiles.carrera=req.body.carrera
-  perfiles.cursandoActualmente=req.body.cursandoActualmente
-  perfiles.preparandoFinales=req.body.preparandoFinales
-  perfiles.usuario = req.usuario.id;//tengo a que usuario le pertenece el perfil creado recientemente
+  // perfiles.nombre=req.body.nombre
+  // perfiles.carrera=req.body.carrera
+  // perfiles.cursandoActualmente=req.body.cursandoActualmente
+  // perfiles.preparandoFinales=req.body.preparandoFinales
+  // perfiles.usuario = req.usuario.id;//tengo a que usuario le pertenece el perfil creado recientemente
   await perfiles.save();
   console.log(perfiles)
 });

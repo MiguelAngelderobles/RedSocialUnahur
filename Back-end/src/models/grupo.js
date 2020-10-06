@@ -1,26 +1,16 @@
 const { Schema, model } = require("mongoose");
 
-const GrupoSchema = Schema({
-  nombreGrupo: {
-    type: String,
-
-  },
-  descripcionGrupo: {
-    type: String,
-
-  },
-  cantParticipantes: {
-    type: String,
-
-  },
-  materiaQueAplica: {
-    type: [],
-
-  },
-  status: {
-    type: Boolean,
-    default: false
-  }
+const Grupo = new Schema({
+  nombreGrupo: String,
+  descripcionGrupo: String,
+  cantParticipantes: String,
+  // materiaQueAplica: {
+  //   type: [String],
+  // },
+  // status: {
+  //   type: Boolean,
+  //   default: false
+  // }
 });
 
-module.exports = model('grupo', GrupoSchema);
+module.exports = model('grupo', Grupo);
