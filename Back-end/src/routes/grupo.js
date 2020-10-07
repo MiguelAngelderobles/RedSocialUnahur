@@ -12,15 +12,15 @@ router.post('/grupo/add', async (req, res, next) => {
   });
   
   router.get('/grupo/join', async (req, res, next) => {
-    const grupos = await Grupo.find();
+    const grupo = await Grupo.find();
     res.status(200)
-    res.send(grupos)    
+    res.send(grupo)    
   });
 
   router.post('/grupo/create', async (req, res, next) => {
-    const grupos = await Grupo.find();
+    const grupo = await Grupo.find();
     res.status(200)
-    res.send(grupos)
+    res.send(grupo)
   });
   // grupo/accion
   router.get('/grupo', async (req, res, next) => {

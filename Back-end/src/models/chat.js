@@ -12,4 +12,4 @@ const ChatSchema = new Schema({
 });
 
 
-module.exports = model('Chat', ChatSchema);
+module.exports = model('Chats', ChatSchema);
