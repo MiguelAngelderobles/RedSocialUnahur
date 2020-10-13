@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const { Schema, model } = require("mongoose");
 
 const GrupoSchema = Schema({
@@ -6,7 +7,7 @@ const GrupoSchema = Schema({
   cantParticipantes: String,
   materiaQueAplica: String,
   user:{
-    type:String,
+    type:String, 
     required:true
   },
   status: {

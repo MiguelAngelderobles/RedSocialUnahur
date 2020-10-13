@@ -12,10 +12,79 @@ const { v4: uuidv4 } = require('uuid');
 const { format } = require('timeago.js');
 
 
+const http = require('http');
+const socketio = require('socket.io');
+const server = http.createServer(app);
+const io = socketio(server);
+
+
+const formatMessage = require('./utils/messages');
+const {
+  userJoin,
+  getCurrentUser,
+  userLeave,
+  getRoomUsers
+} = require('./utils/users');
+
+
+
 mongoose.connect('mongodb://localhost/cruds').then(db => console.log(`db mongo connected ${db}`)).catch(err => console.log(err))
 
 
+
+// Run when client connects
+io.on('connection', socket => {
+  socket.on('joinRoom', ({ username, room }) => {
+    const user = userJoin(socket.id, username, room);
+
+    socket.join(user.room);
+
+    // Welcome current user
+    socket.emit('message', formatMessage(botName, 'Bienvenido al chat!'));
+
+    // Broadcast when a user connects
+    socket.broadcast
+      .to(user.room)
+      .emit(
+        'message',
+        formatMessage(botName, `${user.username} Se ha unido al chat`)
+      );
+
+    // Send users and room info
+    io.to(user.room).emit('roomUsers', {
+      room: user.room,
+      users: getRoomUsers(user.room)
+    });
+  });
+
+  // Listen for chatMessage
+  socket.on('chatMessage', msg => {
+    const user = getCurrentUser(socket.id);
+
+    io.to(user.room).emit('message', formatMessage(user.username, msg));
+  });
+
+  // Runs when client disconnects
+  socket.on('disconnect', () => {
+    const user = userLeave(socket.id);
+
+    if (user) {
+      io.to(user.room).emit(
+        'message',
+        formatMessage(botName, `${user.username} Ha dejado el chat`)
+      );
+
+      // Send users and room info
+      io.to(user.room).emit('roomUsers', {
+        room: user.room,
+        users: getRoomUsers(user.room)
+      });
+    }
+  });
+});
+
 // initializations
+
 
 require('./database');
 require('./passport/local-auth');
@@ -24,9 +93,11 @@ require('./passport/local-auth');
 // settings
 app.set('port',process.env.PORT || 3000)
 app.set('views',path.join(__dirname,'views'))
-
-app.engine('ejs', engine);
+app.engine('ejs',engine);
 app.set('view engine','ejs')
+app.engine('html', require('ejs').renderFile);
+
+
 
 // middlewares
 app.use(morgan('dev'))
@@ -52,6 +123,9 @@ app.use(session({//guardar los datos de la password cuando inicia sesion
     next();//para que continue con el resto de las rutas, si no estuviera queda estancado en el login
   });
 
+ 
+
+
   //images
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
@@ -74,31 +148,25 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, '../public')));
 
 
-
+const botName = '';
 // routes
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/crearuser'));
 app.use('/', require('./routes/creargrupo'));
 app.use('/', require('./routes/Solicitud'));
 app.use('/', require('./routes/Chat'));
+
+
 // Starting the server
 /*
 app.listen(app.get('port'),()=>
-{console.log(`Server connect port ${app.get('port')}`)})
-*/
+{console.log(`Server connect port ${app.get('port')}`)})*/
 
-const http = require('http');
-const socketio = require('socket.io');
 
-const server = http.createServer(app);//creo el servidor
-const io = socketio.listen(server);//ahora va a escuchar en tiempo real
-require('./sockets')(io);
- 
+const PORT = process.env.PORT || 3000;
 
-async function main() {
-  await server.listen(app.get('port'));
-  console.log(`server on port ${app.get('port')}`);
-}
-main();
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+
 
 

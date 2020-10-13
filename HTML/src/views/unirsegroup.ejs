@@ -138,12 +138,12 @@
         <tbody>
           <% for(var i=0;i<grupos.length;i++) { %>
         
-          <tr>
+          <tr > 
             <td class="active "><%=grupos[i].nombreGrupo%></td>
             <td class="active"><%=grupos[i].descripcionGrupo%></td>
             <td class="active"><%=grupos[i].cantParticipantes%></td>
             <td ><%=grupos[i].materiaQueAplica%></td>
-            <td><a href="chatgroup/<%= grupos[i]._id %>">Unirse</a></td>
+            <td><a  href="chatgroup" value="<% grupos[i].nombreGrupo %>"  >Unirse</a></td>
           </tr>
 
         </tbody>

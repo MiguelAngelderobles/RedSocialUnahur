@@ -113,51 +113,7 @@
       <label for="cursandoActualmente">Cursando actualmente</label>
       <select multiple value="<%= perfiles.cursandoActualmente %>" name="cursandoActualmente" required
         class="form-control" id="cursandoActualmente">
-        <option>Matematica 1</option>
-        <option>Introducción a la Progrmación</option>
-        <option>Organización de Computadoras</option>
-        <option>Nuevos Entornos y Lenguajes</option>
-        <option>Estructura de Datos</option>
-        <option>Programación con Objetos 1</option>
-        <option>Base de Datos</option>
-        <option>Ingles 1</option>
-        <option>Matematica 2</option>
-        <option>Programación con Objetos 2</option>
-        <option>Redes de Computadoras</option>
-        <option>Sistemas Operativos</option>
-        <option>Programación Funcional</option>
-        <option>Construcción de Intefaces de Usuarios</option>
-        <option>Algoritmos</option>
-        <option>Estrategias de Persistencias</option>
-        <option>Laboratorio de Sistemas Operativos y Redes</option>
-        <option>Análisis Matemático</option>
-        <option>Lógica y Programación</option>
-        <option>Elementos de Ingeniería de Software</option>
-        <option>Seguridad de la Información</option>
-        <option>Materia UNAHUR 1</option>
-        <option>Ingles 2</option>
-        <option>Matematica 3</option>
-        <option>Programación Concurrente</option>
-        <option>Ingenieria de Requerimientos</option>
-        <option>Desarrollo de Aplicaciones</option>
-        <option>Probabilidad y Estadistica</option>
-        <option>Gestión de Proyectos de Desarrollo de Software</option>
-        <option>Lenguajes Formales y Autómatas</option>
-        <option>Programación con Objetos 3</option>
-        <option>Materia UNAHUR 2</option>
-        <option>Practica Profesional Supervisada (PPS)</option>
-        <option>Teoría de la Computación</option>
-        <option>Arquitectura de Software 1</option>
-        <option>Sistemas Distribuidos y Tiempo Real</option>
-        <option>Tesina de Licenciatura</option>
-        <option>Materia Optativa 1</option>
-        <option>Caracteristicas de Lenguajes de Programación</option>
-        <option>Arquitectura de Software 2</option>
-        <option>Arquitectura de Computadoras</option>
-        <option>Materia Optativa 2</option>
-        <option>Parseo y generación de código</option>
-        <option>Ejercicio Profesional</option>
-        <option>Tecnología y Sociedad</option>
+      
       </select>
     </div>
 
@@ -165,51 +121,7 @@
       <label for="preparandoFinales">Preparando finales</label>
       <select multiple value="<%= perfiles.preparandoFinales %>" name="preparandoFinales" required class="form-control"
         id="preparandoFinales">
-        <option>Matematica 1</option>
-        <option>Introducción a la Progrmación</option>
-        <option>Organización de Computadoras</option>
-        <option>Nuevos Entornos y Lenguajes</option>
-        <option>Estructura de Datos</option>
-        <option>Programación con Objetos 1</option>
-        <option>Base de Datos</option>
-        <option>Ingles 1</option>
-        <option>Matematica 2</option>
-        <option>Programación con Objetos 2</option>
-        <option>Redes de Computadoras</option>
-        <option>Sistemas Operativos</option>
-        <option>Programación Funcional</option>
-        <option>Construcción de Intefaces de Usuarios</option>
-        <option>Algoritmos</option>
-        <option>Estrategias de Persistencias</option>
-        <option>Laboratorio de Sistemas Operativos y Redes</option>
-        <option>Análisis Matemático</option>
-        <option>Lógica y Programación</option>
-        <option>Elementos de Ingeniería de Software</option>
-        <option>Seguridad de la Información</option>
-        <option>Materia UNAHUR 1</option>
-        <option>Ingles 2</option>
-        <option>Matematica 3</option>
-        <option>Programación Concurrente</option>
-        <option>Ingenieria de Requerimientos</option>
-        <option>Desarrollo de Aplicaciones</option>
-        <option>Probabilidad y Estadistica</option>
-        <option>Gestión de Proyectos de Desarrollo de Software</option>
-        <option>Lenguajes Formales y Autómatas</option>
-        <option>Programación con Objetos 3</option>
-        <option>Materia UNAHUR 2</option>
-        <option>Practica Profesional Supervisada (PPS)</option>
-        <option>Teoría de la Computación</option>
-        <option>Arquitectura de Software 1</option>
-        <option>Sistemas Distribuidos y Tiempo Real</option>
-        <option>Tesina de Licenciatura</option>
-        <option>Materia Optativa 1</option>
-        <option>Caracteristicas de Lenguajes de Programación</option>
-        <option>Arquitectura de Software 2</option>
-        <option>Arquitectura de Computadoras</option>
-        <option>Materia Optativa 2</option>
-        <option>Parseo y generación de código</option>
-        <option>Ejercicio Profesional</option>
-        <option>Tecnología y Sociedad</option>
+       
       </select>
     </div>
     <div class="form-group">
@@ -219,3 +131,80 @@
     </div>
   </form>
 </div>
+
+
+
+
+
+
+<script>
+  miformulario = document.querySelector('#miFormulario');
+window.addEventListener("load", function() {
+        cargarMaterias(event);
+    }, false);
+ 
+//Funcion para cargarMaterias al campo "select".
+function cargarMaterias() {
+    //Inicializamos el array.
+    var array = ["Ingles 1", "Matematica 2","Programación con Objetos 2","Redes de Computadoras", "Sistemas Operativos","Programación Funcional","Construcción de Intefaces de Usuarios"
+,"Programación con Objetos 2"," Redes de Computadoras","Sistemas Operativos"  ,"Algoritmos" , "Análisis Matemático", "Laboratorio de Sistemas Operativos y Redes" ,   
+        "Lógica y Programación" , "Elementos de Ingeniería de Software",
+          "Seguridad de la Información","Materia UNAHUR 1" ,"Ingles 2","Matematica 3","Programación Concurrente","Ingenieria de Requerimientos",
+         "Desarrollo de Aplicaciones","Probabilidad y Estadistica","Gestión de Proyectos de Desarrollo de Software","Lenguajes Formales y Autómatas", "Programación con Objetos 3","Materia UNAHUR 2",
+        "Practica Profesional Supervisada(PPS)","Teoría de la Computación","Arquitectura de Software 1","Sistemas Distribuidos y Tiempo Real","Tesina de Licenciatura",
+        "Materia Optativa 1","Caracteristicas de Lenguajes de Programación","Arquitectura de Software 2","Arquitectura de Computadoras","Parseo y generación de código",
+        "Ejercicio Profesional","Tecnología y Sociedad"];
+    //Ordena el array alfabeticamente.
+    array.sort();
+    //Pasamos a la funcion addOptions(el ID del select, las cargarMaterias en el array).
+    addOptions("cursandoActualmente", array);
+}
+ 
+//Funcion para agregar opciones a un <select>.
+function addOptions(domElement, array) {
+    var selector = document.getElementsByName(domElement)[0];
+    //Recorremos el array.
+    for (cursandoActualmente in array) {
+        var opcion = document.createElement("option");
+        opcion.text = array[cursandoActualmente];
+        selector.add(opcion);
+    }
+}
+  
+</script>
+
+<script>
+  miformulario1 = document.querySelector('#miFormulario1');
+window.addEventListener("load", function() {
+  cargarMaterias1(event);
+    }, false);
+ 
+//Funcion para cargarMaterias al campo "select".
+function cargarMaterias1() {
+    //Inicializamos el array.
+    var array = ["Ingles 1", "Matematica 2","Programación con Objetos 2","Redes de Computadoras", "Sistemas Operativos","Programación Funcional","Construcción de Intefaces de Usuarios"
+,"Programación con Objetos 2"," Redes de Computadoras","Sistemas Operativos"  ,"Algoritmos" , "Análisis Matemático", "Laboratorio de Sistemas Operativos y Redes" ,   
+        "Lógica y Programación" , "Elementos de Ingeniería de Software",
+          "Seguridad de la Información","Materia UNAHUR 1" ,"Ingles 2","Matematica 3","Programación Concurrente","Ingenieria de Requerimientos",
+         "Desarrollo de Aplicaciones","Probabilidad y Estadistica","Gestión de Proyectos de Desarrollo de Software","Lenguajes Formales y Autómatas", "Programación con Objetos 3","Materia UNAHUR 2",
+        "Practica Profesional Supervisada(PPS)","Teoría de la Computación","Arquitectura de Software 1","Sistemas Distribuidos y Tiempo Real","Tesina de Licenciatura",
+        "Materia Optativa 1","Caracteristicas de Lenguajes de Programación","Arquitectura de Software 2","Arquitectura de Computadoras","Parseo y generación de código",
+        "Ejercicio Profesional","Tecnología y Sociedad"];
+    //Ordena el array alfabeticamente.
+    array.sort();
+    //Pasamos a la funcion addOptions(el ID del select, las cargarMaterias en el array).
+    addOptions("preparandoFinales", array);
+}
+ 
+//Funcion para agregar opciones a un <select>.
+function addOptions(domElement, array) {
+    var selector = document.getElementsByName(domElement)[0];
+    //Recorremos el array.
+    for (preparandoFinales in array) {
+        var opcion = document.createElement("option");
+        opcion.text = array[preparandoFinales];
+        selector.add(opcion);
+    }
+}
+  
+</script>

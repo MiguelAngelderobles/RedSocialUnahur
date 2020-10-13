@@ -120,13 +120,16 @@ router.get('/index', (req, res, next) => {
 });*/
 
 
-router.get('/chatgrupal', (req, res, next) => {
-  res.render('chatgrupal');
+router.get('/chat', (req, res, next) => {
+  res.render('chat');
 });
 
-router.get('/index', (req, res, next) => {
-  res.render('index');
+router.get('/loginchat', (req, res, next) => {
+  res.render('loginchat');
 });
+
+
+
 
 
 

@@ -63,6 +63,7 @@ router.post('/addgrupo', async (req, res, next) => {
   });
 
 
+/*
   router.get('/chatgroup/:id',  async (req, res, next) => {
     const { id } = req.params;
     const grupos = await Grupo.find ({_id: id}, req.body);
@@ -73,7 +74,29 @@ router.post('/addgrupo', async (req, res, next) => {
     });
   });
 
-  
+  */
 
-  
+
+/*
+ router.get('/logingroup', async (req, res, next) => {
+  const grupos = await Grupo.find({user: req.user.id});
+  res.render('logingroup', {
+      grupos
+  });
+});
+*/
+
+router.get('/chatgroup', async (req, res, next) => {
+  const grupos = await Grupo.find(req.params.id);
+  res.render('chatgroup', {
+      grupos
+  });
+});
+
+
+router.get('/chatg', (req, res, next) => {
+  res.render('chatg');
+});
+
+
   module.exports = router;

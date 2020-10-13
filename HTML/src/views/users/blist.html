@@ -1,0 +1,142 @@
+<!-- Contenido -->
+<main class="app-content">
+
+    <div class="app-title">
+        <div>
+            <h1>
+                <i class="fa fa-users"></i>
+                <span>Lista de usuarios</span>
+            </h1>
+
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item"><a href="#">Lista de usuarios</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Buscar usuarios</h2>
+        </div>
+        <div class="col-md-8">
+            <form class="navbar-form" method="get" action="">
+                <div class="sender row">
+                    <div class="col-md-6">
+                        <input id="buscar" name="busqueda" type="text" class="form-control" size="80"
+                               placeholder="Buscar usuarios">
+                    </div>
+                    <div class="col-md-6">
+                        <button id="btn-buscar" class="btn btn-primary" type="submit"><i class="fa fa-lg fa-fw fa fa-search"></i>
+                            <span>Buscar</span></button>
+                        <button class="btn btn-secondary" href="#">Resetear</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        {% for user in usuarios %}
+        <div class="col-md-12">
+            <div class="card mb-3 border-primary">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5>
+                            {% if usuario.nombre != "" %}
+                                <a href="/users/perfil/?username={{ user.username }}">{{ user.nombre }}
+                                    {{ usuario.apellidos }}</a>
+                            {% else %}
+                                <a href="/users/perfil/?username={{ user.username }}">{{ user.username }}</a>
+                            {% endif %}
+                            </h5>
+                            {% if usuario.foto_perfil != "" %}
+                                <a href="#"><img
+                                    src="{{ user.foto_perfil }}" width="48" height="48"></a>
+                            {% else %}
+                                <a href="#"><img
+                                    src="https://ssl.gstatic.com/images/branding/product/1x/avatar_circle_blue_512dp.png" width="48" height="48"></a>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-8">
+                            <h5>Email</h5>
+                            <p>{{ user.email }}</p>
+
+                            <!-- <a class="alert-link" type="button"
+                                   id="enviarPeticion" href="/users/enviarAmistad/{{ user._id.toString() }}">
+                                    <button class="btn btn-outline-primary">
+                                        <span>Enviar petición de amistad a {{ user.username }}</span>
+                                    </button>
+                                </a> -->
+
+
+                            <!-- Cuando son el mismo usuario -->
+                            {% if user._id.toString() == usuario._id.toString() %}
+
+                            {% elseif user.seHaEnviadoPeticion == true %}
+                            <!-- Cuando se ha enviado la peticion de amistad -->
+                            <div class="alert alert-dismissible alert-success" id="enviada_{{ user.username }}">
+                                <strong>Petición de amistad enviada</strong>
+                            </div>
+
+                            <!-- Cuando los dos usuarios no son amigos -->
+                            {% elseif user.esAmigo == false %}
+                            <form action="/users/enviarAmistad" method="post">
+                                <input type="hidden" name="peticion" value="{{ user._id.toString() }}" />
+                                <button id="{{ user.username }}" type="submit" class="btn btn-outline-primary">
+                                        <span>Enviar petición de amistad a {{ user.username }}</span>
+                                </button>
+                            </form>
+
+                            {% elseif user.esAmigo == true %}
+                            <!-- Cuando los dos usuarios ya son amigos -->
+                            <div class="alert alert-dismissible alert-success">
+                                <strong>¡Qué bien!</strong> <a class="alert-link" href="/users/perfil/?username={{user.username}}">{{ user.username }}</a>
+                                <span> y tú ya sois amigos.</span>
+                            </div>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <!-- Paginación mostrar la actual y 2 anteriores y dos siguientes -->
+    <div class="row text-center">
+        <ul class="pagination">
+            <!-- Primera -->
+            <li class="page-item">
+                <a class="page-link" href="/users/lista-usuarios?pg=1">Primera</a>
+            </li>
+            <!-- Anterior (si la hay ) -->
+            {% if pgActual-1 >= 1 %}
+            <li class="page-item">
+                <a class="page-link" href="/users/lista-usuarios?pg={{ pgActual -1 }}">{{ pgActual -1 }}</a>
+            </li>
+            {% endif %}
+            <!-- Actual -->
+            <li class="page-item active">
+                <a class="page-link" href="/users/lista-usuarios?pg={{ pgActual }}">{{ pgActual }}</a>
+            </li>
+            <!-- Siguiente (si la hay) -->
+            {% if pgActual+1 <= pgUltima %}
+            <li class="page-item">
+                <a class="page-link" href="/users/lista-usuarios?pg={{ pgActual+1 }}">{{ pgActual+1 }}</a>
+            </li>
+            {% endif %}
+            <!-- Última -->
+            <li class="page-item">
+                <a class="page-link" href="/users/lista-usuarios?pg={{ pgUltima }}">Última</a>
+            </li>
+        </ul>
+    </div>
+</main>
