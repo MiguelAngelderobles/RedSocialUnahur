@@ -1,5 +1,8 @@
 const Chat = require('../models/chat');
 const Perfil = require('../models/perfil');
+const bodyParser=require('body-parser');
+  router.use(bodyParser.urlencoded({extend:true}))
+  router.use(bodyParser.json())
 
 module.exports = io => {
 

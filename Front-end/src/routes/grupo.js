@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-require('../configuration/urlBackEnd')
+const urlBackEnd = require('../configuration/urlBackEnd')
 const urlBackEndGrupo = urlBackEnd + '/grupo/'
 
 router.get('x',function(req,res,next){

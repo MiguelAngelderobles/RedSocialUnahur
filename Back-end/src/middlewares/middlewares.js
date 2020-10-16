@@ -2,6 +2,7 @@ const middlewareApp = async (app) => {
   const morgan = require('morgan')
   const passport = require('passport');
   const session = require('express-session');
+
   app.use(morgan('dev'))
   app.use(session({//guardar los datos de la password cuando inicia sesion
     secret: 'mysecretsession',

@@ -2,8 +2,7 @@ const router = require('express').Router();
 const express = require('express')
 const app = express('')
 const axios = require('axios')
-const passport = require('passport');
-require('../configuration/urlBackEnd')
+const urlBackEnd = "http://localhost:7000"
 
 router.get('/', (req, res, next) => {
   res.render('signin');
@@ -25,30 +24,34 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-app.get(urlBackEnd+'/singin', (req, res) => {
+app.get(urlBackEnd +'/index', (req, res) => {
   axios.post(urlBackEnd + '/singin')
   .then(function (response) {
     const data = response.data.data;
-    let user = req.user;
-    res.render('singin', user)  
+    // let user = req.user;
+    res.render('singin',data)  
+  }).catch(err=>{console.log(err)
   })
 })
 
-router.post(urlBackEnd+'/singin',function(req,res,next){
-  const respuesta = await axios.get(urlBackEndPerfil +'update/id',id)
+router.post(urlBackEnd+'/index',function(req,res,next){
+  const respuesta =  axios.get(urlBackEndPerfil +'update/id',id)
   .then(response=>{
     console.log(response.data)
+    const data = response.data.data;
+    res.render('singin',data)  
+
   }).catch(err=>{
     console.log(err)
   })
 })
 
-app.get(urlBackEnd + '/singout', (req, res) => {
-  axios.post(urlBackEnd + '/singin')
+app.get(urlBackEnd + '/index', (req, res) => {
+  axios.post(urlBackEnd + 'singup')
   .then(function (response) {
     const data = response.data.data;
     let user = req.user;
-    res.render('singout', user)  
+    res.render('singout', data)  
   })
 })
 

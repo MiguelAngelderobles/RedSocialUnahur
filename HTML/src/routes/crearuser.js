@@ -9,6 +9,7 @@ const { unlink } = require('fs-extra');
 router.use(bodyParser.urlencoded({extend:true}))
 router.use(bodyParser.json())
 
+
 router.get('/crearaccount', async (req, res) => {
   const perfiles = await Perfil.find({user: req.user.id});
   res.render('crearaccount', {

@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+ 
+ .estilo{
+    width: 50%;
+    margin-left:25%;
+    margin-top: 1%;
+    margin-bottom: 30px;
+    
+  
+  }
+  .estilo1{
+    margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+    
+  }
+
+
+.form-register {
+ 
+  width: 400px;
+
+  background: #24303c;
+  padding: 30px;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-family: 'calibri';
+  color: white;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.navpos{
+    margin-left: 90%;
+}
+
+.controls {
+  width: 100%;
+  background: #24303c;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid #1f53c5;
+  font-family: 'calibri';
+  font-size: 18px;
+  color: white;
+}
+
+.form-register p {
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.form-register a {
+  color: white;
+  text-decoration: none;
+}
+
+.form-register a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-register .botons {
+  width: 100%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+.boton-personalizado{
+ 
+text-decoration:none;
+font-weight: 500;
+font-size: 15px;
+color:#ffffff;
+padding-top:10px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+background-color:#2a4aff;
+border-color: #d8d8d8;
+border-width: 1px;
+border-radius:35px;
+margin-left: 75%;
+}
+.width{
+  width: 20%;
+  margin-left: 77%;
+  margin-bottom: 2%;
+  
+}
+  </style>
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+</head>
+
+  
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="Bienvenida">Red Social</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PERFIL
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="crearaccount">Crear Perfil</a>
+          <a class="dropdown-item" href="miaccount">Ver mi perfil</a>   
+       
+          
+        </div>
+      </li>
+      
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         GRUPO
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Grupo">Grupos</a>
+          <a class="dropdown-item" href="verGrupos">Ver Grupos</a>
+          <a class="dropdown-item" href="solicitudesGrupo">Solicitudes</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          TUTOR 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="perfilTutor">Mi Perfil</a>
+          <a class="dropdown-item" href="solicitudesTutor">Solicitudes</a>
+          <a class="dropdown-item" href="alumnosTutor">Alumnos</a>
+        </div>
+      </li>
+
+      
+      <li class="nav-item">
+        <a class="nav-link" href="chat">CHAT</a>
+      </li>
+     
+    
+      <li class="nav-item navpos">
+        <a class="nav-link navpos" href="singin">EXIT</a>
+      </li>
+
+      
+    </ul>
+  </div>
+</nav>
+<div class="card estilo">
+  <div class="card-header bg-primary">
+    <h5>CREAR GRUPO</h5>
+  </div>
+
+<form class="estilo1">
+  
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nombre del Grupo</label>
+    <input type="user" required class="form-control" id="exampleFormControlInput1" placeholder="Nombre del grupo">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleFormControlInput2">Descripción</label>
+    <input type="email" required class="form-control" id="exampleFormControlInput2" placeholder="Descripción del grupo">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect3">Cantidad de Participantes</label>
+    <select class="form-control" id="exampleFormControlSelect3">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect4">Materia a la que Aplicará el Grupo</label>
+    <select class="form-control" id="exampleFormControlSelect4">
+      <option>Programacion</option>
+      <option>Ingles</option>
+      <option>Base de Datos</option>
+
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect5">Privacidad</label>
+    <select class="form-control" id="exampleFormControlSelect5">
+      <option>Publico</option>
+      <option>Privado</option>
+    </select>
+  </div>
+  
+  <form>
+    <div class="form-group">
+      <label for="exampleFormControlFile1">Cargar Imagen del Grupo</label>
+      <input type="file" class="form-control-file" id="exampleFormControlFile1">
+    </div>
+ 
+
+  
+   
+  </form>
+  <a href="unirseGrupo" class="btn btn-primary width">Guardar</a>
+</div>
+</form>

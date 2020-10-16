@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const Grupo = require('../models/grupo');
+const bodyParser=require('body-parser');
 
+router.use(bodyParser.urlencoded({extend:true}))
+router.use(bodyParser.json())
 
 router.post('/grupo/add', async (req, res, next) => {
     const grupos = new Grupo(req.body);
@@ -31,9 +34,10 @@ router.post('/grupo/add', async (req, res, next) => {
   
   router.delete('/grupo/delete/:id', async (req, res, next) => {
     let { id } = req.params;
-    await Grupo.remove({_id: id});
+    await Grupo.deleteOne({_id: id});
     res.status(200)
-  });
+  });// falla pero borra 
+  
   router.put('/grupo/update/:id', async (req, res, next) => {
     const { id } = req.params;
     await Grupo.update({_id: id}, req.body);

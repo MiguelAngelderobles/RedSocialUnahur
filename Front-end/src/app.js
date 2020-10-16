@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express('')
+const middlewareApp = require('./middleware/middleware')
+const configurApp = require('./configuration/config')
+
+configurApp(app)
+middlewareApp(app,express)
 
 
 require('./configuration/config')
-require('./middleware/middlware')
+require('./middleware/middleware')
 
 app.use('/', require('../src/routes/index'));
 

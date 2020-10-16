@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const Perfil = require('../models/perfil');
-const perfil = require('../models/perfil');
 
+const bodyParser=require('body-parser');
 
-
+router.use(bodyParser.urlencoded({extend:true}))
+router.use(bodyParser.json())
+  
 // router.get('/account/getAll', async (req, res) => {
 //   const perfiles = await Perfil.find({user: req.user.id});
 //   res.render('crearaccount', {
@@ -22,16 +24,12 @@ router.get('/perfil/', async (req, res, next) => {
 });
 
 router.get('/perfil/:id', async (req, res, next) => {
-  const perfiles = await Perfil.findById(req.params.id).populate(usuario)
+  const perfiles = await Perfil.findById(req.params.id).populate('usuario')
   .then(perfiles =>{
     res.status(200)
     res.send(perfiles)})
   .catch(err=>{console.log(err)})
 });
-
-
-
-
 
 router.post('/perfil/add', async (req, res, next) => {
   console.log('POST /perfil/add')
@@ -83,9 +81,8 @@ router.put('/perfil/update/:id', async (req, res, next) => {
 //delete
 router.delete('perfil/delete/:id', async (req, res, next) => {
   let { id } = req.params;
-  await Perfil.remove({_id: id}).populate('usuario');
+  await Perfil.deleteOne({_id: id});
   res.status(200)
-  res.send(perfiles)
 }); 
 //cuenta/accion
 

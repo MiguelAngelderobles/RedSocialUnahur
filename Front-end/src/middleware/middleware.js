@@ -1,10 +1,7 @@
-
-
-const middleware = async (app,express) =>{
-    const express = require('express')
-    const app = express('')
+const middlewareApp = async (app,express) =>{
+    const flash = require('connect-flash')
     const morgan = require('morgan')
-    
+    app.use(flash)
     app.use(morgan('dev'))
     app.use(express.static("img"))
     app.use(express.urlencoded({extended:true}))
@@ -18,4 +15,6 @@ const middleware = async (app,express) =>{
         console.log(app.locals)
         next();//para que continue con el resto de las rutas, si no estuviera queda estancado en el login
     })
-};
+  }
+
+module.exports = middlewareApp; 

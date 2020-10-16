@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body{
+    background: #eee;
+}
+span{
+    font-size:15px;
+}
+
+.box{
+    padding: 5px 0px;
+}
+.navpos{
+    margin-left: 90%;
+}
+
+
+.box-part{
+    background:#FFF;
+    border-radius:0;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+.text{
+    margin:20px 0px;
+}
+
+.fa{
+     color:#4183D7;
+}
+  .ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+ .li {
+    float: left;
+  }
+  
+ .li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+  }
+  
+  .li.dropdown {
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .Title{
+      background-color: #8BC6EC;
+      background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+      
+
+
+      text-align: center;
+  }
+
+  .Grupo {
+    text-align:justify;
+    padding: 50px;
+    padding-left: 350px; 
+  }
+
+  .Titulo{
+      color: #32de84;
+  }
+
+  .lista3 {
+    counter-reset: li; 
+    list-style: none; 
+    list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    width:485px;
+    
+}
+
+.lista3 ol {
+    margin: 0 0 0 2em; 
+}
+
+.lista3 li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 2.5em;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    transition: all .3s ease-out;   
+}
+
+.lista3 li:hover{
+    background: #eee;
+}   
+
+.lista3 li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.lista3 li:after{
+    position: absolute; 
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    transition: all .3s ease-out;               
+}
+
+.lista3 li:hover:after{
+    left: -.5em;
+    border-left-color: #fa8072;             
+}
+
+.boton-personalizado{
+text-decoration:none;
+font-weight: 600;
+font-size: 20px;
+color:#ffffff;
+padding-top:15px;
+padding-bottom:15px;
+padding-left:40px;
+padding-right:40px;
+background-color:#2a4aff;
+border-color: #d8d8d8;
+border-width: 1px;
+border-radius:35px;
+margin-left: 60px;
+}
+
+ /*FLEXBOX */
+ .flex-container {
+  display: flex;
+  height: 300px;
+  flex-wrap: wrap;
+  align-content: space-between;
+  width: 1000px;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 280px;
+  margin: 5px;
+  height: 200px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 20px;
+}
+
+.botons {
+  width: 50%;
+  background: #1f53c5;
+  border: none;
+  padding: 12px;
+  color: white;
+  margin: 16px 0;
+  font-size: 16px;
+}
+
+/*SEARCH */
+.active-pink-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-pink input.form-control[type=text] {
+  border-bottom: 1px solid #f48fb1;
+  box-shadow: 0 1px 0 0 #f48fb1;
+}
+.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+.active-purple input.form-control[type=text] {
+  border-bottom: 1px solid #ce93d8;
+  box-shadow: 0 1px 0 0 #ce93d8;
+}
+.active-cyan-2 input.form-control[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan input.form-control[type=text] {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+}
+.active-cyan .fa, .active-cyan-2 .fa {
+  color: #4dd0e1;
+}
+.active-purple .fa, .active-purple-2 .fa {
+  color: #ce93d8;
+}
+.active-pink .fa, .active-pink-2 .fa {
+  color: #f48fb1;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+.flexsearch {
+  padding: 0 25px 0 200px; /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+  -webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+     height: 30px;
+     width: 250px;
+    
+  padding: 0 46px 0 10px;
+	border-color: #888;
+  border-radius: 35px; /* (height/2) + border-width */
+  border-style: solid;
+	border-width: 2px;
+  margin-top: 15px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+	font-size: 16px;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+   
+}
+	
+.flexsearch--submit {
+  position: absolute;
+	right: 0;
+	top: 0;
+	display: block;
+	
+	height: 60px;
+  padding: 0;
+  border: none;
+	margin-top: 2px; /* margin-top + border-width */
+  margin-right: 830px; /* border-width */
+	background: transparent;
+  color: #888;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 25px;
+  line-height: 60px;
+}
+
+.flexsearch--input:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+ 	color: #333; 
+}
+
+.flexsearch--submit:hover {
+  color: #333;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: #888;  
+}
+
+input:-moz-placeholder {
+  color: #888
+}
+
+
+/****************
+
+ ****************/
+.h1 {
+  float: left;
+  margin: 25px;
+  color: #333;
+  font-family: 'Helvetica', sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 45px;
+  text-align: center;
+}
+.buscarGrupo{
+  width: 29.8%;
+  margin-left: 30.8%;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  
+}
+
+.search{
+  width: 30%;
+  margin-left: 30.8%;
+}
+
+.espacio{
+  top: 10%;
+  margin-top: 9%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.text1{
+  margin-left: 31%;
+
+  
+}
+
+
+
+
+  </style>
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Formulario Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  
+</head>
+
+  
+  
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="Bienvenida">Red Social</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PERFIL
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="crearaccount">Crear Perfil</a>
+          <a class="dropdown-item" href="miaccount">Ver mi perfil</a>   
+          
+        </div>
+      </li>
+      
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         GRUPO
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Grupo">Grupos</a>
+          <a class="dropdown-item" href="verGrupos">Ver Grupos</a>
+          <a class="dropdown-item" href="solicitudesGrupo">Solicitudes</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          TUTOR 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="perfilTutor">Mi Perfil</a>
+          <a class="dropdown-item" href="solicitudesTutor">Solicitudes</a>
+          <a class="dropdown-item" href="alumnosTutor">Alumnos</a>
+        </div>
+      </li>
+
+     
+      <li class="nav-item">
+        <a class="nav-link" href="chat">CHAT</a>
+      </li>
+   
+      <li class="nav-item navpos">
+        <a class="nav-link navpos" href="signin">EXIT</a>
+      </li>
+
+      
+    </ul>
+  </div>
+</nav>
+
+  <div class="espacio">
+    <p class="h2 text1">Buscar Grupo</p>
+  <div class="active-cyan-3 active-cyan-4 mb-4 search">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  </div>
+  <body>
+    
+  
+
+  <div class="box">
+    <div class="container">
+     	<div class="row">
+			 
+			    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part card text-center">
+                        
+                        
+                        
+						<div class="title">
+							<h4>Matematica 2</h4>
+						</div>
+                        
+						<div class="text">
+							<span>Preparando Parciales</span>
+						</div>
+                        
+						<a href="chatGrupo">Unirse</a>
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part card text-center">
+					    
+					   
+                    
+						<div class="title">
+							<h4>Programacion</h4>
+						</div>
+                        
+						<div class="text">
+              <span>Preparando Parciales</span>						
+            </div>
+                        
+            <a href="chatGrupo">Unirse</a>
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part card text-center">
+                        
+                      
+                        
+						<div class="title">
+							<h4>Base de Datos</h4>
+						</div>
+                        
+						<div class="text">
+              <span>Preparando Parciales</span>
+            						</div>
+                        
+						<a href="chatGrupo">Unirse</a>
+                        
+					 </div>
+				</div>	 
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part card text-center">
+                        
+                        
+						<div class="title">
+							<h4>Ingles</h4>
+						</div>
+                        
+						<div class="text">
+              <span>Preparando Parciales</span>
+            						</div>
+                        
+            <a href="chatGrupo">Unirse</a>
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part card text-center">
+					    
+                    
+						<div class="title">
+							<h4>Programacion 2</h4>
+						</div>
+                        
+						<div class="text">
+              <span>Preparando Parciales</span>
+						</div>
+                        
+						<a href="chatGrupo">Unirse</a>
+                        
+					 </div>
+				</div>	 
+				
+				 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               
+					<div class="box-part card text-center">
+                        
+                        
+						<div class="title">
+							<h4>Estructura de Datos</h4>
+						</div>
+                        
+						<div class="text">
+              <span>Preparando Parciales</span>
+						</div>
+                        
+						<a href="chatGrupo">Unirse</a>
+                        
+					 </div>
+				</div>
+		
+		</div>		
+    </div>
+</div>
+</body>

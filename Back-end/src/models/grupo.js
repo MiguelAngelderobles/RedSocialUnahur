@@ -1,10 +1,10 @@
 const { Schema, model } = require("mongoose");
 
 const GrupoSchema = new Schema({
-  nombreGrupo: {type: String},
-  descripcionGrupo: {type: String},
-  cantParticipantes: {type: String},
-  materiaQueAplica: {type:[String]},
+  nombreGrupo: String,
+  descripcionGrupo: String,
+  cantParticipantes: String,
+  materiaQueAplica:[String],
   status: {
     type: Boolean,
     default: false
