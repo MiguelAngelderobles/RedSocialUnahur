@@ -3,7 +3,8 @@ const { Schema } = mongoose;
 
 const SolicitudSchema = new Schema({
 
-  mensaje: String,
+  user: { type: Schema.ObjectId, ref: 'usuario' },
+	followed: { type: Schema.ObjectId, ref: 'usuario' },
   created: { type: Date, default: Date.now }
 });
 

@@ -153,7 +153,7 @@ const botName = '';
 app.use('/', require('./routes/index'));
 app.use('/', require('./routes/crearuser'));
 app.use('/', require('./routes/creargrupo'));
-app.use('/', require('./routes/Solicitud'));
+app.use('/', require('./routes/follow'));
 app.use('/', require('./routes/Chat'));
 
 

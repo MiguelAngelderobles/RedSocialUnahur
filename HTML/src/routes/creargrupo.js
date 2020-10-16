@@ -86,17 +86,30 @@ router.post('/addgrupo', async (req, res, next) => {
 });
 */
 
+
+
 router.get('/chatgroup', async (req, res, next) => {
-  const grupos = await Grupo.find(req.params.id);
+  const grupos = await Grupo.find({ _id: req.query.id });
   res.render('chatgroup', {
       grupos
   });
 });
 
+router.get('/chatg', async (req, res, next) => {
+  const grupos = await Grupo.find({ _id: req.query.id });
+  const perfiles = await Perfil.find();
+  const usuarios = await Usuario.find();
+  res.render('chatg', {
+      grupos, usuarios, perfiles
+  });
+});
+
+
 
 router.get('/chatg', (req, res, next) => {
   res.render('chatg');
 });
+
 
 
   module.exports = router;

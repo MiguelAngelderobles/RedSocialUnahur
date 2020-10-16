@@ -111,19 +111,26 @@
       <div class="card">
      
         <div class="card-body">
-            <% for(var i=0; i < grupos.length; i++) { %>
-            <input value=<%= grupos[i].nombreGrupo %> type="user" readonly="readonly" class="form-control" name="nombreGrupo">
-            <% } %>
-          <a name="boton01" id="boton01" type="button" href="#" class="btn btn-primary">Aceptar</a>
-          <a name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" href="#"
+          <tbody>
+            <% var i=0; %>
+            <%if(grupos.length){%>
+              <div class="form-control">
+                <input name="room" id="room" id="room-name" value="<%= grupos[i].nombreGrupo %>" readonly="readonly" id="nombreGrupo"
+                    class="form-control btn btn-primary" name="nombreGrupo">
+                         
+          
+                      <button type="submit" class="btn">Entrar</button> <br> <br>
+                      </div>
+
+                      
+            <a name="boton01" id="boton01" type="button" onclick="ConfirmDemo()" href="#"
             class="btn btn-danger">Cancelar</a>
         </div>
       </div>
     </div>
   </div>
-  
+  <% } %>
 </tbody>
-
   
 
 </div>

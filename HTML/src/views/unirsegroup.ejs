@@ -143,7 +143,7 @@
             <td class="active"><%=grupos[i].descripcionGrupo%></td>
             <td class="active"><%=grupos[i].cantParticipantes%></td>
             <td ><%=grupos[i].materiaQueAplica%></td>
-            <td><a  href="chatgroup" value="<% grupos[i].nombreGrupo %>"  >Unirse</a></td>
+            <td><a  href="chatgroup?id=<%= grupos[i].id %>"  value="<% grupos[i].nombreGrupo %>" >Unirse</a></td>          
           </tr>
 
         </tbody>

@@ -62,8 +62,8 @@ router.get('/turn/:id', async (req, res, next) => {
 });
 
 
-router.get('/edit/:id', async (req, res, next) => {
-  const perfiles = await Perfil.findById(req.params.id);
+router.get('/edit', async (req, res, next) => {
+  const perfiles = await Perfil.find({ _id: req.query.id });
   console.log(perfiles)
   res.render('edit', { perfiles });
 });

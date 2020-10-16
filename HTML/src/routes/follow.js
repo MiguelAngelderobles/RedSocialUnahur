@@ -4,7 +4,7 @@ const Grupo = require('../models/crearGrupo');
 const Perfil = require('../models/crearPerfil');
 const Usuario = require('../models/usuario');
 
-
+/*
 //estoy hay que modificarlo
 router.post('/solicitudesgroup', async (req, res, next) => {
 
@@ -13,12 +13,18 @@ router.post('/solicitudesgroup', async (req, res, next) => {
     console.log(grupos)
     
   });
+*/
 
   router.get('/solicitudesgroup', async (req, res, next) => {
-    const grupos = await Grupo.find({user: req.user.id})
+    const grupos = await Grupo.find({ _id: req.query.id });
+    const perfiles = await Perfil.find();
+    const usuarios = await Usuario.find({ _id: req.query.id });
     res.render('solicitudesgroup', {
-      grupos
+      grupos, perfiles,usuarios
     });
   });
+
+
+  
 
   module.exports = router;
