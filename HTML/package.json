@@ -18,13 +18,20 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.17.1",
+    "fs-extra": "^9.0.1",
     "handlebars": "^4.7.6",
+    "moment": "^2.29.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.24",
     "morgan": "^1.10.0",
+    "multer": "^1.4.2",
     "nodemon": "^2.0.4",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "sudo": "^1.0.3"
+    "socket.io": "^2.3.0",
+    "sudo": "^1.0.3",
+    "timeago": "^1.6.7",
+    "timeago.js": "^4.0.2",
+    "uuid": "^8.3.1"
   }
 }
