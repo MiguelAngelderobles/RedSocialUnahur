@@ -1,11 +1,10 @@
-const Chat = require('../models/chat');
-const Perfil = require('../models/perfil');
-const bodyParser=require('body-parser');
-  router.use(bodyParser.urlencoded({extend:true}))
-  router.use(bodyParser.json())
+const socketUp = async (io) => {
+  const Chat = require('../models/chat');
 
-module.exports = io => {
-
+  const bodyParser=require('body-parser');
+    router.use(bodyParser.urlencoded({extend:true}))
+    router.use(bodyParser.json())
+  
   let users = {};
 
   io.on('connection', async socket => {
@@ -72,3 +71,5 @@ module.exports = io => {
   });
 
 }
+
+module.exports = socketUp

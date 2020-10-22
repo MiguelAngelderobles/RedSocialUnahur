@@ -1,11 +1,13 @@
 const router = require('express').Router();
-const express = require('express')
-const app = express('')
-const axios = require('axios')
-const urlBackEnd = "http://localhost:7000"
+// const express = require('express')
+// const app = express('')
+// const axios = require('axios')
+// const urlBackEnd = "http://localhost:7000"
 
 router.get('/', (req, res, next) => {
   res.render('signin');
+  // res.render('Bienvenida');
+  console.log('console log bra')
 });
 
 router.get('/signin', (req, res, next) => {
@@ -24,36 +26,36 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-app.get(urlBackEnd +'/index', (req, res) => {
-  axios.post(urlBackEnd + '/singin')
-  .then(function (response) {
-    const data = response.data.data;
-    // let user = req.user;
-    res.render('singin',data)  
-  }).catch(err=>{console.log(err)
-  })
-})
+// app.get(urlBackEnd +'/index', (req, res) => {
+//   axios.post(urlBackEnd + '/singin')
+//   .then(function (response) {
+//     const data = response.data.data;
+//     // let user = req.user;
+//     res.render('singin',data)  
+//   }).catch(err=>{console.log(err)
+//   })
+// })
 
-router.post(urlBackEnd+'/index',function(req,res,next){
-  const respuesta =  axios.get(urlBackEndPerfil +'update/id',id)
-  .then(response=>{
-    console.log(response.data)
-    const data = response.data.data;
-    res.render('singin',data)  
+// router.post(urlBackEnd+'/index',function(req,res,next){
+//   const respuesta =  axios.get(urlBackEndPerfil +'update/id',id)
+//   .then(response=>{
+//     console.log(response.data)
+//     const data = response.data.data;
+//     res.render('singin',data)  
 
-  }).catch(err=>{
-    console.log(err)
-  })
-})
+//   }).catch(err=>{
+//     console.log(err)
+//   })
+// })
 
-app.get(urlBackEnd + '/index', (req, res) => {
-  axios.post(urlBackEnd + 'singup')
-  .then(function (response) {
-    const data = response.data.data;
-    let user = req.user;
-    res.render('singout', data)  
-  })
-})
+// app.get(urlBackEnd + '/index', (req, res) => {
+//   axios.post(urlBackEnd + 'singup')
+//   .then(function (response) {
+//     const data = response.data.data;
+//     let user = req.user;
+//     res.render('singout', data)  
+//   })
+// })
 
 
 // router.post('/signin', passport.authenticate('local-signin', {
