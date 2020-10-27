@@ -1,5 +1,3 @@
-const socketUp = require('../socket/socket')
-
 const configurApp = async (app) => {
     const http = require('http') 
     const socketio = require('socket.io')

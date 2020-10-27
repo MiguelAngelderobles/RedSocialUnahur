@@ -1,7 +1,6 @@
 const configurApp =  async (app) => {
     const path = require('path')
     const engine = require('ejs-mate');
-    const http = require('html')
     
     app.set('views',path.join(__dirname,'../views'));
     app.engine('ejs', engine);

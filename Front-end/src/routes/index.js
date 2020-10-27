@@ -1,14 +1,22 @@
 const router = require('express').Router();
 // const express = require('express')
 // const app = express('')
-// const axios = require('axios')
-// const urlBackEnd = "http://localhost:7000"
+const axios = require('axios')
+const urlBackEnd = "http://localhost:7000"
 
-router.get('/', (req, res, next) => {
-  res.render('signin');
-  // res.render('Bienvenida');
-  console.log('console log bra')
-});
+// router.get('/', (req, res, next) => {
+//   res.render('Bienvenida');
+//   // res.render('Bienvenida');
+//   console.log('console log bra')
+// });
+
+router.get('/', (req, res) => {
+  axios.post(urlBackEnd + '/signin')
+  .then(function (response) {
+     
+  }).catch(err=>{console.log(err)
+  })
+})
 
 router.get('/signin', (req, res, next) => {
   res.render('signin');
@@ -26,15 +34,6 @@ router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
 
-// app.get(urlBackEnd +'/index', (req, res) => {
-//   axios.post(urlBackEnd + '/singin')
-//   .then(function (response) {
-//     const data = response.data.data;
-//     // let user = req.user;
-//     res.render('singin',data)  
-//   }).catch(err=>{console.log(err)
-//   })
-// })
 
 // router.post(urlBackEnd+'/index',function(req,res,next){
 //   const respuesta =  axios.get(urlBackEndPerfil +'update/id',id)
@@ -154,4 +153,5 @@ router.get('/unirseGrupo', (req, res, next) => {
 router.get('/perfilTutor', (req, res, next) => {
   res.render('perfilTutor');
 });
+
 module.exports = router;
