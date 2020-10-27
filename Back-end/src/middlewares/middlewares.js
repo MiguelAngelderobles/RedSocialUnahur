@@ -1,4 +1,4 @@
-const middlewareApp = async (app) => {
+const middlewareApp = async (app,express) => {
   const morgan = require('morgan')
   const passport = require('passport');
   const session = require('express-session');

@@ -1,7 +1,8 @@
 const router = require('express').Router();
 // const express = require('express')
 // const app = express('')
-const axios = require('axios')
+const axios = require('axios');
+const { response } = require('express');
 const urlBackEnd = "http://localhost:7000"
 
 // router.get('/', (req, res, next) => {
@@ -9,12 +10,14 @@ const urlBackEnd = "http://localhost:7000"
 //   // res.render('Bienvenida');
 //   console.log('console log bra')
 // });
-
 router.get('/', (req, res) => {
   axios.post(urlBackEnd + '/signin')
   .then(function (response) {
-     
-  }).catch(err=>{console.log(err)
+     res.render('Bienvenida')
+  }).catch(err=>{
+    console.log(err)
+    res.status(500).send({mensaje: "hola"})
+   
   })
 })
 

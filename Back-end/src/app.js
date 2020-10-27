@@ -7,7 +7,7 @@ const usePassPort = require('./passport/local-auth')
 
 configApp(app)
 updatabase()
-middlewareApp(app)
+middlewareApp(app,express)
 usePassPort()
 
 

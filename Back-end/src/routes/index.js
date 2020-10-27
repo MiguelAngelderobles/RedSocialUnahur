@@ -2,14 +2,18 @@ const router = require('express').Router();
 const passport = require('passport');
 const urlFront = 'http://localhost:3000'
 
-router.post('/signin', passport.authenticate('local-signin', {
+// router.post('/signin', passport.authenticate('local-signin', {
   
-  successRedirect: '/Bienvenida',
+//   successRedirect: '/Bienvenida',
   
-  failureRedirect: '/signin',
+//   failureRedirect: '/signin',
   
-  failureFlash: true
-}));
+//   failureFlash: true
+// }));
+router.post('/signin', (req, res, next) => {//para cerrar la sesión
+  res.status(200).send({a:23})
+});
+
 
 router.post('/signup', passport.authenticate('local-signup', {
    
@@ -19,10 +23,6 @@ router.post('/signup', passport.authenticate('local-signup', {
   
   failureFlash: true
 }));
-
-router.get('/signin', function(req, res) {
-  res.redirect('signin', { user : req.user });
-});
 
 router.get('/logout', (req, res, next) => {//para cerrar la sesión
   req.logout();
