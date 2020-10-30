@@ -1,42 +1,25 @@
 const router = require('express').Router();
-const passport = require('passport');
-const urlFront = 'http://localhost:3000'
+const Usuario = require('../models/usuario');
 
-// router.post('/signin', passport.authenticate('local-signin', {
-  
-//   successRedirect: '/Bienvenida',
-  
-//   failureRedirect: '/signin',
-  
-//   failureFlash: true
-// }));
-router.post('/signin', (req, res, next) => {//para cerrar la sesión
-  res.status(200).send({a:23})
+router.post('/usuario/add', async (req, res, next) => {
+  const usuario = new Usuario(req.body);
+  await usuario.save();
+  console.log(usuario)
+  res.status(200)
+  res.send(usuario)
+});
+
+router.get('/usuario/', async (req, res, next) => {
+  const usuario = await Usuario.find();
+  res.status(200)
+  res.send(usuario)    
 });
 
 
-router.post('/signup', passport.authenticate('local-signup', {
-   
-  successRedirect: '/signin',
-  
-  failureRedirect: '/signup',
-  
-  failureFlash: true
-}));
-
-router.get('/logout', (req, res, next) => {//para cerrar la sesión
-  req.logout();
-  res.redirect('/');//lo devuelvo a la pagina principal de mi aplicacion
+router.get('/usuario/:email?', async (req, res, next) => {
+  const usuario = await Usuario.findOne({email: req.body.email});
+  res.status(200)
+  res.send(usuario)    
 });
-
-
-function isAuthenticated(req, res, next) {
-  if(req.isAuthenticated()) {
-    return next();
-  }
-
-  res.redirect('/')
-}
-
 
 module.exports = router;

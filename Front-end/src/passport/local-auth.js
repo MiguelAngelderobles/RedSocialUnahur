@@ -1,9 +1,21 @@
+const { response } = require('express');
+const { replaceOne } = require('../../../HTML/src/models/usuario');
+
 const usePassPort = () => {
+  const axios = require('axios')
   const passport = require('passport');
   const LocalStrategy = require('passport-local').Strategy;
-
-  const User = require('../models/usuario');
-
+  const urlBackEnd = "http://localhost:7000/"
+  const bcrypt =require('bcrypt-nodejs')
+  
+  const encryptPassword = (password) => {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(10));//hash de la password
+  };
+  
+  const comparePassword= function (password) {
+    return bcrypt.compareSync(password, this.password); //si contraseñas coinciden va a retornar un true, caso contrario un false
+  };
+ 
   passport.serializeUser((user, done) => {
     done(null, user.id);
   });
@@ -20,19 +32,16 @@ const usePassPort = () => {
     passwordField: 'password',
     passReqToCallback: true
   }, async (req, email, password, done) => {
-    const user = await User.findOne({'email': email})
-    console.log(user)
+    const user =  axios({method:'get',url:'http://localhost:7000/usuario/:email?',data:{email}})
     if(user) {
       return done(null, false, req.flash('signupMessage', 'El Email ingresado ya existe.'));
     } else {
-      const newUser = new User();
-      newUser.email = email;
-      newUser.password = newUser.encryptPassword(password);
-    console.log(newUser)
-      await newUser.save();
-      done(null, newUser);
-  }
-}));
+      // newUser.email = email;
+      // newUser.password = newUser.encryptPassword(password);
+      password.encryptPassword()
+       const newUser = axios({method:'get',url:'http://localhost:7000/usuario/:email?',data:{email,password}})
+         done(null,newUser)        
+  }}));
 
 //para iniciar sesión
   passport.use('local-signin', new LocalStrategy({
@@ -40,7 +49,8 @@ const usePassPort = () => {
     passwordField: 'password',
     passReqToCallback: true
   }, async (req, email, password, done) => {
-    const user = await User.findOne({email: email});
+    // const user = await User.findOne({email: email});
+    const user = await axios({method:'get',url:'http://localhost:7000/usuario/:email?',data:email})
     if(!user) {
       return done(null, false, req.flash('signinMessage', 'Usuario no encontrado'));
     }
@@ -52,3 +62,8 @@ const usePassPort = () => {
 }
 
 module.exports = usePassPort
+
+// axios.get(urlBackEnd +'http://localhost:7000/usuario/:email?',email)
+//     .then(function(response){
+//  //hash de la password
+//     })

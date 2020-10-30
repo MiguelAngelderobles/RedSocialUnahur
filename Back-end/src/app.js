@@ -3,12 +3,12 @@ const app = express('')
 const configApp = require('./configurations/config')
 const middlewareApp = require('./middlewares/middlewares')
 const updatabase = require('./database/database')
-const usePassPort = require('./passport/local-auth')
+// const usePassPort = require('./passport/local-auth')
 
 configApp(app)
 updatabase()
 middlewareApp(app,express)
-usePassPort()
+// usePassPort()
 
 
 app.use('/', require('./routes/index'));

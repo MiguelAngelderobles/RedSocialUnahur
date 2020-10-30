@@ -1,27 +1,45 @@
 const router = require('express').Router();
-// const express = require('express')
-// const app = express('')
-const axios = require('axios');
-const { response } = require('express');
-const urlBackEnd = "http://localhost:7000"
 
-// router.get('/', (req, res, next) => {
-//   res.render('Bienvenida');
-//   // res.render('Bienvenida');
-//   console.log('console log bra')
-// });
-router.get('/', (req, res) => {
-  axios.post(urlBackEnd + '/signin')
-  .then(function (response) {
-     res.render('Bienvenida')
-  }).catch(err=>{
-    console.log(err)
-    res.status(500).send({mensaje: "hola"})
-   
-  })
-})
+const axios = require('axios');
+const urlBackEnd = "http://localhost:7000"
+const passport = require('passport')
 
 router.get('/signin', (req, res, next) => {
+  res.render('signin');
+});
+
+router.post('/signin', passport.authenticate('local-signin', {
+  
+  successRedirect: '/Bienvenida',
+  
+  failureRedirect: '/signin',
+  
+  failureFlash: true
+}));
+
+router.post('/signup', passport.authenticate('local-signup', {
+   
+  successRedirect: '/signin',
+  
+  failureRedirect: '/signup',
+  
+  failureFlash: true
+}));
+
+router.get('/logout', (req, res, next) => {//para cerrar la sesión
+  req.logout();
+  res.redirect('/');//lo devuelvo a la pagina principal de mi aplicacion
+});
+
+function isAuthenticated(req, res, next) {
+  if(req.isAuthenticated()) {
+    return next();
+  }
+
+  res.redirect('/')
+}
+
+router.get('/', (req, res, next) => {
   res.render('signin');
 });
 
@@ -36,62 +54,6 @@ router.get('/CrearCuenta', (req, res, next) => {
 router.get('/Bienvenida', (req, res, next) => {
   res.render('Bienvenida');
 });
-
-
-// router.post(urlBackEnd+'/index',function(req,res,next){
-//   const respuesta =  axios.get(urlBackEndPerfil +'update/id',id)
-//   .then(response=>{
-//     console.log(response.data)
-//     const data = response.data.data;
-//     res.render('singin',data)  
-
-//   }).catch(err=>{
-//     console.log(err)
-//   })
-// })
-
-// app.get(urlBackEnd + '/index', (req, res) => {
-//   axios.post(urlBackEnd + 'singup')
-//   .then(function (response) {
-//     const data = response.data.data;
-//     let user = req.user;
-//     res.render('singout', data)  
-//   })
-// })
-
-
-// router.post('/signin', passport.authenticate('local-signin', {
-   
-//   successRedirect: '/Bienvenida',
-  
-//   failureRedirect: '/signin',
-  
-//   failureFlash: true
-// }));
-
-// router.post('/signup', passport.authenticate('local-signup', {
-   
-//   successRedirect: '/signin',
-  
-//   failureRedirect: '/signup',
-  
-//   failureFlash: true
-// }));
-
-
-// router.get('/logout', (req, res, next) => {//para cerrar la sesión
-//   req.logout();
-//   res.redirect('/');//lo devuelvo a la pagina principal de mi aplicacion
-// });
-
-
-function isAuthenticated(req, res, next) {
-  if(req.isAuthenticated()) {
-    return next();
-  }
-
-  res.redirect('/')
-}
 
 router.get('/olvidoContrasenia', (req, res, next) => {
   res.render('olvidoContrasenia');
@@ -158,3 +120,26 @@ router.get('/perfilTutor', (req, res, next) => {
 });
 
 module.exports = router;
+
+
+// router.post(urlBackEnd+'/index',function(req,res,next){
+//   const respuesta =  axios.get(urlBackEndPerfil +'update/id',id)
+//   .then(response=>{
+//     console.log(response.data)
+//     const data = response.data.data;
+//     res.render('singin',data)  
+
+//   }).catch(err=>{
+//     console.log(err)
+//   })
+// })
+
+// app.get(urlBackEnd + '/index', (req, res) => {
+//   axios.post(urlBackEnd + 'singup')
+//   .then(function (response) {
+//     const data = response.data.data;
+//     let user = req.user;
+//     res.render('singout', data)  
+//   })
+// })
+
