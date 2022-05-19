@@ -3,6 +3,7 @@ const updatabase = async()=>{
   const { mongodb } = require('./keys');
 
   mongoose.set('useFindAndModify', false);
+  mongoose.set("useUnifiedTopology",true)
   mongoose.connect(mongodb.URI, {
     useNewUrlParser: true
   })

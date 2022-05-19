@@ -5,24 +5,32 @@
   "main": "app.js",
   "dependencies": {
     "bcrypt-node": "^0.1.0",
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt-nodejs": "^0.0.3",
+    "connect": "^3.7.0",
     "connect-flash": "^0.1.1",
-    "ejs": "^3.1.5",
+    "ejs": "^3.1.6",
     "ejs-mate": "^3.0.0",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
+    "express": "^4.17.3",
+    "express-handlebars": "^4.0.2",
+    "express-session": "^1.17.2",
+    "expresse": "^1.0.2",
+    "flash": "^1.1.0",
+    "handlebars": "^4.7.5",
     "http": "0.0.1-security",
+    "install": "^0.13.0",
     "mongo": "^0.1.0",
     "mongod": "^2.0.0",
-    "mongodb": "^3.6.2",
-    "mongoose": "^5.10.5",
+    "mongodb": "^3.7.3",
+    "mongoose": "^5.13.14",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^4.4.1",
+    "socketio": "^1.0.0",
+    "sudo": "^1.0.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.15"
   },
   "scripts": {
     "start": "node src/app.js",

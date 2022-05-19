@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
-const Perfil = mongoose.Schema({
+const Profile = mongoose.Schema({
   nombre: String,
   carrera: String,
   cursandoActualmente: String,
   preparandoFinales:String,
-  usuario:{
+  user:{
     type: mongoose.Schema.Types.ObjectId,
-    href:'usuario'
+    href:'user'
   },
   status: {
     type: Boolean,
@@ -15,4 +15,4 @@ const Perfil = mongoose.Schema({
   }});
 
 
-module.exports = mongoose.model('perfiles', Perfil);
+module.exports = mongoose.model('profile', Profile);

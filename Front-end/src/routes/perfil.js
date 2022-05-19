@@ -15,7 +15,7 @@ router.get('x',function(req,res,next){
 })
 
 router.get('x',function(req,res,next){
-  const respuesta = await axios.get(urlBackEndPerfil + ':id',id)
+  const respuesta = await axios.get(urlBackEndPerfil + '/perfil/:id',id)
   .then(response=>{
     console.log(response.data)
   }).catch(err=>{
