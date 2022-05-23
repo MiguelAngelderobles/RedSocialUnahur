@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const controllerGroup = require('../../controller/grup.controller')
+const controllerGroup = require('../../controller/group.controller')
 
 router.use(bodyParser.urlencoded({extend:true}))
 router.use(bodyParser.json())

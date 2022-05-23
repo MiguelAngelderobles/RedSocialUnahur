@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Grupo = require('../models/crearGrupo');
+const urlBackEnd = require('../configuration/urlBackEnd')
+const urlBackEndGrupo = urlBackEnd + '/grupo/'
 
 
-router.post('/addgrupo', async (req, res, next) => {
+router.post( urlBackEnd + '/grupo', async (req, res, next) => {
     const grupos = new Grupo(req.body);
     await grupos.save();
     console.log(grupos)

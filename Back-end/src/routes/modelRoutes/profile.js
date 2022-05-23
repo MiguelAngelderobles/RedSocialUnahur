@@ -18,24 +18,3 @@ router.put('/:id', controllerProfile.put);
 router.delete('/:id', controllerProfile.delete); 
 
 module.exports = router;
-
-/* router.get('/perfil/turn/:id', async (req, res, next) => {
-  let { id } = req.params;
-  const perfiles = await Perfil.findById(id).populate('usuario');
-  perfiles.status = !perfiles.status;
-  await perfiles.save();
-  res.status(200)
-  res.send(perfiles)
-  .then(perfiles =>{
-    res.status(200)
-    res.send(perfiles)})
-  .catch(err=>{console.log(err)})
-
-}); */
-
-// router.get('/account/getAll', async (req, res) => {
-//   const perfiles = await Perfil.find({user: req.user.id});
-//   res.render('crearaccount', {
-//     perfiles
-//   });
-// });
